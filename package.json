@@ -2,7 +2,7 @@
   "name": "html-base-structure",
   "version": "0.0.1",
   "scripts": {
-    "development": "webpack-dev-server --env.production=false --progress",
+    "development": "webpack-dev-server --env.production=true --progress",
     "dev": "webpack-dev-server --env.production=false --progress",
     "production": "webpack --env.production=true --progress",
     "prod": "npm run build && rm -rf ../../../public/assets/front/static/assets/ && cp -R ./dist/assets ../../../public/assets/front/static/assets",

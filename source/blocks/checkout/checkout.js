@@ -376,7 +376,7 @@ class Checkout {
                 if (field === 'extras' && this.formData.extras.length > 0) {
                   data[field] = this.formData.extras.map(el => el.id);
                 } else {
-                  data.extras = [] // Костыль, чтобы сервер не отдавал 500
+                  data.extras = []; // Костыль, чтобы сервер не отдавал 500
                 }
               }
               if (field === 'seats') {
