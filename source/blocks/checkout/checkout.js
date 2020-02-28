@@ -357,7 +357,7 @@ class Checkout {
             if (!valided) errors.push({ name, valided });
           });
           if (errors.length === 0) {
-            let api = '/api/cabinet/v1.0/bookings';
+            let api = '/api/front/v1.0/bookings';
             // eslint-disable-next-line
             if (IS_DEV) {
               api = '/api/booking.json';
