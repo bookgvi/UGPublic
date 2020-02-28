@@ -1,0 +1,62 @@
+$parent: home-description;
+
+@include block($parent) {
+  width: 100%;
+  padding: rem(10) rem(10) rem(18);
+  background-color: $gray_f8;
+
+  @media (min-width: $md) {
+    padding: rem(30) rem(20);
+  }
+
+  @media (min-width: $lg) {
+    padding: rem(60) 0 rem(40);
+  }
+
+  @include element($parent, 'content') {
+    overflow: hidden;
+    transition: height 0.2s ease;
+
+    @media (min-width: $lg) {
+      max-width: rem(800);
+      margin: 0 auto;
+    }
+
+    @include modifier ($parent, 'close') {
+      height: 0;
+    }
+  }
+
+  @include element($parent, 'more-wrapper') {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  @include element($parent, 'more-btn') {
+    width: rem(40);
+    height: rem(40);
+    background-color: $white;
+    border-radius: 50%;
+
+    svg {
+      width: rem(20);
+      height: rem(12);
+      fill: $dark;
+      transform: rotate(180deg);
+      transition: transform 0.2s, opacity 0.2s ease;
+    }
+
+    &:hover {
+      svg {
+        opacity: 0.5;
+      }
+    }
+
+    @include modifier ($parent, 'close') {
+      svg {
+        transform: rotate(0);
+      }
+    }
+  }
+}

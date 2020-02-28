@@ -1,0 +1,95 @@
+include ../../../blocks/form/button/form-button.pug
+include ../../../blocks/form/input/form-input.pug
+include ../../../blocks/form/checkbox/form-checkbox.pug
+
+mixin profile-settings(settings)
+  .profile-settings
+    form.profile-settings__container(name='profileSettingsPage', method='post', action='/')
+      .profile-settings__title #{settings.heading}
+      .profile-settings__photo-box
+        .profile-settings__image
+          img(src=settings.photo, alt='alt')
+        .profile-settings__photo-settings
+          label.profile-settings__load-label(for='profile-settings-load') Выбрать файл
+          input.profile-settings__load(type='file', name='loadimage', id='profile-settings-load')
+          +form-button({
+            text: 'Удалить',
+            attributes: {
+              type: 'button',
+            }
+          })(class='form-button--cancel profile-settings__delete-btn')
+          .profile-settings__format 200x200 px, 100 kB, JPG, PNG, GIF
+      .profile-settings__input-box
+        +form-input({
+          type: 'text',
+          label: 'Имя',
+          checkOk: true,
+          attributes: {
+            name: 'name',
+            value: 'Андрей',
+          }
+        })(class='form-input--check-ok profile-settings__input profile-settings__input--half-size')
+        +form-input({
+          type: 'text',
+          label: 'Фамилия',
+          attributes: {
+            name: 'secondName',
+          }
+        })(class='profile-settings__input profile-settings__input--half-size')
+        +form-input({
+          type: 'tel',
+          label: 'Телефон',
+          checkOk: true,
+          attributes: {
+            name: 'phone',
+            value: '+7 909 333 00 06',
+          }
+        })(class='form-input--check-ok profile-settings__input profile-settings__input--half-size')
+      .profile-settings__input-box
+        +form-input({
+          type: 'email',
+          label: 'Эл.почта',
+          checkOk: true,
+          attributes: {
+            name: 'email',
+            value: 'andre@revin.ru',
+          }
+        })(class='form-input--check-ok profile-settings__input profile-settings__input--email')
+        +form-checkbox({
+          inputID: 'profile-settings',
+          label: 'Получать информацию о локациях, событиях и скидках на почту ',
+          attributes: {
+            name: 'info',
+            checked: 'checked',
+          }
+        })(class='profile-settings__checkbox')
+      .profile-settings__sub-title #{settings.heading3}
+      .profile-settings__input-box
+        +form-input({
+          type: 'password',
+          label: 'Пароль',
+          attributes: {
+            name: 'profile-password',
+          }
+        })(class='profile-settings__input')
+        +form-input({
+          type: 'password',
+          label: 'Новый пароль',
+          error: 'от 6 знаков, 1 цифра и 1 заглавная буква минимум',
+          attributes: {
+            name: 'profile-password-confirm',
+          }
+        })(class='profile-settings__input')
+        +form-input({
+          type: 'password',
+          attributes: {
+            name: 'profile-password-repeat',
+          }
+        })(class='profile-settings__input')
+      .profile-settings__input-box
+        +form-button({
+          text: 'Сохранить',
+          attributes: {
+            type: 'submit',
+          }
+        })(class='profile-settings__save-btn')

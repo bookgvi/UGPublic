@@ -1,0 +1,44 @@
+include ../../form/button/form-button.pug
+include ../../location/rate/location-rate.pug
+
+.comments-item(:class='{"comments-item--respondent" : info.replyTo}', :id='"comment-" + info.id')
+  - var id = '"comment-" + info.id';
+  .comments-item__heading
+    .comments-item__user-logo(:style='{backgroundColor: info.logoColor || "#c2c7e0"}') {{ info.author.fullName[0] }}
+    .comments-item__user-data
+      .comments-item__user-name {{ info.author.fullName }}
+      .comments-item__rate(v-if='info.rating')
+        span.comments-item__star(v-for='n in 5', :class='{"comments-item__star--active" : n <= info.rating}') ★
+      .comments-item__respondent(v-if='info.isAuthorOwner') ОТВЕТ ВЛАДЕЛЬЦА
+      .comments-item__date {{ info.createdAt }}
+  span.comments-item__respondent.comments-item__respondent--mobile(v-if='info.respondent') {{ info.respondent }}
+  p.comments-item__content {{ info.content }}
+  .comments-item__btn-section
+    .comments-item__btns(v-if='info.likes && info.dislikes')
+      button.comments-item__btn-voited(type='button')
+        .comments-item__voited.comments-item__voited--like(:class='{"comments-item__voited--selected" : voted === "like"}', @click='setVote(true)')
+          svg
+            use(xlink:href='./assets/sprite.svg#like-usage')
+          span {{ info.likes }}
+      button.comments-item__btn-voited(type='button')
+        .comments-item__voited.comments-item__voited--dislake(:class='{"comments-item__voited--selected" : voted === "dislike"}', @click='setVote(false)')
+          svg
+            use(xlink:href='./assets/sprite.svg#like-usage')
+          span {{ info.dislikes }}
+    button.comments-item__btn-voited.comments-item__btn-voited--reply(v-if='isAuthorized', type='button', @click='answerComment') ОТВЕТИТЬ
+    button.comments-item__btn-voited.comments-item__btn-voited--edit(type='button', v-if='isCommentAuthor', @click='editComment') РЕДАКТИРОВАТЬ
+  .comments-item__answer(v-if='answerVisible')
+    textarea.comments-item__textarea(v-model='comment', :placeholder='placeholder')
+    .comments-item__answer-btns
+      .comments-item__rate-wrapper
+        +location-rate({
+          count: '10',
+          rateId: id,
+        })
+      .comments-item__btn-wrapper
+        +form-button({
+          text: 'Отправить',
+          attributes: {
+            type: 'button'
+          }
+        })(@click='addAnswer')

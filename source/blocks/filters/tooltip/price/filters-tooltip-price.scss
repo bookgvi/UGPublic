@@ -1,0 +1,128 @@
+$parent: filters-tooltip-price;
+
+@include block($parent) {
+  @include element($parent, 'container') {
+    padding: rem(10) rem(10) 0;
+    overflow: auto;
+
+    @media (min-width: $md) {
+      padding: 0;
+    }
+  }
+
+  @include element($parent, 'title') {
+    display: flex;
+    align-items: center;
+    height: rem(40);
+    font-weight: 700;
+    font-size: rem(16);
+    line-height: rem(19);
+  }
+
+  @include element($parent, 'period') {
+    display: flex;
+    height: rem(40);
+    margin-bottom: rem(20);
+  }
+
+  @include element($parent, 'tab') {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 50%;
+    height: 100%;
+    font-weight: 500;
+    font-size: rem(14);
+    line-height: rem(18);
+
+    label {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid $gray-laght-btn-cancel;
+    }
+
+    input {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      opacity: 0;
+      cursor: pointer;
+
+      &:checked {
+        & + label {
+          background-color: $marsh;
+          border-color: $marsh;
+
+          span {
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+
+  @include element($parent, 'content') {
+    overflow: hidden;
+  }
+
+  @include element($parent, 'value') {
+    z-index: 2;
+    cursor: pointer;
+  }
+
+  @include element($parent, 'select') {
+    display: none;
+
+    @include modifier($parent, 'active') {
+      display: block;
+    }
+  }
+
+  @include element($parent, 'wrapper') {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: rem(40);
+  }
+
+  @include element($parent, 'price') {
+    font-weight: 700;
+    font-size: rem(16);
+    line-height: rem(19);
+  }
+
+  @include element($parent, 'location') {
+    font-weight: 500;
+    font-size: rem(14);
+    line-height: rem(18);
+  }
+
+  @include element($parent, 'graph') {
+    margin-bottom: rem(65);
+    padding-left: rem(15);
+    padding-right: rem(15);
+  }
+
+  @include element ($parent, 'buttons') {
+    display: flex;
+    justify-content: space-between;
+    flex-shrink: 0;
+    margin-top: rem(20);
+
+    @media (max-width: $md-min) {
+      padding: rem(10) rem(10) 0;
+      border-top: 1px solid #e5e5e5;
+    }
+  }
+
+  @include element ($parent, 'btn') {
+    flex-basis: calc(50% - 5px);
+  }
+}

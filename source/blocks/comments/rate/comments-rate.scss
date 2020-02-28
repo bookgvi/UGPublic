@@ -1,0 +1,61 @@
+$parent: comments-rate;
+
+@include block($parent) {
+  display: flex;
+  align-items: center;
+  padding-left: rem(4);
+
+  @include element($parent, 'star-section') {
+    display: flex;
+    margin-right: rem(20);
+
+    @media (min-width: $md) {
+      margin-right: rem(13);
+    }
+
+    .star {
+      font-size: rem(24);
+      padding-right: rem(5);
+      color: transparentize($marsh, 0.5);
+      margin-right: rem(4);
+      cursor: pointer;
+
+      @media (min-width: $md) {
+        font-size: rem(36);
+
+        @supports (-webkit-overflow-scrolling: touch) {
+          font-size: rem(26);
+          margin-right: rem(10);
+        }
+      }
+
+      @supports (-webkit-overflow-scrolling: touch) {
+        font-size: rem(26);
+        margin-right: rem(10);
+      }
+    }
+
+    .glow {
+      color: $marsh;
+    }
+  }
+
+  @include element($parent, 'input') {
+    display: none;
+  }
+
+  @include element($parent, 'value') {
+    display: inline-block;
+    padding-top: rem(5);
+    color: $dark;
+    font-family: $montserrat;
+    font-size: rem(14);
+    line-height: rem(24);
+
+    @media (min-width: $md) {
+      padding-top: rem(10);
+      font-size: rem(16);
+      line-height: rem(28);
+    }
+  }
+}

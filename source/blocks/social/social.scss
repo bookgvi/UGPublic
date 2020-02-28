@@ -1,0 +1,93 @@
+$parent: social;
+
+@include block($parent) {
+  display: inline-block;
+
+  @include modifier ($parent, 'border-grey') {
+    @include element($parent, 'network') {
+      border-color: $gray_0;
+      transition: border-color 0.2s ease;
+
+      &:hover {
+        border-color: $white;
+        background-color: $white;
+
+        &.#{$parent}__network--facebook {
+          svg {
+            fill: $marsh;
+          }
+        }
+
+        &.#{$parent}__network--vk {
+          svg {
+            fill: $marsh;
+          }
+        }
+
+        &.#{$parent}__network--instagram {
+          svg {
+            fill: $marsh;
+          }
+        }
+      }
+    }
+  }
+
+  @include element($parent, 'wrapper') {
+    display: flex;
+  }
+
+  @include element($parent, 'network') {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: rem(40);
+    height: rem(40);
+    margin-right: rem(10);
+    border-radius: 50%;
+    border: 1px solid $gray-light-border;
+    position: relative;
+    transition: background-color 0.25s linear;
+
+    // @include modifier($parent, 'vk') {
+    //   &:hover {
+    //     svg {
+    //       fill: $marsh;
+    //     }
+    //   }
+    // }
+
+    // @include modifier($parent, 'facebook') {
+    //   &:hover {
+    //     svg {
+    //       fill: $marsh;
+    //     }
+    //   }
+    // }
+
+    // @include modifier($parent, 'instagram') {
+    //   &:hover {
+    //     svg {
+    //       fill: $marsh;
+    //     }
+    //   }
+    // }
+
+    &:hover {
+      background-color: $gray_f2;
+    }
+
+    &::after {
+      position: absolute;
+      content: '';
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    svg {
+      transition: fill 0.25s linear;
+      fill: $dark;
+    }
+  }
+}

@@ -1,0 +1,10 @@
+mixin location-inputNumber(input, isVue)
+  .location-inputNumber&attributes(attributes)
+    .location-inputNumber__wrapper
+      button.location-inputNumber__button(type='button', data-operation='decrement')
+        svg
+          use(xlink:href=require('../assets/svg/minus.svg').url)
+      input.location-inputNumber__input(type='text', value=input.value ? input.value : '1', min=input.min ? input.min : '1', max=input.max ? input.max : '99')&attributes(input.attributes)
+      button.location-inputNumber__button(type='button', data-operation='increment')
+        svg
+          use(xlink:href=require('../assets/svg/plus.svg').url)

@@ -1,0 +1,39 @@
+@function rem($size) {
+  $remsize: $size / 16;
+
+  @return #{$remsize}rem;
+}
+
+@mixin block ($parent) {
+  .#{$parent} {
+    @content;
+  }
+}
+
+@mixin element ($parent, $name) {
+  .#{$parent}__#{$name} {
+    @content;
+  }
+}
+
+@mixin modifier($parent, $name) {
+  $length_check: str-length('#{$parent}') + 1;
+
+  @if ($length_check == str-length('#{&}')) {
+    $subQuery: $parent;
+
+    @at-root &.#{$subQuery}--#{$name} {
+      @content;
+    }
+  }
+
+  @else {
+    $length: str-length('.#{$parent} ');
+    $subQuery: str-slice('#{&}', $length + 1);
+    $query: '#{&}#{$subQuery}--#{$name}';
+
+    @at-root #{$query} {
+      @content;
+    }
+  }
+}

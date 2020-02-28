@@ -1,0 +1,166 @@
+$parent: dev-faq;
+
+@include block ($parent) {
+  padding: rem(20) rem(10);
+
+  @media (min-width: $md) {
+    padding: rem(40) 0;
+  }
+
+  @include element ($parent, 'title') {
+    margin-bottom: rem(11);
+    font-weight: 700;
+    font-size: rem(18);
+    line-height: rem(24);
+
+    @media (min-width: $md) {
+      margin-bottom: rem(20);
+      font-size: rem(24);
+      line-height: rem(29);
+    }
+  }
+
+  @include element ($parent, 'container') {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+
+    @media (min-width: $md) {
+      max-width: rem(580);
+    }
+  }
+
+  @include element ($parent, 'item') {
+    color: $dark;
+
+    @include modifier ($parent, 'open') {
+      border-bottom: 1px solid #e5e5e5;
+
+      @include element ($parent, 'question') {
+        padding-left: rem(10);
+        border-color: transparent;
+        background-color: #f2f6f7;
+        color: $marsh;
+
+        @media (min-width: $md) {
+          padding-left: rem(20);
+        }
+      }
+
+      @include element ($parent, 'arrow') {
+        transform: rotate(180deg);
+
+        svg {
+          fill: #c0d6da;
+        }
+      }
+
+      @include element ($parent, 'answer') {
+        max-height: none;
+      }
+    }
+  }
+
+  @include element ($parent, 'question') {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: rem(14) rem(10);
+    padding-left: 0;
+    border-bottom: 1px solid #e5e5e5;
+    cursor: pointer;
+    transition: padding-left 0.2s, background-color 0.2s;
+
+    @media (min-width: $md) {
+      padding: rem(19) 0;
+      padding-right: rem(10);
+    }
+
+    &:hover {
+      padding-left: rem(10);
+      background-color: #f8f8f8;
+
+      @media (min-width: $md) {
+        padding-left: rem(20);
+      }
+    }
+  }
+
+  @include element ($parent, 'question-text') {
+    width: rem(320);
+    font-weight: 700;
+    font-size: rem(14);
+    line-height: rem(21);
+
+    @media (min-width: $md) {
+      width: rem(520);
+      font-size: rem(16);
+    }
+  }
+
+  @include element ($parent, 'arrow') {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: rem(24);
+    height: rem(24);
+    transition: transform 0.2s;
+
+    svg {
+      fill: #d9d9d9;
+    }
+  }
+
+  @include element ($parent, 'answer') {
+    max-height: 0;
+    overflow: hidden;
+  }
+
+  @include element ($parent, 'answer-text') {
+    padding: rem(10) rem(10) rem(17) rem(10);
+    font-weight: 500;
+    font-size: rem(15);
+    line-height: rem(28);
+
+    @media (min-width: $md) {
+      padding: rem(10) rem(40) rem(20) rem(20);
+    }
+  }
+
+  @include element ($parent, 'help') {
+    margin-top: rem(30);
+    margin-bottom: rem(20);
+    font-weight: 500;
+    font-size: rem(15);
+    line-height: rem(28);
+    color: $dark;
+
+    @media (min-width: $md) {
+      margin-top: rem(40);
+    }
+  }
+
+  @include element ($parent, 'link') {
+    color: #86b1b9;
+  }
+
+  @include element ($parent, 'btn') {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50px;
+    background-color: #739ca3;
+    font-size: rem(16);
+    line-height: rem(19);
+
+    @media (min-width: $md) {
+      width: rem(270);
+    }
+
+    svg {
+      margin-right: rem(10);
+    }
+  }
+}

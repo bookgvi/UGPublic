@@ -1,0 +1,105 @@
+include ../form/input/form-input.pug
+include ../form/checkbox/form-checkbox.pug
+include ../form/button/form-button.pug
+
+mixin registration(data)
+  .registration
+    .registration__title Регистрация
+    form.registration__form(action='/')
+      .registration__personal-section
+        .registration__authorization-wrapper.registration__authorization-wrapper--personal
+          +form-input({
+            type: 'text',
+            checkOk: false,
+            attributes: {
+              name: 'firstName',
+              placeholder: 'Имя',
+              value: ''
+            },
+            label: 'Имя'
+          }, 'form-input--text')
+        .registration__authorization-wrapper.registration__authorization-wrapper--big-padding.registration__authorization-wrapper--personal
+          +form-input({
+            type: 'text',
+            checkOk: false,
+            attributes: {
+              name: 'secondName',
+              placeholder: 'Фамилия',
+              value: ''
+            },
+            label: 'Фамилия'
+          }, 'form-input--text')
+        .registration__authorization-wrapper.registration__authorization-wrapper--personal
+          +form-input({
+            type: 'tel',
+            checkOk: false,
+            attributes: {
+              name: 'phone',
+              placeholder: 'Телефон',
+              value: ''
+            },
+            label: 'Телефон'
+          }, 'form-input--phone')
+      .registration__authorization-wrapper.registration__authorization-wrapper--big-padding-desktop
+        +form-input({
+          type: 'text',
+          checkOk: false,
+          attributes: {
+            name: 'eMail',
+            placeholder: 'Эл. почта',
+            value: ''
+          },
+          label: 'Эл. почта'
+        }, 'form-input--email')
+      .registration__authorization-wrapper
+        +form-input({
+          type: 'password',
+          checkOk: false,
+          attributes: {
+            name: 'password',
+            placeholder: 'Пароль',
+            value: '',
+            'data-pass': 'pass'
+          },
+          label: 'Пароль',
+          error: 'от 6 знаков, 1 цифра и 1 заглавная буква минимум'
+        })(class='form-input--pass form-input--check-fail')
+      .registration__authorization-wrapper.registration__authorization-wrapper--big-padding
+        +form-input({
+          type: 'password',
+          checkOk: false,
+          attributes: {
+            name: 'password',
+            placeholder: 'Повторите пароль',
+            value: '',
+            'data-pass': 'check'
+          }
+        })(class='form-input--pass-check')
+      .registration__authorization-button-wrapper
+        +form-button({
+          text: 'Зарегистрироваться',
+          attributes: {
+            type: 'submit'
+          }
+        })
+      .registration__authorization-wrapper.registration__authorization-wrapper--medium-padding
+        +form-checkbox({
+          inputID: 'info',
+          label: 'Получать информацию о локациях, событиях и скидках на почту ',
+          attributes: {
+            name: 'info',
+            value: '',
+            checked: 'checked'
+          }
+        })
+      .registration__authorization-wrapper
+        +form-checkbox({
+          inputID: 'offert',
+          label: 'Согласен с условиями ',
+          linkText: 'Пользовательского&nbsp;соглашения',
+          link: '/',
+          attributes: {
+            name: 'offert',
+            value: ''
+          }
+        })

@@ -1,0 +1,218 @@
+include ../blocks/dev/header/dev-header.pug
+
+-
+  var data = {
+    devHeader: {
+      notification: 'Для завершения регистрации подтвердите вашу эл. почту. Откройте письмо от noreplay@ugoloc.ru и перейдите по ссылке.',
+      search: {
+        searchFillter: false,
+        autocomplete: [
+          {
+            title: 'Фотосъемка',
+            activeItem: true
+          },
+          {
+            title: 'Видео',
+            activeItem: false
+          },
+          {
+            title: 'Мероприятие',
+            activeItem: false
+          }
+        ],
+        currentLocation: {
+          title: 'Москва',
+          numberSeats: 39
+        },
+        locations: [
+          {
+            title: 'Москва',
+            activeItem: true
+          },
+          {
+            title: 'Санкт-Петербург',
+            activeItem: false
+          },
+          {
+            title: 'Нижний Новгород',
+            activeItem: false
+          },
+          {
+            title: 'Казань',
+            activeItem: false
+          },
+          {
+            title: 'Сочи',
+            activeItem: false
+          }
+        ]
+      },
+      user: {
+        is_authorized: true,
+        authorizedUserMenuDesctop: [
+          {
+            title: 'Добавить локацию',
+            link: '#',
+            notice: false,
+            activeItem: false
+          },
+          {
+            title: 'CRM',
+            link: '#',
+            notice: false,
+            activeItem: false
+          },
+          {
+            title: 'Сообщения',
+            link: '/messages.html',
+            notice: true,
+            activeItem: false,
+            is_auth: true,
+          },
+          {
+            title: 'Мои брони',
+            link: '/orders.html',
+            notice: false,
+            activeItem: false,
+            is_auth: true,
+          },
+          {
+            title: 'Регистрация',
+            link: '#',
+            notice: false,
+            activeItem: false,
+            is_auth: false,
+          },
+          {
+            title: 'Вход',
+            link: '#',
+            notice: false,
+            activeItem: false,
+            is_auth: false,
+          }
+        ],
+        authorizedUserMenuDesctopMore: [
+          {
+            title: 'Настройки',
+            link: '#',
+            notice: false,
+            activeItem: false
+          },
+          {
+            title: 'Избранное',
+            link: '/favorites.html',
+            notice: false,
+            activeItem: true
+          },
+          {
+            title: 'Отзывы',
+            link: '/reviews.html',
+            notice: false,
+            activeItem: false
+          },
+          {
+            title: 'Кабинет',
+            link: '#',
+            notice: false,
+            activeItem: false
+          },
+          {
+            title: 'Выйти',
+            link: '#',
+            notice: false,
+            activeItem: false
+          }
+        ],
+      }
+    },
+    devFooter: {
+      openFooter: false,
+      sections_link: [
+        {
+          section: {
+            title: 'Ugoloc',
+            pages: [
+              {
+                title: 'О нас',
+                link: '#'
+              },
+              {
+                title: 'Реквизиты',
+                link: '#'
+              },
+              {
+                title: 'FAQ',
+                link: '#'
+              },
+              {
+                title: 'Пользовательское соглашение',
+                link: '#'
+              }
+            ]
+          }
+        },
+        {
+          section: {
+            title: 'Партнерство',
+            pages: [
+              {
+                title: 'Размещение рекламы',
+                link: '#'
+              },
+              {
+                title: 'Разместить свою локацию',
+                link: '#'
+              },
+              {
+                title: 'Система управления бронированиями',
+                link: '#'
+              }
+            ]
+          }
+        },
+      ],
+      sections_link_show: [
+        {
+          title: 'О нас',
+          link: '#'
+        },
+        {
+          title: 'FAQ',
+          link: '#'
+        }
+      ],
+      sections_link_hide: '<span class="dev-footer__text-hide">Показать</span>&nbsp;' + 'еще 5'
+    }
+  }
+
+doctype html
+html(lang='ru')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0, user-scalable=no')
+    meta(http-equiv='X-UA-Compatible', content='ie=edge')
+    script(src='https://api-maps.yandex.ru/2.1/?apikey=ab535de8-8918-4bb9-95c9-79c4b7f17529&lang=ru_RU')
+    title Ugoloc
+    link(rel='apple-touch-icon', sizes='57x57', href='/favicons/apple-icon-57x57.png')
+    link(rel='apple-touch-icon', sizes='60x60', href='/favicons/apple-icon-60x60.png')
+    link(rel='apple-touch-icon', sizes='72x72', href='/favicons/apple-icon-72x72.png')
+    link(rel='apple-touch-icon', sizes='76x76', href='/favicons/apple-icon-76x76.png')
+    link(rel='apple-touch-icon', sizes='114x114', href='/favicons/apple-icon-114x114.png')
+    link(rel='apple-touch-icon', sizes='120x120', href='/favicons/apple-icon-120x120.png')
+    link(rel='apple-touch-icon', sizes='144x144', href='/favicons/apple-icon-144x144.png')
+    link(rel='apple-touch-icon', sizes='152x152', href='/favicons/apple-icon-152x152.png')
+    link(rel='apple-touch-icon', sizes='180x180', href='/favicons/apple-icon-180x180.png')
+    link(rel='icon', type='image/png', sizes='192x192', href='/favicons/android-icon-192x192.png')
+    link(rel='icon', type='image/png', sizes='32x32', href='/favicons/favicon-32x32.png')
+    link(rel='icon', type='image/png', sizes='96x96', href='/favicons/favicon-96x96.png')
+    link(rel='icon', type='image/png', sizes='16x16', href='/favicons/favicon-16x16.png')
+    meta(name='msapplication-TileColor', content='#ffffff')
+    meta(name='msapplication-TileImage', content='/ms-icon-144x144.png')
+    script(src='https://code.jquery.com/jquery-3.3.1.min.js')
+    block scripts
+  body
+    +dev-header(data.devHeader)
+
+    .content
+      .content__overlay
+      block content

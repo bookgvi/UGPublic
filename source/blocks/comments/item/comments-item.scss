@@ -1,0 +1,268 @@
+$parent: comments-item;
+
+@include block($parent) {
+  padding: 0 rem(20) rem(30);
+
+  @media (min-width: $md) {
+    padding: 0 rem(20) rem(50);
+  }
+
+  @include modifier ($parent, 'respondent') {
+    padding-left: rem(40);
+
+    @media (min-width: $md) {
+      padding-left: rem(80);
+    }
+  }
+
+  @include element($parent, 'heading') {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: rem(9);
+  }
+
+  @include element($parent, 'user-logo') {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: rem(40);
+    height: rem(40);
+    flex: 0 0 rem(40);
+    margin-right: rem(20);
+    border-radius: 50%;
+    color: $white;
+    font-family: $montserrat;
+    font-size: rem(24);
+    line-height: rem(29);
+  }
+
+  @include element($parent, 'user-data') {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+
+    @media (min-width: $md) {
+      flex-wrap: nowrap;
+    }
+  }
+
+  @include element($parent, 'user-name') {
+    display: inline-block;
+    color: $dark;
+    font-family: $montserrat;
+    font-size: rem(16);
+    font-weight: 600;
+    line-height: rem(19);
+    padding-right: rem(18);
+
+    @media (min-width: $md) {
+      padding-right: rem(15);
+    }
+  }
+
+  @include element($parent, 'star') {
+    display: inline-block;
+    font-size: rem(14);
+    padding-right: rem(7);
+    color: transparentize($marsh, 0.5);
+
+    @include modifier ($parent, 'active') {
+      color: $marsh;
+    }
+  }
+
+  @include element($parent, 'respondent') {
+    display: none;
+    padding: 0 5px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 1px;
+    color: $gray_9b;
+    font-family: $montserrat;
+    font-size: rem(14);
+    font-weight: 500;
+    line-height: rem(18);
+    text-transform: uppercase;
+
+    @media (min-width: $md) {
+      display: block;
+    }
+
+    @include modifier ($parent, 'mobile') {
+      display: inline-block;
+      margin-bottom: rem(13);
+
+      @media (min-width: $md) {
+        display: none;
+      }
+    }
+  }
+
+  @include element($parent, 'date') {
+    color: $gray;
+    font-family: $montserrat;
+    font-size: rem(14);
+    font-weight: 500;
+    line-height: rem(18);
+    width: 100%;
+    padding-top: rem(6);
+
+    @media (min-width: $md) {
+      margin-left: auto;
+      width: auto;
+      padding: 0;
+    }
+  }
+
+  @include element($parent, 'content') {
+    display: inline-block;
+    color: $dark;
+    font-family: $montserrat;
+    font-size: rem(14);
+    line-height: rem(24);
+    padding-bottom: rem(14);
+
+    @media (min-width: $md) {
+      font-size: rem(16);
+      line-height: rem(28);
+      padding-bottom: rem(20);
+    }
+  }
+
+  @include element($parent, 'btn-section') {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+
+    @media (min-width: $md) {
+      flex-wrap: nowrap;
+    }
+  }
+
+  @include element($parent, 'btn-voited') {
+    display: inline-block;
+    margin-right: rem(21);
+    color: $gray;
+    font-family: $montserrat;
+    font-size: rem(14);
+    font-weight: 600;
+    line-height: rem(18);
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: $marsh;
+
+      svg {
+        fill: $marsh;
+      }
+    }
+
+    @include modifier ($parent, 'reply') {
+      margin-right: 0;
+      margin-left: auto;
+
+      @media (min-width: $md) {
+        margin-left: 0;
+        margin-right: rem(21);
+      }
+    }
+
+    @include modifier ($parent, 'edit') {
+      width: 100%;
+      text-align: left;
+
+      @media (min-width: $md) {
+        width: auto;
+      }
+    }
+  }
+
+  @include element($parent, 'voited') {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: rem(12);
+
+    @media (min-width: $md) {
+      margin-bottom: 0;
+    }
+
+    svg {
+      width: rem(20);
+      height: rem(18);
+      fill: $gray;
+      margin-right: rem(12);
+      transition: fill 0.2s ease;
+    }
+
+    @include modifier ($parent, 'dislake') {
+      svg {
+        margin-top: 2px;
+        transform: rotate(180deg);
+      }
+    }
+
+    @include modifier ($parent, 'selected') {
+      svg {
+        fill: $marsh;
+      }
+    }
+  }
+
+  @include element($parent, 'answer') {
+    border: 1px solid $gray-light-border;
+    margin-top: rem(20);
+  }
+
+  @include element($parent, 'textarea') {
+    width: 100%;
+    height: rem(110);
+    padding: rem(11);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    color: $dark;
+    font-family: $montserrat;
+    font-size: rem(14);
+    font-weight: 400;
+    line-height: rem(24);
+    resize: none;
+    overflow: auto;
+
+    @media (min-width: $md) {
+      padding: rem(17) rem(20);
+      font-size: rem(16);
+    }
+
+    &::placeholder {
+      color: $gray_9b;
+    }
+  }
+
+  @include element($parent, 'rate-wrapper') {
+    padding-bottom: rem(10);
+
+    @media (min-width: $md) {
+      padding: 0;
+    }
+  }
+
+  @include element($parent, 'answer-btns') {
+    display: flex;
+    flex-direction: column;
+    padding: rem(12) rem(10);
+
+    @media (min-width: $md) {
+      padding: rem(14) rem(20);
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  @include element($parent, 'btn-wrapper') {
+    width: 100%;
+
+    @media (min-width: $md) {
+      width: rem(130);
+    }
+  }
+}

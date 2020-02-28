@@ -1,0 +1,24 @@
+include ../reviews-item/reviews-item.pug
+
+mixin reviews(data)
+  //-
+    Expected data for output, withdrawal
+    Example: +reviews({
+      title: 'title',
+      reviewsArr: [
+        {
+          title: 'title',
+          date: '01.01.1970',
+          text: 'text',
+          like: number,
+          dislike: number
+        }
+      ]
+    })
+
+  .reviews
+    .reviews__container
+      .reviews__title #{data.title} • #{data.reviewsArr.length}
+      .reviews__wrapper
+        each review in data.reviewsArr 
+          +reviews-item(review)

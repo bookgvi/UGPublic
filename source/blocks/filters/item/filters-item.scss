@@ -1,0 +1,134 @@
+$parent: filters-item;
+
+@include block ($parent) {
+  margin-right: rem(10);
+  margin-bottom: rem(10);
+
+  @media (min-width: $md) {
+    position: relative;
+  }
+
+  @media (min-width: $tablet) {
+    // margin-bottom: 0;
+  }
+
+  @include modifier ($parent, 'open') {
+    @include element ($parent, 'title') {
+      border-color: $marsh;
+      background-color: $marsh;
+      color: $white;
+
+      &:hover {
+        border-color: $marsh;
+        background-color: $marsh;
+        color: $white;
+      }
+    }
+
+    @include element ($parent, 'tooltip') {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
+
+  @include modifier ($parent, 'hidden-mobile') {
+    @media (max-width: $md-min) {
+      display: none;
+    }
+
+    .filters-tooltip-select__count {
+      display: none !important;
+    }
+  }
+
+  @include modifier ($parent, 'visible-mobile') {
+    display: block;
+
+    @media (min-width: $md) {
+      display: none;
+    }
+  }
+
+  @include element ($parent, 'title') {
+    padding: rem(5) rem(10);
+    border: 1px solid $gray-light-2;
+    border-radius: 2px;
+    background-color: $white;
+    font-weight: 500;
+    font-size: rem(14);
+    line-height: rem(18);
+    letter-spacing: -0.3px;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.05);
+      border-color: rgba(0, 0, 0, 0.05);
+    }
+  }
+
+  @include modifier ($parent, 'active-option') {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $marsh;
+    color: $white;
+    border-radius: 2px;
+    pointer-events: none;
+
+    @media (max-width: $md-min) {
+      order: 1;
+    }
+
+    @include element ($parent, 'title') {
+      padding-right: 0;
+      border: none;
+      background-color: $marsh;
+      cursor: default;
+    }
+  }
+
+  @include element ($parent, 'close') {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: rem(24);
+    height: rem(24);
+    margin-left: rem(10);
+    margin-right: 3px;
+    cursor: pointer;
+    pointer-events: all;
+
+    svg {
+      fill: $white;
+    }
+  }
+
+  @include element ($parent, 'tooltip') {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    width: 100%;
+    height: 100%;
+    padding-top: rem(20);
+    padding-bottom: rem(10);
+    background-color: $white;
+    box-shadow: 0 15px 30px 0 rgba($black, 0.1);
+    z-index: 3;
+
+    @media (min-width: $md) {
+      top: calc(100% + 11px);
+      width: rem(320);
+      height: auto;
+      max-height: calc(100vh - 180px);
+      padding: rem(20);
+      overflow: auto;
+    }
+
+    @media (max-width: $md-min) {
+      position: fixed;
+    }
+  }
+}

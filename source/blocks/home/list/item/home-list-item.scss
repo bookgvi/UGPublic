@@ -1,0 +1,164 @@
+$parent: home-list-item;
+
+@include block($parent) {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  width: 100%;
+  height: 100%;
+  padding: rem(22) rem(10);
+
+  @media (min-width: $md) {
+    padding: rem(20);
+  }
+
+  @media (min-width: $lg) {
+    padding: rem(30);
+  }
+
+  @include modifier ($parent, 'big-width') {
+    @include element($parent, 'image') {
+      @media (min-width: $lg) {
+        width: 50%;
+        height: 100%;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: right;
+          font-family: 'object-fit: cover; object-position: right;';
+        }
+      }
+    }
+
+    @include element($parent, 'content') {
+      @media (min-width: $lg) {
+        max-width: calc(50% - 35px);
+      }
+    }
+
+    @include element($parent, 'gradient') {
+      @media (min-width: $lg) {
+        display: none;
+      }
+    }
+  }
+
+  @include modifier ($parent, 'black-font') {
+    @include element($parent, 'heading') {
+      color: $black;
+    }
+
+    @include element($parent, 'text') {
+      color: transparentize($dark, 0.3);
+    }
+
+    @include element($parent, 'link') {
+      color: $black;
+    }
+  }
+
+  @include modifier ($parent, 'big-heading') {
+    @include element($parent, 'heading') {
+      font-size: rem(22);
+      line-height: rem(27);
+
+      @media (min-width: $lg) {
+        max-width: rem(340);
+        font-size: rem(28);
+        line-height: rem(34);
+      }
+    }
+  }
+
+  @include element($parent, 'image') {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 50%;
+    z-index: -1;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      font-family: 'object-fit: cover; object-position: top;';
+    }
+  }
+
+  @include element($parent, 'gradient') {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    @include modifier ($parent, 'horizontal') {
+      display: none;
+
+      @media (min-width: $lg) {
+        display: block;
+      }
+    }
+  }
+
+  @include element($parent, 'content') {
+    padding-bottom: rem(15);
+
+    @media (min-width: $md) {
+      padding-bottom: rem(20);
+    }
+
+    @media (min-width: $lg) {
+      width: 100%;
+      padding-bottom: rem(40);
+    }
+  }
+
+  @include element($parent, 'heading') {
+    color: $white;
+    font-family: $montserrat;
+    font-size: rem(18);
+    font-weight: 600;
+    line-height: rem(22);
+
+    @media (min-width: $md) {
+      font-size: rem(21);
+      line-height: rem(25);
+    }
+  }
+
+  @include element($parent, 'text') {
+    color: transparentize($white, 0.3);
+    font-family: $montserrat;
+    font-size: rem(14);
+    font-weight: 500;
+    line-height: rem(24);
+    padding-top: rem(10);
+
+    @media (min-width: $md) {
+      font-size: rem(15);
+    }
+  }
+
+  @include element($parent, 'link') {
+    color: $white;
+    font-family: $montserrat;
+    font-size: rem(14);
+    font-weight: 600;
+    line-height: rem(18);
+    letter-spacing: 1px;
+    transition: opacity 0.2s ease;
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+mixin leftMenu(dataLeftMenu)
+  section.leftMenu
+    .leftMenu__select-title= dataLeftMenu.titleSelect
+      .leftMenu__arrow
+        svg(width='12', height='7', fill='#d9d9d9')
+          use(xlink:href=require('../assets/svg/arrow_down.svg').url)
+    .leftMenu__dropdown-box
+      .leftMenu__dropdown
+        a.leftMenu__title.leftMenu__link-active.js-smooth-scroll(href=dataLeftMenu.titleId)= dataLeftMenu.title
+        ul.leftMenu__list
+          each link, index in dataLeftMenu.menu
+            li.leftMenu__item
+              a.leftMenu__link.js-smooth-scroll(href=link.url, class=link.is_select ? 'leftMenu__link--active' : '') #{index + 1}. #{link.title}

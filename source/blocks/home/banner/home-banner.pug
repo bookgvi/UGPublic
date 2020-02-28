@@ -1,0 +1,67 @@
+include input/home-banner-input.pug
+
+mixin home-banner(data)
+  .home-banner
+    .home-banner__content-section
+      .home-banner__content-container
+        picture.home-banner__image
+          each item in data.formImages
+            source(media=item.media, srcset=item.srcset, type=item.type)
+          img(src=data.formImage, alt=data.formImageAlt)
+        .home-banner__slide
+          .home-banner__content-wrapper
+            form.home-banner__content(action='/')&attributes(data.formAttributes)
+              .home-banner__title !{data.title}
+              .home-banner__input-wrapper
+                +banner-input(data.input1)
+              .home-banner__input-wrapper.home-banner__input-wrapper--big-padding
+                +banner-input(data.input2)
+              .home-banner__btn-search-wrapper
+                +form-button({
+                  text: data.btnFind,
+                  attributes: {
+                    type: 'button'
+                  }
+                })
+              .home-banner__split-or-container
+                span или
+              .home-banner__description-container
+                span !{data.description}
+              .home-banner__btn-compilation-wrapper
+                +form-button({
+                  text: data.btnSearch,
+                  attributes: {
+                    type: 'button',
+                    class: 'home-banner__btn-compilation'
+                  }
+                })
+      .home-banner__content-container
+        .home-banner__slider
+          .home-banner__wrapper
+            each slide in data.slider
+              .home-banner__slide
+                picture.home-banner__image
+                  each item in slide.images
+                    source(media=item.media, srcset=item.srcset, type=item.type)
+                  img(src=slide.mainImg, alt=slide.altImg)
+                .home-banner__content-wrapper
+                  .home-banner__content
+                    .home-banner__title.home-banner__title--small-padding-bottom !{slide.title}
+                    .home-banner__text !{slide.text}
+                    .home-banner__slider-btn
+                      +form-button({
+                        text: slide.btnText,
+                        attributes: {
+                          type: 'button'
+                        }
+                      })
+        .home-banner__control-section
+          .home-banner__pagination-section
+            .home-banner__pagination
+          .home-banner__button-section
+            button.home-banner__button.home-banner__button--prev(type='button')
+              svg
+                use(xlink:href=require('../assets/svg/arrow_prev.svg').url)
+            button.home-banner__button.home-banner__button--next(type='button')
+              svg
+                use(xlink:href=require('../assets/svg/arrow_prev.svg').url)

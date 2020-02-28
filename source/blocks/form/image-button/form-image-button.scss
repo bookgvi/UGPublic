@@ -1,0 +1,67 @@
+$parent: form-image-button;
+
+@include block($parent) {
+  position: relative;
+  width: 100%;
+
+  @include element($parent, 'button') {
+    display: flex;
+    width: 100%;
+    height: rem(50);
+    border: 1px solid $gray;
+    justify-content: center;
+    align-items: center;
+
+    &:focus {
+      border: 2px solid $gray;
+    }
+
+    &:hover {
+      & > .#{$parent}__svg-box {
+        svg {
+          fill: $marsh;
+        }
+      }
+    }
+  }
+
+  @include element($parent, 'svg-box') {
+    svg {
+      display: inline-block;
+      transition: fill 0.2s linear;
+      fill: $dark;
+      margin-right: rem(10);
+    }
+
+    @include modifier ($parent, 'vk') {
+      svg {
+        width: rem(23);
+        height: rem(13);
+      }
+    }
+
+    @include modifier ($parent, 'facebook') {
+      svg {
+        width: rem(18);
+        height: rem(18);
+      }
+    }
+  }
+
+  @include element($parent, 'button-img') {
+    display: inline-block;
+    width: rem(24);
+    height: rem(18);
+    margin-right: rem(10);
+    object-fit: contain;
+    font-family: 'object-fit: contain;';
+  }
+
+  @include element($parent, 'button-text') {
+    color: $dark;
+    font-family: $montserrat;
+    font-size: rem(16);
+    line-height: rem(20);
+    font-weight: 500;
+  }
+}

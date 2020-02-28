@@ -1,0 +1,43 @@
+$parent: four-hundred-four;
+
+@include block ($parent) {
+  padding: rem(20) rem(10) rem(30);
+
+  @media (min-width: $md) {
+    padding: rem(40) 0;
+  }
+
+  @include element ($parent, 'container') {
+    margin-left: auto;
+    margin-right: auto;
+
+    @media (min-width: $md) {
+      max-width: rem(580);
+    }
+  }
+
+  @include element ($parent, 'title') {
+    font-weight: 700;
+    font-size: rem(18);
+    line-height: rem(24);
+
+    @media (min-width: $md) {
+      font-size: rem(24);
+      line-height: rem(29);
+    }
+  }
+
+  @include element ($parent, 'text') {
+    margin-top: rem(10);
+    color: $gray_9b;
+    font-weight: 500;
+
+    @media (min-width: $md) {
+      margin-top: rem(20);
+    }
+  }
+
+  @include element ($parent, 'link') {
+    color: $marsh;
+  }
+}

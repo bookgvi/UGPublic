@@ -1,0 +1,12 @@
+mixin location-service(service)
+  .location-service
+    .location-service__title #{service.title}
+    .location-service__list-box
+      .location-service__left-column
+        ul.location-service__list
+          each left in service.listLeft
+            li.location-service__item #{left}
+      .location-service__right-column
+        ul.location-service__list
+          each right in service.listRight
+            li.location-service__item #{right}

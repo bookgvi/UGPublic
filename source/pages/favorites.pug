@@ -1,0 +1,79 @@
+extends ../layouts/main.pug
+include ../blocks/favorites/favorites.pug
+
+block content
+  -
+    var dataFavorites = {
+      title: 'Избранное',
+      locations: [
+        {
+          images: [
+            {
+              src: require('../assets/images/location/level-studio.jpg'),
+              alt: 'level-studio'
+            },
+            {
+              src: require('../assets/images/location/level-studio.jpg'),
+              alt: 'naked-sky'
+            },
+            {
+              src: require('../assets/images/location/level-studio.jpg'),
+              alt: 'level-studio'
+            },
+            {
+              src: require('../assets/images/location/level-studio.jpg'),
+              alt: 'naked-sky'
+            },
+            {
+              src: require('../assets/images/location/level-studio.jpg'),
+              alt: 'level-studio'
+            }
+          ],
+          type: 'Студия',
+          number_voters: 21,
+          studio_name: 'Level Studio',
+          studio_link: '/#',
+          price: '1500₽ в час',
+          hours: '· 2 ч. минимум',
+          status: '',
+          status_color: ''
+        },
+        {
+          images: [
+            {
+              src: require('../assets/images/location/naked-sky.jpg'),
+              alt: 'naked-sky'
+            },
+            {
+              src: require('../assets/images/location/naked-sky.jpg'),
+              alt: 'level-studio'
+            },
+            {
+              src: require('../assets/images/location/naked-sky.jpg'),
+              alt: 'naked-sky'
+            },
+            {
+              src: require('../assets/images/location/naked-sky.jpg'),
+              alt: 'level-studio'
+            },
+            {
+              src: require('../assets/images/location/naked-sky.jpg'),
+              alt: 'naked-sky'
+            }
+          ],
+          type: 'Студия · Зал',
+          number_voters: 36,
+          studio_name: 'Naked Sky Studio',
+          studio_link: '/#',
+          hall_name: 'Angels',
+          hall_link: '/#',
+          hall: true,
+          price: '2400₽ в час',
+          hours: '',
+          status: 'Популярная',
+          status_color: '#8791c3;'
+        }
+      ]
+    }
+
+  +favorites(dataFavorites)

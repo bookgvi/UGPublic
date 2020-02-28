@@ -1,0 +1,321 @@
+$parent: home-banner;
+
+@include block($parent) {
+  position: relative;
+  overflow: hidden;
+
+  @include element($parent, 'background-wrapper') {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+
+  @include element($parent, 'slider') {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+  }
+
+  @include element($parent, 'wrapper') {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
+
+  @include element($parent, 'slide') {
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+    flex-grow: 0;
+    width: 100%;
+    height: 100%;
+    padding: rem(10);
+
+    @media (min-width: $md) {
+      padding: rem(30);
+    }
+  }
+
+  @include element($parent, 'content-wrapper') {
+    max-width: rem(1280);
+    margin: 0 auto;
+  }
+
+  @include element($parent, 'image') {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      font-family: 'object-fit: cover;';
+    }
+  }
+
+  @include element($parent, 'content-section') {
+    display: flex;
+    transition: transform 0.5s ease;
+
+    @media (min-width: $lg) {
+      height: calc(80vh - 60px);
+      min-height: rem(720);
+    }
+
+    @include modifier($parent, 'motion') {
+      transform: translateX(-100%);
+    }
+  }
+
+  @include element($parent, 'content-container') {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 100%;
+    min-width: 100%;
+    width: 100%;
+  }
+
+  @include element($parent, 'content') {
+    width: 100%;
+    padding: rem(10);
+    background-color: transparentize($white, 0.1);
+
+    @media (min-width: $md) {
+      max-width: rem(440);
+      padding: rem(20);
+    }
+
+    @media (min-width: $lg) {
+      align-self: flex-start;
+      max-width: rem(580);
+      padding: rem(50);
+    }
+  }
+
+  @include element($parent, 'title') {
+    color: $dark;
+    font-family: $montserrat;
+    font-size: rem(18);
+    font-weight: 700;
+    line-height: rem(24);
+    padding: rem(10) rem(10) rem(13);
+
+    @media (min-width: $md) {
+      font-size: rem(24);
+      line-height: rem(29);
+      padding: 0 0 rem(23);
+    }
+
+    @media (min-width: $lg) {
+      font-size: rem(36);
+      line-height: rem(44);
+      padding-bottom: rem(30);
+    }
+
+    @include modifier($parent, 'small-padding-bottom') {
+      padding-bottom: rem(10);
+
+      @media (min-width: $md) {
+        padding-bottom: rem(10);
+      }
+
+      @media (min-width: $lg) {
+        padding-bottom: rem(10);
+      }
+    }
+  }
+
+  @include element($parent, 'text') {
+    color: $dark;
+    font-family: $montserrat;
+    font-size: rem(14);
+    font-weight: 700;
+    line-height: rem(24);
+    padding-bottom: rem(10);
+
+    @media (min-width: $md) {
+      font-size: rem(16);
+      line-height: rem(28);
+      padding-bottom: rem(23);
+    }
+
+    @media (min-width: $lg) {
+      padding-bottom: rem(30);
+    }
+  }
+
+  @include element($parent, 'slider-btn') {
+    max-width: rem(280);
+  }
+
+  @include element($parent, 'input-wrapper') {
+    padding-bottom: rem(10);
+
+    @include modifier ($parent, 'big-padding') {
+      @media (min-width: $md) {
+        padding-bottom: rem(20);
+      }
+    }
+  }
+
+  @include element($parent, 'btn-search-wrapper') {
+    padding-bottom: rem(20);
+  }
+
+  @include element($parent, 'split-or-container') {
+    position: relative;
+    width: 100%;
+    color: $dark;
+    font-family: $montserrat;
+    font-size: rem(14);
+    font-weight: 500;
+    line-height: rem(24);
+    text-align: center;
+    margin-bottom: rem(10);
+
+    span {
+      &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: calc(50% + 27px);
+        height: 1px;
+        background-color: $gray_d0;
+        transform: translateY(-50%);
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: calc(50% + 27px);
+        right: 0;
+        height: 1px;
+        background-color: $gray_d0;
+        transform: translateY(-50%);
+      }
+    }
+  }
+
+  @include element($parent, 'description-container') {
+    width: 100%;
+    padding-bottom: rem(20);
+    color: $dark;
+    font-family: $montserrat;
+    font-size: rem(15);
+    font-weight: 500;
+    line-height: rem(21);
+    text-align: center;
+  }
+
+  @include element($parent, 'btn-compilation-wrapper') {
+    width: rem(240);
+    margin: 0 auto;
+  }
+
+  @include element ($parent, 'control-section') {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: rem(10);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (min-width: $md) {
+      padding: 0;
+    }
+  }
+
+  @include element ($parent, 'pagination-section') {
+    position: relative;
+    color: $white;
+    font-family: $montserrat;
+    font-size: rem(14);
+    font-weight: 500;
+    line-height: rem(18);
+
+    @media (min-width: $md) {
+      position: absolute;
+      bottom: rem(20);
+      left: rem(20);
+    }
+
+    @media (min-width: $lg) {
+      bottom: rem(30);
+      left: rem(30);
+    }
+  }
+
+  @include element ($parent, 'button-section') {
+    display: flex;
+    position: relative;
+
+    @media (min-width: $md) {
+      position: absolute;
+      bottom: rem(20);
+      right: rem(20);
+    }
+
+    @media (min-width: $lg) {
+      bottom: rem(30);
+      right: rem(30);
+    }
+  }
+
+  @include element ($parent, 'button') {
+    position: relative;
+    top: 50%;
+    width: rem(40);
+    height: rem(40);
+    background-color: $white;
+    border-radius: 50%;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+
+    @media (min-width: $lg) {
+      width: rem(60);
+      height: rem(60);
+    }
+
+    svg {
+      width: rem(12);
+      height: rem(20);
+      fill: $dark;
+      margin-top: rem(3);
+      transition: opacity 0.2s, fill 0.2s ease;
+    }
+
+    &:hover {
+      svg {
+        opacity: 0.5;
+      }
+    }
+
+    @include modifier ($parent, 'next') {
+      margin-left: rem(10);
+
+      svg {
+        transform: rotate(180deg);
+      }
+
+      &.#{$parent}__button--disabled {
+        svg {
+          fill: $gray-laght-btn-cancel;
+        }
+      }
+    }
+  }
+}

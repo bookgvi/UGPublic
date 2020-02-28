@@ -1,0 +1,9 @@
+<svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g fill="none" fill-rule="evenodd">
+    <mask id="b" fill="#fff">
+      <path id="a" d="M6 9.3L9.71 12 8.29 7.64 12 5H7.45L6 .5 4.55 5H0l3.71 2.64L2.29 12z"/>
+    </mask>
+    <use fill="#81AEB6" fill-rule="nonzero" xlink:href="#a"/>
+    <path fill="#FFF" fill-rule="nonzero" opacity=".8" mask="url(#b)" d="M6-1h7v15H6z"/>
+  </g>
+</svg>

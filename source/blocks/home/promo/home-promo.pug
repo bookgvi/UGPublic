@@ -1,0 +1,10 @@
+mixin home-promo(data)
+  .home-promo&attributes(attributes)
+    .home-promo__heading-section
+      .home-promo__title #{data.title}
+      if (data.allText && data.allLink)
+        a.home-promo__all-link(href=data.allLink) #{data.allText}
+          svg(width='12', height='7', fill='#d9d9d9')
+            use(xlink:href=require('../assets/svg/arrow_down_blue.svg').url)
+    .home-promo__content-section
+      block

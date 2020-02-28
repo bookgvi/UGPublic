@@ -1,0 +1,82 @@
+$parent: checkout-participants;
+
+@include block($parent) {
+  @include element($parent, 'title') {
+    color: $dark;
+    font-family: $montserrat;
+    font-size: rem(18);
+    font-weight: 600;
+    line-height: rem(22);
+    padding-bottom: rem(10);
+
+    @media (min-width: $md) {
+      font-size: rem(21);
+      line-height: rem(25);
+      padding-bottom: rem(20);
+    }
+  }
+
+  @include element($parent, 'description') {
+    color: $dark;
+    font-family: $montserrat;
+    font-size: rem(14);
+    line-height: rem(24);
+    padding-bottom: rem(10);
+
+    @media (min-width: $md) {
+      font-size: rem(16);
+      line-height: rem(28);
+    }
+  }
+
+  @include element($parent, 'inputs-section') {
+    padding-bottom: rem(10);
+
+    @media (min-width: $md) {
+      padding-bottom: rem(30);
+    }
+  }
+
+  @include element($parent, 'participant-container') {
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: rem(10);
+  }
+
+  @include element($parent, 'button') {
+    width: rem(50);
+    height: rem(50);
+    flex: 0 0 rem(50);
+    border: 1px solid $gray-light-border;
+    border-left: none;
+
+    svg {
+      width: rem(22);
+      max-height: rem(22);
+      fill: $dark;
+    }
+
+    @media (min-width: $md) {
+      margin-left: rem(20);
+      border-left: 1px solid $gray-light-border;
+    }
+  }
+
+  @include element($parent, 'comment-heading') {
+    color: $dark;
+    font-size: rem(14);
+    font-weight: 500;
+    line-height: rem(18);
+    padding-bottom: rem(10);
+  }
+
+  @include element($parent, 'textarea') {
+    font-weight: 500;
+    width: 100%;
+    height: rem(92);
+    border: 1px solid $gray-light-border;
+    padding: rem(10) rem(16);
+    resize: none;
+    color: $dark;
+  }
+}

@@ -1,0 +1,64 @@
+include ../location/info/location-info.pug
+include ../location/specifications/location-specifications.pug
+include ../location/equipments/location-equipments.pug
+include ../location/pavilions/location-pavilions.pug
+include ../location/service/location-service.pug
+include ../location/additionalService/additionalService.pug
+include ../location/booking/location-booking.pug
+include ../checkout/studio/checkout-studio.pug
+include ../form/button/form-button.pug
+include ../checkout/studios-props/checkout-studios-props.pug
+include ../checkout/personal-data/checkout-personal-data.pug
+include ../checkout/participants/checkout-participants.pug
+include ../checkout/calendar/checkout-calendar.pug
+
+mixin checkout(data)
+  .checkout(id='checkout')
+    .checkout__content
+      .checkout__information
+        .checkout__info-box
+          +location-info(data.info)(class='location-info--checkout-page')
+        .checkout__pavilions
+          +location-pavilions(data.pavilions, true)
+        .checkout__studios-props
+          +checkout-studios-props()
+        .checkout__calendar-section
+          +checkout-calendar()
+        .checkout__service
+          +location-additionalService(data.additionalService)
+        .checkout__personal-data-section
+          +checkout-personal-data(data.personalData)
+        .checkout__participants-section
+          +checkout-participants(data.participants)
+      .checkout__book-up
+        .checkout__detail-title Детали бронирования
+        .checkout__receipt.sticky-polifill
+          .checkout__slider
+            each studio in data.studios
+              +checkout-studio(studio)(v-if='formData.id === "' + studio.id + '"')
+          .checkout__order
+            +location-specifications(data.orderBox, '', 'info.order')(class='location-specifications--checkout-page')
+          .checkout__order
+            +location-specifications(data.orderBoxPersonal, '', 'info.personal')(class='location-specifications--checkout-page')
+          .checkout__order.checkout__order--price
+            .location-specifications.location-specifications--checkout-page
+              .location-specifications__title Стоимость
+              .location-specifications__wrapper
+                .location-specifications__row(v-if='info.price.peopleAdditionalPayment')
+                  span.location-specifications__left-value(v-html='info.price.peopleAdditionalPayment.title')
+                  span.location-specifications__right-value(v-html='info.price.peopleAdditionalPayment.value')
+                .location-specifications__row(v-if='info.price.extras', v-for='extra in info.price.extras')
+                  span.location-specifications__left-value(v-html='extra.title')
+                  span.location-specifications__right-value(v-html='extra.amount')
+                template(v-if='info.price.promocode && info.price.promocode.length > 0')
+                  .location-specifications__row(v-for='promo in info.price.promocode')
+                    span.location-specifications__left-value(v-html='"Промо код -" + promo.amount')
+                    span.location-specifications__right-value(v-html='"- " + promo.amount')
+          .checkout__total
+            span.checkout__total-text Итого, р.
+            span.checkout__total-price(v-html='info.price.amount')
+          .checkout__button-box
+            .form-button
+              button.form-button__button.checkout-page__submit(@click='submit')
+                span.form-button__button-text(v-html='"Перейти к оплате " + (info.price.sumForPay || "") + " р."')
+          .checkout__agreement Нажимая на кнопку, соглашаюсь с <a href='#'>правилами</a> студии и принимаю пользовательское <a href='#'>соглашение.</a>

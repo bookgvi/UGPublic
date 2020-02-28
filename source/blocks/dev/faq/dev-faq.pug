@@ -1,0 +1,20 @@
+include ../../core/button/button.pug
+
+mixin dev-faq(data)
+  .dev-faq
+    .dev-faq__container
+      .dev-faq__title Часто задаваемые вопросы
+      .dev-faq__list
+        each item in data.faqArr
+          .dev-faq__item(class=item.visible_answer ? 'dev-faq__item--open' : '')
+            .dev-faq__question
+              .dev-faq__question-text #{item.question}
+              .dev-faq__arrow
+                svg(width='12', height='8')
+                  use(xlink:href=require('../assets/svg/arrow_down.svg').url)
+            .dev-faq__answer
+              .dev-faq__answer-text #{item.answer}
+      .dev-faq__help!= data.reference_box
+      svg(width='24', height='24', style='display: none')
+        use(xlink:href=require('../assets/svg/message.svg').url)
+      +button('dev-faq__btn', 'Отправить сообщение', '<svg width="24" height="24"><use xlink:href="./assets/sprite.svg#message-usage"></use></svg>')

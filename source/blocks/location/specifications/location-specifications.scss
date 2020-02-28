@@ -1,0 +1,99 @@
+$parent: location-specifications;
+
+@include block($parent) {
+  @include element ($parent, 'title') {
+    font-weight: 600;
+    font-size: rem(18);
+    line-height: rem(22);
+    color: $dark;
+    margin-bottom: rem(10);
+
+    @media (min-width: $md) {
+      font-size: rem(21);
+      line-height: rem(25);
+      margin-bottom: rem(16);
+    }
+  }
+
+  @include element ($parent, 'row') {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid $gray-light-border;
+  }
+
+  @include element ($parent, 'left-value') {
+    font-size: rem(14);
+    line-height: rem(40);
+    color: $dark;
+    padding-left: rem(10);
+
+    @media (min-width: $md) {
+      font-size: rem(16);
+    }
+  }
+
+  @include element ($parent, 'right-value') {
+    font-weight: 600;
+    font-size: rem(14);
+    line-height: rem(40);
+    color: $dark;
+
+    @media (min-width: $md) {
+      font-size: rem(16);
+    }
+  }
+
+  @include modifier ($parent, 'checkout-page') {
+    @include element ($parent, 'wrapper') {
+      padding-left: rem(10);
+
+      @media (min-width: $md) {
+        padding-left: 0;
+      }
+    }
+
+    @include element($parent, 'row') {
+      min-height: rem(38);
+    }
+
+    @include element ($parent, 'title') {
+      font-weight: 700;
+      font-size: rem(18);
+      line-height: rem(24);
+      margin-bottom: rem(10);
+      color: $dark;
+    }
+
+    @include element ($parent, 'left-value') {
+      font-weight: 500;
+      font-size: rem(16);
+      line-height: rem(24);
+      color: $gray_9b;
+      padding-left: 0;
+    }
+
+    @include element ($parent, 'right-value') {
+      font-weight: 500;
+      font-size: rem(16);
+      line-height: rem(24);
+    }
+  }
+
+  @include modifier($parent, 'equipments') {
+    @include element ($parent, 'row') {
+      align-items: flex-start;
+      padding: 5px 0;
+    }
+
+    @include element ($parent, 'left-value') {
+      line-height: rem(24);
+      flex-shrink: 0;
+    }
+
+    @include element ($parent, 'right-value') {
+      padding-left: rem(10);
+      line-height: rem(24);
+    }
+  }
+}

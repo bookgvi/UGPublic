@@ -1,0 +1,6 @@
+mixin map(className)
+  .map(id='map', class=className)
+    .map__close
+      .map__close-icon
+        svg(width='14', height='14')
+          use(xlink:href=require('../assets/svg/close.svg').url)

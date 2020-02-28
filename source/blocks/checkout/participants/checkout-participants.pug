@@ -1,0 +1,37 @@
+include ../../form/input/form-input.pug
+
+mixin checkout-participants(data)
+  .checkout-participants
+    .checkout-participants__title #{data.title}
+    .checkout-participants__description #{data.description}
+    .checkout-participants__form-section
+      .checkout-participants__inputs-section
+        .checkout-participants__participant-container
+          .form-input
+            .form-input__text-section
+              .form-input__input-name
+                span(v-html='"№" + (formData.members.length + 1)')
+            .form-input__input-container
+              input.form-input__input(type='text', v-model='info.participants', name='participants')
+              .form-input__check-ok
+                svg
+                  use(xlink:href='/assets/front/static/assets/sprite.svg#check-usage')
+          button.checkout-participants__button(@click='addParticipant')
+            svg
+              use(xlink:href='/assets/front/static/assets/sprite.svg#plus-usage')
+        .checkout-participants__participant-container(v-if='formData.members && formData.members.length > 0', v-for='member, index in formData.members')
+          .form-input
+            .form-input__text-section
+              .form-input__input-name
+                span(v-html='"№" + (index + 1)')
+            .form-input__input-container
+              input.form-input__input(type='text', :value='member', readonly)
+              .form-input__check-ok
+                svg
+                  use(xlink:href='/assets/front/static/assets/sprite.svg#check-usage')
+          button.checkout-participants__button(@click='removeParticipant(member)')
+            svg
+              use(xlink:href='/assets/front/static/assets/sprite.svg#delete-basket-usage')
+      .checkout-participants__comment-section
+        .checkout-participants__comment-heading Комментарий
+        textarea.checkout-participants__textarea(v-model='formData.userComment')

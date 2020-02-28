@@ -1,0 +1,28 @@
+include ../banner-location/banner-location.pug
+include ../location/location.pug
+include ../pagination/pagination.pug
+include ../dev/footer/dev-footer.pug
+include ./map/map.pug
+
+mixin catalog(data)
+  .catalog
+    .catalog__wrapper(class=(data.map_checkbox.is_active ? 'catalog__wrapper--move-over' : ''))
+      div(render='true')
+        .catalog__container
+          .catalog__row
+            location(v-for='(object, index) in locations.slice(0, itemInRow)', :key='object.id', :objectdata='object')
+            .catalog__slider.swiper-container.swiper-no-swiping
+              .swiper-wrapper
+                each banner in data.locationsBanner
+                  .swiper-slide
+                    +banner-location(banner, 'catalog__banner')
+              .catalog__slider-btn
+                svg(width='40', height='40')
+                  use(xlink:href=require('../assets/svg/arrow_circle.svg').url)
+            location(v-for='(object, index) in locations.slice(itemInRow)', :key='object.id', :objectdata='object')
+        .catalog__pagination(v-if='showPagination')
+          .pagination(v-bind:class='getPrevNextClass(-1)', @click='setPageDir(-1)')!= '<svg width="8" height="12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 12"><path d="M-8-6v24h24V-6z" fill="none" fill-rule="evenodd"/><path d="M7.41 1.41L2.83 6l4.58 4.59L6 12 0 6l6-6z"/></svg>'
+          +pagination('1')(v-for='page in showPages', v-html='page', @click='setPage(page)', v-bind:class='getPagesClass(page)')
+          .pagination.pagination--next(v-bind:class='getPrevNextClass(1)', @click='setPageDir(1)')!= '<svg width="8" height="12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 12"><path fill="none" d="M-8-6v24h24V-6H-8z"/><path d="M2 0l6 6-6 6-1.4-1.4L5.2 6 .6 1.4 2 0z"/></svg>'
+      +dev-footer(data.devFooter)(class=page_class || null)
+    +map((data.map_checkbox.is_active ? 'map--visible' : ''))

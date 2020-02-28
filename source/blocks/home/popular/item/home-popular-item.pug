@@ -1,0 +1,7 @@
+mixin home-popular-item(data)
+  .home-popular-item
+    a.home-popular-item__link(href=data.link)
+    .home-popular-item__wrapper-img
+      img(alt=data.imgAlt, src=data.imgSrc)
+    .home-popular-item__title !{data.title}
+    .home-popular-item__link-text #{data.linkText}

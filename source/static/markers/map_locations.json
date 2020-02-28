@@ -1,0 +1,998 @@
+{
+	"data": {
+		"total": 1005,
+		"studios": [
+			{
+				"id": 3,
+				"name": "Martin studio",
+				"description": "Интерьерная фотостудия в самом центре Москвы. Циклорама, лофт зона, дворцовая стена, бетон. Новое оборудование Profoto с большим количеством насадок.",
+				"images": [
+					{
+						"url": "/uploads/images/studio/original/0483024e98fa18e6f14aa203d7bf44db.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/94d1c6d10a4c9178e5fe880fa0c37428.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/0dd8cdc8f245fe20ee008fe3c2107c3b.jpg"
+					}
+				],
+				"rating": 0.3,
+				"minPrice": 100,
+				"minHours": 2,
+				"label": {
+					"name": null,
+					"color": null
+				},
+				"commentsCount": 0,
+				"coordinates": {
+					"lat": "55.757678000000000",
+					"lng": "37.606676000000000"
+				},
+				"detailPageUri": "/new/studios/3"
+			},
+			{
+				"id": 5,
+				"name": "8bit",
+				"description": "Новая профессиональная фотостудия в стиле лофт в центре Москвы, зараженная идеей создания уникального контента. Мы сдаем в аренду не просто студию, а уникальный формат профессионального пространства для фотографов и их творчества. С нас — почти 400 кв.м. пространства, 3 больших светлых зала, 2 угловых циклорамы, 5−метровый потолок,  20 различных интерьеров, два балкона (выходящие в залы), выход на огромную промышленную крышу и свет Profoto, способный остановить мгновение и сделать его искусством. С Вас — желание создавать.",
+				"images": [
+					{
+						"url": "/uploads/images/studio/original/4782f97616a98cc70427bb226944bf19.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/34ca7594b913d350f33c5331413c5536.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/f94aff3c8a8163cccdafe607e52a7d12.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/0a2b5fb6ddf945365e00f6771219e251.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/9f349ad6ff3a2219fa872f1429b5c8ff.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/fb1e9f0bd71c22bd9082cfa66e42e107.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/240ce97bb9ae7099bf26123ce92a6ded.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/b2b8cc3ef362b9ec7fc8f80306170579.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/c85dc6760886460414af4e93d5a70b0c.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/56722b9e62a74e843fb8ec6e7c7b5ead.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/3b2230d6ac2397e58a8a1c1aeef24c57.jpg"
+					}
+				],
+				"rating": 0.6,
+				"minPrice": 600,
+				"minHours": 1,
+				"label": {
+					"name": null,
+					"color": null
+				},
+				"commentsCount": 0,
+				"coordinates": {
+					"lat": "55.788044000000000",
+					"lng": "37.583697000000000"
+				},
+				"detailPageUri": "/new/studios/5"
+			},
+			{
+				"id": 6,
+				"name": "WoodStudios",
+				"description": "Фотостудия Wood – это идеальная площадка для творческой и коммерческой работы. 11 больших идеально продуманных залов в стиле LOFT с двумя циклорамами у четырех метровых окон, черной циклорамой в темном помещении без естественного света и хромакей циклорамой с уже установленным светом. Вы можете как арендовать съемочные площадки, так и заказать персональную фото/видео съемку, а так же забронировать любой зал под мероприятие!",
+				"images": [
+					{
+						"url": "/uploads/images/studio/original/00db354af23c91924978424550184f0b.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/2fd58e09782479485871a2cb43f65d4b.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/818d2b4925f8b52aadf249a808c96496.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/52530c39ccc88873d5980d2965faee2c.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/d2ccf8121e991f23f75c4e6c6c616bd7.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/088e8c15a98822a0cec1ee8609e4ffa9.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/9c7948d823e118b0f3c75521d4a0510e.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/b701be6fad42779e238195009d2d2ec5.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/e7ca120932766f8c028301f01f4881b5.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/ba8441a2d1ae14734ce3c185ce8244ca.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/982ec6aea2e0ddde801be036f617fe7a.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/1cbfcbc91d67223ded55f0bfc0c5e4ed.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/059aab51302e50542b32ca6443ce0b1b.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/30552d48261308c7f7063f106bfe7d2f.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/1a7bd84585312aced39b0de1c2a84fe7.jpg"
+					}
+				],
+				"rating": 1,
+				"minPrice": 300,
+				"minHours": 1,
+				"label": {
+					"name": null,
+					"color": null
+				},
+				"commentsCount": 6,
+				"coordinates": {
+					"lat": "55.786505000000000",
+					"lng": "37.704134000000000"
+				},
+				"detailPageUri": "/new/studios/6"
+			},
+			{
+				"id": 7,
+				"name": "Vox Studios",
+				"description": "Умело разработанные студии VOX могут обеспечить потребности любого проекта\nКаждая студия оборудована большими циклорамами и панорамными окнами с возможностью затенения. Красота естественного освещения, доступная Вам каждый день. \nДля реализации уникальных творческих задач студии оснащенны первокласным осветительным оборудованием ProFoto с полным комплектом насадок и грип.\n\n - Комфортная, бесплатная гримерная комната.\n - 200 кв метров для фото и видеосъемок, мастер классов, презентаций, выставок и других мероприятий.\n - 2 больших циклорамы, а также огромные панорамные окна для съемки с естественным светом\n - Профессиональное световое оборудование ProFoto.\n - Комфортная, бесплатная гримерная комната.\n - Для Вас круглосуточно работают 2 зала!\n",
+				"images": [
+					{
+						"url": "/uploads/images/studio/original/e966b96ed8d454e8a369c805d24bc984.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/1ffc254a8cdc5a67512b29889bd86688.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/a4dfecaf122fbbf5926fa46dce18b99f.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/37b3844aa7c72d46d0b501fb6e902035.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/8f711299a1c29e0ab2054c114ea8bfe3.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/68c3d6c54d9c12e56ecf77670fd142ae.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/f0910026de95946b53fb5114182fa51b.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/d787815f6e402bb89391ff5b96360d04.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/5de432eadce1ea87c047066d5115b1ad.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/3137ee5d7115d673504400c225156137.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/43bdf05ec2f734ea217ac17b6e228c8b.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/1827ed54a2a697ddaf6db407207be599.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/6b42b144ad468b37de971c1b06c73344.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/da7c44bee434f787803fef13684db75f.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/cc75a3fec5ce7acdc2f76df39c26448f.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/98b180607fe7b8bc6387716244dcf308.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/1a10830fe8001ef0beacaa43a505ca85.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/328e79aa4792b241a2370cd4d19feee9.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/370b142f35e8ed3e076edd7089cd3a42.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/fcca17764ddb55a4cb375aa1a9219ea2.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/90ffa1bc68b4a56db51c2d51df2b6147.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/75569b55d68016efdc1ba4e7ff91ee79.jpg"
+					}
+				],
+				"rating": 0.851792,
+				"minPrice": 1300,
+				"minHours": 2,
+				"label": {
+					"name": null,
+					"color": null
+				},
+				"commentsCount": 8,
+				"coordinates": {
+					"lat": "55.807132000000000",
+					"lng": "37.588395000000000"
+				},
+				"detailPageUri": "/new/studios/7"
+			},
+			{
+				"id": 8,
+				"name": "Fotohaus",
+				"description": null,
+				"images": [
+					{
+						"url": "/uploads/images/studio/original/9d321f5bc89ca79bac59bf0e81532aab.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/98fe1ab97d3b61f5d6852bf694b47f0f.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/8c01c9ce237d0946753fe01bdf5c3f88.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/54acace4f2037e08486c79872f60aa89.jpg"
+					}
+				],
+				"rating": 0,
+				"minPrice": 600,
+				"minHours": 1,
+				"label": {
+					"name": null,
+					"color": null
+				},
+				"commentsCount": 0,
+				"coordinates": {
+					"lat": "55.760585000000000",
+					"lng": "37.664437000000000"
+				},
+				"detailPageUri": "/new/studios/8"
+			},
+			{
+				"id": 14,
+				"name": "Quattrofashion",
+				"description": "Это место для реализации любых творческих идей и задач. Наши залы идеально подходят для организации свадебной, семейной и детской фотосъемки. Различные интерьеры студии помогут воплотить самые яркие и неординарные fashion идеи в сочные фотографии, а организаторы каталожных съёмок будут приятно удивлены нашими ценами и скидками!",
+				"images": [
+					{
+						"url": "/uploads/images/studio/original/e498cb46d9233940f4222d0367705dd7.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/ae18f893d56e1aada9e2aff53f19af8b.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/fa38fa6eb9c399db987680dc144236d0.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/491808cb57b433a9747318ecb083451a.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/c34ab9cd6f2aadeebf0f6cf7875b01f3.jpg"
+					}
+				],
+				"rating": 0,
+				"minPrice": 250,
+				"minHours": 2,
+				"label": {
+					"name": null,
+					"color": null
+				},
+				"commentsCount": 0,
+				"coordinates": {
+					"lat": "55.860605000000000",
+					"lng": "37.654520000000000"
+				},
+				"detailPageUri": "/new/studios/14"
+			},
+			{
+				"id": 16,
+				"name": "StBrown",
+				"description": "Фотостудия «StBrown» —лофт-пространство площадью 350 квадратных метров, располагается на первом этаже с собственным входом/выходом, состоящее из трех залов, зоны ресепшн, отдельной гримерной комнатой и кофейней.  Каждый зал выполнен в индивидуальном стиле и имеет несколько разделенных локаций с фактурными стенами, деревянными полами и разнообразными предметами интерьера. Большие панорамные окна 3,5 на 4 метра, выходящие на северо-восток, дают обилие ровного естественного света и красивый теневой рисунок в первой половине дня. В наших залах висят плотные шторы, которыми можно перекрывать дневной свет из окна. Для видео допускается установка источников света со стороны улицы + подключение трехфазной нагрузки. В каждом зале возможна установка цветных фонов (большой выбор), 9 профессиональных источников импульсного света ProFoto, стойки, флаги, вентеляторы, различные световые модификаторы и рассеиватели, которые включены в стоимость аренды. Все предметы интерьера легко передвигаются, благодаря чему Вы можете трансформировать пространство под свои творческие идеи. Помимо фотосъемок залы нашей студии прекрасно подходят для проведения семинаров, мастер классов, workshop и детских дней рождений.",
+				"images": [
+					{
+						"url": "/uploads/images/studio/original/cb3ebfa064c15903b3e4c35167f537f9.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/2a12a91f128bad4184b0798d0ba3f2a9.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/e24874311ad89e391e2d62f53898f653.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/40a7a77620d1aa250375e280d23001f5.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/0544f33c15e29697ddacd8693c2812ca.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/2a85aa07721d889a07addad9284db95c.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/ecea402aa315d50af80e4c2290c6da83.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/edcd5161aa1ea4eea7910e6d9fb81c41.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/08059722ed6d6c08a6dc0e58a29a8846.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/b3ce04b7e70ca9c185237a29a0bfb364.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/ebe006d0712279b335edf38d8e10eeb5.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/4a25b42eefefd427de9634e8fa223a4e.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/3d50212acaa236a9babd4988d9afc610.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/3007ebba3dde5de43b8ed2971e819334.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/68d2ab599b7d2643fe9f8fc1fef059fd.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/a93dec540b447a6b3a62e9671fcaa9d7.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/adb9fa9200a6cf4b08f04f7d1686a827.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/0da7590a75b47e6c758e8ebf65f97d4f.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/fb52222e62443bf2b6d06bb941035520.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/14477faf871a0c0175b70f4f11c556bd.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/2c94c40b2d33069d3ba527a387d95e0d.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/ea4528a70c95feea34235740af98734f.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/0d9e84e07ccd71e263649b753eca6cde.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/f48bcd8a87b070949316a8715bef3b4f.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/c498672288e8b48af4990d0d9bc03d26.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/8a6db9609bf45f19a70b65fab6a4f4da.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/874734e4ecfaafff4751db499ce7ed9c.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/7155adec441334c843718412a88615f1.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/31666673bf0777f1776de0d30d00f02f.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/35871230d053424ea645486e34358e6e.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/d8548ce377b9d0a2d53a9386b8f9a026.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/c3cf98b166d396dd2b2661661426083a.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/13e9216f95a0e2d4daf78c6b42f72237.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/6bb82a3f0311e4c13dfd5ed36cb60e13.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/03d72480f27725ed73527542ba612e84.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/3666451d8ff95686bafced0fab5d92d7.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/5388497472dffdbeed002cf3c9804e74.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/56a8c2e99bbb2edc058927007778e3c6.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/e6e7ca894282dd44196fe70bf643b7ea.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/d2d61ba91de87c58be67a0d3f7adea68.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/a850793a7021b68161b72d103959977c.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/7fc4801c6a3e0a4559c09bd6daa80ebd.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/16eb7078a3793ad730a2f14373040506.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/7ab769427f5edb553942c4c07858b834.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/b8d8c10a824481e1ac2ee5150524a10b.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/95f25a0d7958fa06842bad7652e7024e.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/45483e4468d9b83b7f994df9b35381bf.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/3e1ab2f16a7030dbe4457139d9a2ff55.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/0abd04706d95c51af2ff33d93dad98c2.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/4f92abebe5bedbf2a817374395a5a011.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/72dd314b94c73e32350fa56626e4ee8a.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/873018c7f2561029f69b0543ab99f6ef.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/12c039554d8d1dcaf4ba57d4820c50c9.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/b43795d5e033bc0c820917222a839838.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/bc49cd2e1a2eb47bcb0cdb8022196d77.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/a19a280a66fecd872d9d9b2a320474e7.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/a0df713136bf962f6bbe6227393df6ee.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/701c8fa17712b6d1639a767296987b69.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/a328f524bcb6587dc5e91e2aa3a026e4.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/c9f04bf7e3c4194d9fa2a9b784b60112.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/854344194e2e361883e20cd84fd86483.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/2715ce30f6bc8bb9f739e927db757c76.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/8cde12216bcb9df92d963e8914b35876.jpg"
+					}
+				],
+				"rating": 0.802505,
+				"minPrice": 1300,
+				"minHours": 2,
+				"label": {
+					"name": null,
+					"color": null
+				},
+				"commentsCount": 1,
+				"coordinates": {
+					"lat": "55.806808000000000",
+					"lng": "37.625612000000000"
+				},
+				"detailPageUri": "/new/studios/16"
+			},
+			{
+				"id": 17,
+				"name": "Look Studios",
+				"description": "The look studios — это многофункциональное творческое пространство. Мы создали все условия для Вашего комфортного времяпрепровождения. Живописный панорамный вид и круглосуточное время работы позволят насладиться вдохновляющими закатами и рассветами столицы.",
+				"images": [
+					{
+						"url": "/uploads/images/studio/original/5f96c9669594adef5c4a2e59032ab664.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/825eedfc30f63c74f61fffe5c760d8a0.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/b342441d7176f371e0faa0cb72608858.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/fd38163294f57f8d7713fa9ed741cd2f.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/c53aa72a2ef5ba7913be8c4ad724da69.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/99191c060860bdd86c586e4e7e408608.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/459e0c262b3293c744755685f2786965.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/eec861b2df3cc91be44a1578b4ffde54.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/8f9293f13372c119ac308fbec386c0e7.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/56abfcef3b406fb9b71a8753a8da3abd.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/d6af6b3d0f578ea19bfb0d25c97cbeba.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/ba32e07919be268efe8fe379ce3d864c.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/ad9a5766dac7212a4e144fcaab98500c.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/eaec501fe384592e3e9a12654025efa9.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/ffdcdeb7981f720c9923db9460e0a5a2.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/9272b883de211eac4bced66d6732ed0e.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/792df4775f50c0630fcf6b6cf3a17a6c.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/f15a026f791a642d776854371e098a75.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/1228440db1b2d9a0fd5aec30b9cb95f3.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/8091dc6e99b90c596b7e5e1416cff421.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/dd841032b63acfcf82a89ecc82e5c962.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/53c44c002a79123d05fc79563b9a0f20.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/a3c4835b90aa02b7e47b14e598f56c9d.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/ec28c5fc66a37fe1539be126a3f265a2.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/090a20c3b6921856bfae9aaefa96fe8c.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/07959625ce8262da60114ff118ebe3e5.jpg"
+					}
+				],
+				"rating": 0.814566,
+				"minPrice": 1100,
+				"minHours": 2,
+				"label": {
+					"name": null,
+					"color": null
+				},
+				"commentsCount": 3,
+				"coordinates": {
+					"lat": "55.735018000000000",
+					"lng": "37.555705000000000"
+				},
+				"detailPageUri": "/new/studios/17"
+			},
+			{
+				"id": 19,
+				"name": "Promofoto",
+				"description": "Студия «Промофото» - это идеальное место для того, чтобы провести профессиональную фотосессию или съемку для каталога. В этой студии все организовано таким образом, чтобы вам было удобно работать, а, главное, чтобы вы могли достичь поставленной цели вне зависимости от степени ваших профессиональных притязаний. Съемочное и осветительное оборудование, предоставляемое студией «Промофото», отличается высоким качеством, к вашим услугам 1 циклорама, аква-зона, свет Profoto,  аренда постоянного света  Arri, Dedolight. Общая площадь студии, включая рабочие помещения — 340 м², высота потолков — 3,30 метров. В свою очередь большой выбор декораций и реквизита максимально расширяет горизонты для вашего творчества.\nМы расположены в самом сердце Москвы – на станции метро Арбат, Староконюшенный переулок, дом 43, так что добраться до нас не составит никакого труда.",
+				"images": [
+					{
+						"url": "/uploads/images/studio/original/1797f2705e0183b79ddbb491ce847220.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/ba6f904b76eb4406cdf2e0f91d7e6fc7.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/26a083e3a892bc3a09174cb5b85c5b17.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/8ddd497918e63f0d81632b730dc87352.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/c8f562736d3bad4c398ba1e66573f790.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/0774982fa9c3d5836bc1ce970a3614ba.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/5f4fc9cbcd6e67015afd39bd5a904104.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/32338c89947a3ead85ed4c523f3878cc.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/95d2660d7108bbc5e3c7ae78f61872a9.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/b0c4004ec922560af825ccebcc5646ed.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/f12a2c5f9b3a25d3642a6912214327a8.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/2b330471ba3b2850517ef4ddfd88a440.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/f71615244bb9b5920156d58b504d8b51.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/fb938049e6dfb0cc6b9188a8beb73168.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/756c90dbb8bc10fbdf9239071fc9f86a.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/dc0ba06187bbbf3319cd3936c5197cf0.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/c8e03fda91c78f698515f775cf446ee9.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/fb05d6d19e1192025753a8a8793dee97.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/e184f67b8774645c10802ca1c208db06.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/412ad20229784b027b79a2f6d1d725b2.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/068cacd9cc096ca9ecae5cb3d2f6109e.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/e19ef2d4556305bb39cd6b85cd83ce86.jpg"
+					}
+				],
+				"rating": 0,
+				"minPrice": 1100,
+				"minHours": 2,
+				"label": {
+					"name": null,
+					"color": null
+				},
+				"commentsCount": 0,
+				"coordinates": {
+					"lat": "55.749552000000000",
+					"lng": "37.594270000000000"
+				},
+				"detailPageUri": "/new/studios/19"
+			},
+			{
+				"id": 20,
+				"name": "APRIORI",
+				"description": "Фотостудия APRIORI – профессиональная фотостудия для съёмок и уникальное арт-пространство для мероприятий, где вековое наследие сливается с современной архитектурой мегаполиса, в самом центре Москвы. Популярное место для проведения фото- и видеосъёмок среди продюсеров, редакторов, режиссеров, фотографов и блогеров. Среди постоянных клиентов ведущие интернет-магазины, а также топовые модельные агентства, популярные журналы, известные артисты и рекламные компании. \n\nГлавное преимущество - это 2 этажа единого пространства с бесплатной парковкой у парадного входа. На территории студии работает кофейня, а также находится отдельный мейкап-корнер, который пользуется популярностью среди визажистов и бьюти-компаний.\n\nРабочее пространство в фотостудии Москвы освещает как дневной свет через панорамные окна, так и осветительное оборудование Profoto. Студия полностью укомплектована профессиональным оборудованием: автоматические системы фонов, большие зеркала 2х2м на роликах, светоформирующие насадки, гримерные столы, вентиляторы и т.п. Наша команда с радостью проконсультирует по техническим вопросам и проведет профессиональные съёмки для личных и коммерческих целей. Пространство фотостудии также отлично подходит для проведения развлекательных и деловых мероприятий.\n\nМногофункциональное ивент-пространство включает 6 залов от 50 до 200 м2 для проведения мероприятий разного формата. Здесь вы можете арендовать залы для семинаров, мастер-классов, тренингов, презентаций, выставок, вечеринок.\n\n**НАШИ ПРЕИМУЩЕСТВА:**\n- удобное расположение с отдельным парадным входом, фотостудия APRIORI PHOTO расположена в 5-ти минутах пешком от станции метро Красносельская / Бауманская с отдельным входом без пропусков\n\n- бесплатная наземная и подземная парковка, из которой на лифте сразу попадаете в студию\n- циклорама 4,5х3,7м\n- аренда самого быстрого в мире генератора PRO-10, первая и единственная фотостудия в Москве, у которой он в наличии\n- современное оборудование Profoto, потолки 7 метров, залы от 50 до 200 кв, огромные окна дают естественный свет в дневное время, кроме этого к Вашим\n- услугам всегда комплект студийного света\n- отдельный мейкап-корнер, гримерка с профессиональными столами для визажистов с подсветкой\n- уютная атмосфера, вас всегда ждет теплый прием, кафе с wifi, переговорная комната\n- специальные условия для юридических лиц, быть нашим клиентом престижно и выгодно",
+				"images": [
+					{
+						"url": "/uploads/images/studio/original/7c1ea70476381988040f2736d252de80.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/49daf4d96109909863dc172ff2b6d998.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/4e0d552feaf2727484d5de1a65ceaaaa.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/3e3d527536547a52425806f093dd842c.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/6568535a4f60c3d205e1852e1350d80e.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/9f0c05b020258811c877819fc90a868e.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/8a8a0b42112990a27ad989db0c2b9cc9.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/8087549921ee0bf513ff1a118868442b.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/97ad772dcba2ff3a3fe12655f0cc3eee.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/b34190ae839ddf2f79e7d2f1845a60a1.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/50e3af7cd8a6e29ed1ad9ed9876e4944.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/823fe4dad106af6b0223950fc355d46e.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/2225b47d06cafdefb020622753505d85.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/4d663a86b523ae901555a122337a39e2.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/0c6f0fd04b11d718df7e736bc86d3855.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/30eafde0b808775ae5b63145c3fe1c38.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/052c0bd602ca3f36d1ebfa88b311dc93.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/8a3a7b5404e66b88ded727ae7d1e97c5.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/d72cf3d321ab789c1b1bc54ec4fe5474.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/8f5823cc7ef589d7a6dd80d65a6c582c.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/423133b98eb8279ba3277901b7b5da1b.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/611ea93294046e19da1cd9175678e353.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/a74d427dfc11454adf83423d1b94c98e.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/a9bce53ab308189cf5635fca6a0cd200.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/72ee02f9930a56b7b8fea950abbb679a.jpg"
+					}
+				],
+				"rating": 0.830063,
+				"minPrice": 1000,
+				"minHours": 2,
+				"label": {
+					"name": null,
+					"color": null
+				},
+				"commentsCount": 5,
+				"coordinates": {
+					"lat": "55.778487000000000",
+					"lng": "37.672379000000000"
+				},
+				"detailPageUri": "/new/studios/20"
+			},
+			{
+				"id": 21,
+				"name": "PROSTYLE",
+				"description": "Интерьерная фотостудия в Москве в 5−ти минутах от м. Медведково на машине и в 15 минутах -пешком. На территории имеется бесплатная парковка, отдельная гримерка на четыре рабочих места с идеальными условия для работы стилиста/визажиста, холл ожидания с удобными диванчиками и кофеавтоматом.\n\nЗал [PASSION][1] подходит для фото/видеосъемок, коммерческих съемок, проведения мастер-классов  и съемок музыкантов и свадебных съемок.\n\nЗал [SWEET][2] подходит для фото/видеосъемок, коммерческих съемок, фуд съемок, модельных тестов, портретных съемок, love story, lifestyle съемок, а так же детских, семейных.\n\nЗал [FLASH][3] подходит для модельных тестов, коммерческих каталожных съемок и предметной фотосъемки, а так же для съемок портретов с импульсным светом.\n\nЗал [LOFT][4] подходит для модельных тестов, коммерческих съемок, love story, lifestyle съемок, а так же детских и семейных съемок.\n\nЗал [VLOG][5] подходит для видеоблоггинга, полностью подготовлен для записи звука и видео. В зале имеется все необходимое, включая высокоскоростной интернет с резервной линией!\n\nЧто еще вы найдете в нашей студии:\n\nоригинальные декорации в различных стилях, \n\nинтересный реквизит, который постоянно пополняется и изменяется бумажные фоны  (белый/ черный/ серый/ коричневый/ бордовый/ зеленый/ синий/ желтый/ розовый/ фиолетовый)  можно использовать в любом зале (уточняйте наличие заранее) ширина 2,72м \n\nхромакей бумажный (синий/зеленый) ширина 2,72м \n\nнатуральные фактуры (ткань, дерево) \n\nнастроенный черный рояль и белоснежное пианино (без деки) \n\nнадежное оборудование фирмы Bowens и масса насадок и фильтров \n\nпомощь начинающим фотографам в постановке света и работе с оборудованием \n\nWi-Fi, музыка, чай, кофе - бесплатно\n\nсистема скидок\n\nЗабронировать зал Вы можете ТОЛЬКО на сайте prostylephoto.ru во вкладке [РАСПИСАНИЕ И БРОНИРОВАНИЕ][6]. У каждого зала свой календарь. \nПо любым вопросам обращайтесь к нашему администратору по тел. +7 (495) 585-08-25 \n\n\n  [1]: https://prostylephoto.ru/zal-passion/\n  [2]: https://prostylephoto.ru/zal-nejnost/\n  [3]: https://prostylephoto.ru/zal-flash/\n  [4]: https://prostylephoto.ru/zal-loft/\n  [5]: https://prostylephoto.ru/zal-vlog/\n  [6]: https://prostylephoto.ru/raspisanie-zalov/",
+				"images": [
+					{
+						"url": "/uploads/images/studio/original/643bb2f1c33c4644ba729f2e07d41eec.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/083c3b7b2476df08ce2c6b9f5e8cc786.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/28f4e912c942ebc50dbe34c25a3f2768.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/9652696a50183ef0c33ec7bb20c02bd2.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/7b9e7940ec62ebbb181f938e3ae4903d.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/0f39a44448bec7bb37c833e8a6d8f16f.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/68697db3c0ba5a218507205346643f7a.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/65fb91f8fbd53f352920bee7813c85dc.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/8e8ee1949c343cd2471e7e61e5eed1ab.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/ed37054e35249e17fee48e0532e8dccd.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/7a91715b5031c72bfe58f63d65593f1b.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/57f37b481db9f95dcadca9403b3bbb33.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/24da43ab412b91de1d4792b4ee198574.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/fed129917fe7783e3956ec0d01eb7935.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/33c02667bd066eccd350fa0b8a11a580.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/c389e51e5f1f29834efc8ce131e167f1.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/d449d0643355cd711cfaf0b17baed8c7.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/40f93a008f8980c3ce8b406d49943702.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/ad99b7773b070217c3c34192fdb3651b.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/f826d3c9b462d27ecff60445ae87e3b5.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/a3783f1a29b6e3831ba561352af7bab2.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/20dc6d49c4b8d5f90dd0b3011dc86042.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/5feacf66e3c6891a47e2e7eb8b031f69.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/a75f4ae2124f7582326c6ebb922d5122.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/f10998e8f76a84db573b10bb9204dedf.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/a47cb2b383d14b76b1401236f95a6aa6.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/abd4144bd963fd2cb4d90343c9c95447.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/a2a2c7b44d2a92f9f34892f44083e68a.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/32334943eb1105232e8f4be0251312b4.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/63d46fc44a4c54c278f8b76a48e81b9a.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/2a8cf1cc62a779bd323db0bc153cf901.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/33c97d7a0ac9a72db0c3e10e7ec3e9d2.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/d113aac9cfa07df592b4eafb46a7ba7a.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/e7f92e82916f9411b4df1b8c0c071886.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/ba5704d10102613156555f313577e9bb.jpg"
+					}
+				],
+				"rating": 0.6,
+				"minPrice": 1000,
+				"minHours": 2,
+				"label": {
+					"name": null,
+					"color": null
+				},
+				"commentsCount": 0,
+				"coordinates": {
+					"lat": "55.893960000000000",
+					"lng": "37.644234000000000"
+				},
+				"detailPageUri": "/new/studios/21"
+			},
+			{
+				"id": 24,
+				"name": "Citrusfoto",
+				"description": "7 съемочных залов с естественным светом и гримерными местами. Залы оборудованы приборами Profoto, Bowens, Godox, качественными стойками и журавлями Avenger и Kupo. Более 280 м² для коммерческих и творческих съемок, записи блогов, организации праздников и мастер-классов.\n\n\n",
+				"images": [
+					{
+						"url": "/uploads/images/studio/original/23ec52f2c63bf167091c5e8f6816e4b6.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/320e54512ea41683a47ae14fa9b78c2b.jpg"
+					},
+					{
+						"url": "/uploads/images/studio/original/fe70a4cc72ca5263db104a47a91b03d9.jpg"
+					}
+				],
+				"rating": 0.793148,
+				"minPrice": 300,
+				"minHours": 2,
+				"label": {
+					"name": null,
+					"color": null
+				},
+				"commentsCount": 1,
+				"coordinates": {
+					"lat": "55.720945000000000",
+					"lng": "37.630167000000000"
+				},
+				"detailPageUri": "/new/studios/24"
+			}
+		],
+		"promos": [
+			{
+				"id": 3,
+				"title": "Студия",
+				"image": "/uploads/images/studio/original/ec5729c416fe5018d1a70e3b5e6864da.jpg",
+				"link": "/new/studios/29",
+				"description": "Универсальное пространство с циклорамой 5х5 и топовым оборудованием Profoto, Kinoflo, ARRI, Avenger. В зале 3 головы Profoto.",
+				"label": {
+					"name": "Лейбл",
+					"color": "#000000"
+				},
+				"comment": "Комментарий",
+				"isPublished": true
+			},
+			{
+				"id": 1,
+				"title": "Новая интерьерная студия",
+				"image": "/uploads/images/studio/original/29bf1d442d04f778358fde901d3d69a8.jpg",
+				"link": "/new/studios/21",
+				"description": "Новая интерьерная студия в классическом стиле, элегантной мебелью, 5-ти метровыми потолками и большими окнами.",
+				"label": {
+					"name": "Лейбл",
+					"color": "#000000"
+				},
+				"comment": "Комментарий",
+				"isPublished": true
+			},
+			{
+				"id": 4,
+				"title": "Новая студия",
+				"image": "/uploads/images/studio/original/aed6bfe5895305c9dea750e55094d861.jpg",
+				"link": "/new/studios/30",
+				"description": "Выгодные предложения в расписании от 2-х часов ",
+				"label": {
+					"name": "Лейбл",
+					"color": "#000000"
+				},
+				"comment": "Комментарий",
+				"isPublished": true
+			}
+		],
+		"rooms": [],
+		"roomsPrices": {
+			"byHour": {
+				"min": 1,
+				"max": 22002200
+			},
+			"byInterval": []
+		}
+	}
+}

@@ -1,0 +1,43 @@
+include item/home-list-item.pug
+include ../../form/input/form-input.pug
+include ../../form/button/form-button.pug
+include ../../social/social.pug
+
+mixin home-list(data)
+  .home-list&attributes(attributes)
+    .home-list__title Новости
+    .home-list__content-section
+      each item, index in data.prew
+        .home-list__content-wrapper(class=index === 1 || index === 2 ? 'home-list__content-wrapper--big-width' : '')
+          +home-list-item(item.content)(class!=item.mod)
+    .home-list__subscribtion
+      .home-list__mailing-section
+        picture.home-list__mailing-image-wrapper
+          each item in data.mailing.images
+            source(media=item.media, srcset=item.srcset, type=item.type)
+          img(src=data.mailing.mainImg, alt=data.mailing.altImg)
+        .home-list__mailing-heading !{data.mailing.heading}
+        .home-list__mailing-input-wrapper
+          +form-input({
+            type: 'text',
+            checkOk: data.mailing.inputCheckOk,
+            attributes: data.mailing.inputAttr,
+            label: data.mailing.inputLabel
+          })(class=data.mailing.inputClass)
+        .home-list__mailing-btn-wrapper
+          +form-button({
+            text: data.mailing. btnText,
+            attributes: {
+              type: 'button'
+            }
+          })
+      .home-list__info-section
+        .home-list__info-wrapper
+          each location in data.locations
+            .home-list__info-counter
+              .home-list__info-counter-heading #{location.heading}
+              .home-list__info-counter-text #{location.text}
+        .home-list__info-wrapper.home-list__info-wrapper--marsh
+          .home-list__info-social-wrapper
+            +social(data.networks)(class='social--border-grey')
+          a.home-list__info-link(href='/') ЕЩЕ НОВОСТИ

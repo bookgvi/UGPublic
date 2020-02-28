@@ -1,0 +1,58 @@
+$parent: location-service;
+
+@include block($parent) {
+  @include element ($parent, 'title') {
+    font-weight: 600;
+    font-size: rem(18);
+    line-height: rem(22);
+    color: $dark;
+    margin-bottom: rem(9);
+
+    @media (min-width: $md) {
+      font-size: rem(21);
+      line-height: rem(25);
+      margin-bottom: rem(12);
+    }
+  }
+
+  @include element ($parent, 'list-box') {
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: $md) {
+      flex-direction: row;
+    }
+  }
+
+  @include element ($parent, 'list') {
+    padding-left: rem(24);
+  }
+
+  @include element ($parent, 'item') {
+    position: relative;
+    font-size: rem(14);
+    line-height: rem(40);
+    color: $dark;
+
+    &::before {
+      position: absolute;
+      content: '';
+      top: rem(18);
+      left: rem(-12);
+      width: rem(4);
+      height: rem(4);
+      border-radius: 50%;
+      background-color: $marsh;
+    }
+
+    @media (min-width: $md) {
+      font-size: rem(16);
+    }
+  }
+
+  @include element ($parent, 'left-column') {
+    @media (min-width: $md) {
+      width: 52%;
+    }
+  }
+}

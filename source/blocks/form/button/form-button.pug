@@ -1,0 +1,18 @@
+mixin form-button(data)
+  //-
+    Expected data type of button and span text.
+    Expected attributes in data for button such as type and disabled
+    +form-button({
+      text: 'Зарегистрироваться',
+      icon_status: true,
+      icon: <svg></svg>
+      attributes: {
+        type: 'button',
+        disabled: 'disabled'
+      }
+    })(class='form-button--cancel')
+  .form-button&attributes(attributes)
+    button.form-button__button&attributes(data.attributes)
+      if data.icon_status
+        span.form-button__button-icon!= data.icon
+      span.form-button__button-text #{data.text}

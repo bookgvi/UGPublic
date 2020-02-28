@@ -1,0 +1,125 @@
+$parent: map-contact;
+
+@include block ($parent) {
+  @include modifier ($parent, 'location') {
+    @include element ($parent, 'street') {
+      font-size: rem(18);
+
+      @media (min-width: $md) {
+        font-size: rem(21);
+        line-height: rem(25);
+      }
+    }
+
+    @include element ($parent, 'map') {
+      height: rem(240);
+
+      @media (min-width: $md) {
+        margin-top: rem(20);
+      }
+    }
+
+    @include element ($parent, 'wrp') {
+      line-height: rem(24);
+
+      @media (min-width: $md) {
+        font-size: rem(16);
+        line-height: rem(28);
+      }
+    }
+  }
+
+  @include element ($parent, 'contacts') {
+    margin-top: rem(25);
+    font-weight: 700;
+    font-size: rem(16);
+    line-height: rem(24);
+    letter-spacing: -0.3px;
+
+    @media (min-width: $md) {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  @include element ($parent, 'street') {
+    margin-bottom: rem(7);
+
+    @media (min-width: $md) {
+      margin-bottom: 0;
+      padding-right: rem(80);
+    }
+  }
+
+  @include element ($parent, 'phone') {
+    flex-shrink: 0;
+  }
+
+  @include element ($parent, 'map') {
+    position: relative;
+    height: rem(160);
+    margin-top: rem(8);
+  }
+
+  @include element ($parent, 'route') {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-top: rem(20);
+
+    @media (min-width: $md) {
+      flex-direction: row;
+    }
+  }
+
+  @include element ($parent, 'tabs') {
+    display: flex;
+    align-self: flex-start;
+    flex-shrink: 0;
+    height: rem(40);
+    margin-right: auto;
+    margin-bottom: rem(10);
+    border: 1px solid $marsh;
+
+    @media (min-width: $md) {
+      margin-left: auto;
+      margin-bottom: 0;
+    }
+  }
+
+  @include element ($parent, 'tab') {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: rem(40);
+    height: 100%;
+    background-color: $white;
+    cursor: pointer;
+
+    svg {
+      fill: $marsh;
+    }
+
+    @include modifier ($parent, 'active') {
+      background-color: $marsh;
+      pointer-events: none;
+
+      svg {
+        fill: $white;
+      }
+    }
+  }
+
+  @include element ($parent, 'wrp') {
+    padding-right: rem(10);
+    font-size: rem(14);
+    line-height: rem(21);
+  }
+
+  @include element ($parent, 'wrp-text') {
+    display: none;
+
+    @include modifier ($parent, 'active') {
+      display: block;
+    }
+  }
+}

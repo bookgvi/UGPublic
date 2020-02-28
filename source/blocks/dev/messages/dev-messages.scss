@@ -1,0 +1,232 @@
+$parent: dev-messages;
+
+@include block($parent) {
+  position: relative;
+  padding-top: rem(20);
+
+  @media (min-width: $md) {
+    padding-bottom: rem(20);
+  }
+
+  @media (min-width: $lg) {
+    padding-top: rem(40);
+  }
+
+  @include element($parent, 'title') {
+    padding: 0 rem(10);
+    font-weight: bold;
+    font-size: rem(18);
+    line-height: rem(24);
+    color: $dark;
+
+    @media (min-width: $md) {
+      padding: 0;
+      font-size: rem(24);
+      line-height: rem(29);
+      text-align: center;
+    }
+  }
+
+  @include element($parent, 'container') {
+    margin-top: rem(11);
+    margin-left: auto;
+    margin-right: auto;
+    background-color: $white;
+
+    @media (min-width: $md) {
+      display: flex;
+      width: calc(100% - 40px);
+      max-height: rem(580);
+      margin-top: rem(20);
+      border: 1px solid #d9d9d9;
+    }
+
+    @media (min-width: $lg) {
+      width: rem(960);
+      height: rem(550);
+      max-height: none;
+    }
+  }
+
+  @include element($parent, 'list') {
+    position: relative;
+    overflow: hidden;
+    border-right: 1px solid #e5e5e5;
+
+    @media (min-width: $md) {
+      width: rem(365);
+    }
+
+    @media (min-width: $lg) {
+      width: rem(400);
+    }
+  }
+
+  @include element ($parent, 'dialog') {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: $white;
+
+    @media (min-width: $md) {
+      position: relative;
+      top: auto;
+      left: auto;
+      display: flex;
+      width: calc(100% - 365px);
+      height: auto;
+    }
+
+    @media (min-width: $lg) {
+      width: calc(100% - 400px);
+    }
+
+    @include modifier($parent, 'open') {
+      display: flex;
+    }
+  }
+
+  @include element ($parent, 'dialog-header') {
+    flex-shrink: 0;
+    background-color: #fafafa;
+    border-bottom: 1px solid #e0e0e0;
+    cursor: default;
+
+    @media (max-width: $md-min) {
+      padding-left: rem(20);
+      padding-right: rem(20);
+      background-color: $white;
+    }
+  }
+
+  @include element ($parent, 'wrapper-chat') {
+    position: relative;
+    flex-grow: 1;
+    overflow: hidden;
+    display: none;
+    padding-top: rem(10);
+    padding-left: rem(20);
+    padding-right: rem(20);
+
+    @include modifier ($parent, 'open') {
+      display: block;
+    }
+  }
+
+  @include element ($parent, 'chat') {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @include element ($parent, 'message-date') {
+    position: relative;
+    margin-bottom: rem(10);
+    font-weight: 500;
+    font-size: rem(14);
+    line-height: rem(24);
+    color: #b5b5b5;
+    text-align: center;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: calc(50% - 51px);
+      height: 1px;
+      background-color: #eee;
+    }
+
+    &::before {
+      left: 0;
+    }
+
+    &::after {
+      right: 0;
+    }
+  }
+
+  @include element ($parent, 'wrapper-textarea') {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    flex-shrink: 0;
+    height: rem(60);
+    padding: rem(10);
+    border-top: 1px solid #e5e5e5;
+
+    @media (min-width: $md) {
+      height: rem(80);
+      padding: rem(20);
+    }
+  }
+
+  @include element ($parent, 'textarea') {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: rem(10);
+    padding-right: rem(70);
+    resize: none;
+    font-weight: 500;
+    font-size: rem(16);
+    line-height: rem(30);
+
+    @media (min-width: $md) {
+      padding: rem(20);
+      padding-right: rem(65);
+      line-height: rem(28);
+
+      @media (min-width: $tablet) {
+        padding-right: rem(130);
+      }
+    }
+
+    &::-webkit-input-placeholder {
+      color: #d9d9d9;
+      font-weight: 500;
+      font-size: rem(16);
+      line-break: rem(38);
+
+      @media (min-width: $md) {
+        line-height: rem(28);
+      }
+    }
+  }
+
+  @include element ($parent, 'btn-send') {
+    width: rem(40);
+    height: rem(40);
+    background: #d4e8e9 url('./assets/images/logo_btn-mobile.jpg') no-repeat center / 18px;
+    border-radius: 50%;
+    font-size: 0;
+    z-index: 1;
+
+    @media (min-width: $md) {
+      width: auto;
+      height: auto;
+      background: $white url('./assets/images/logo_btn.jpg') no-repeat center / 20px;
+      border-radius: 0%;
+    }
+
+    @media (min-width: $lg) {
+      width: rem(120);
+      background: none;
+    }
+
+    .form-button__button {
+      @media (max-width: $lg-min) {
+        opacity: 0;
+        color: transparent;
+      }
+    }
+  }
+}

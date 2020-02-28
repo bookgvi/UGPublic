@@ -1,0 +1,51 @@
+include ../../form/button/form-button.pug
+include ../order-payment/order-payment.pug
+include ../../map-contact/map-contact.pug
+
+mixin order-item(data)
+  .order-item(class=data.is_open ? 'order-item--open' : '')
+    .order-item__header
+      img.order-item__img(src=data.img, alt=data.alt)
+      .order-item__wrapper
+        .order-item__title #{data.title}
+        .order-item__info #{data.fullPrice} #{data.hours} #{data.date}
+        if data.paid_status
+          .order-item__status Оплачено #{data.paid} #{data.sale}
+        else
+          .order-item__status.order-item__status--alert #{data.paid}
+      .order-item__arrow
+        svg(width='12', height='8', fill='#d9d9d9')
+          use(xlink:href=require('../assets/svg/arrow_down.svg').url)
+    .order-item__content
+      svg(width='24', height='24', style='display: none')
+        use(xlink:href=require('../assets/svg/message.svg').url)
+      if data.paid_status
+        .order-item__buttons
+          +form-button({
+            text: 'Сообщение',
+            icon_status: true,
+            icon: '<svg width="20" height="20"><use xlink:href="./assets/sprite.svg#message-usage"></use></svg>'
+          })(class='order-item__btn order-item__btn--width')
+          +form-button({
+            text: 'Отменить'
+          })(class='order-item__btn form-button--cancel')
+      else
+        .order-item__buttons.order-item__buttons--wrap
+          +form-button({
+            text: 'Сообщение',
+            icon_status: true,
+            icon: '<svg width="20" height="20"><use xlink:href="./assets/sprite.svg#message-usage"></use></svg>'
+          })(class='order-item__btn order-item__btn--message')
+          +form-button({
+            text: 'Отменить'
+          })(class='order-item__btn order-item__btn--margin form-button--cancel')
+          +form-button({
+            text: 'Оплатить 1615 р.'
+          })(class='order-item__btn order-item__btn--pay form-button')
+      .order-item__map-contact-wrapper
+        +map-contact(data.mapContact)
+      each check in data.payment_check
+        +order-payment(check)
+      .order-item__result
+        | Итого, р.
+        .order-item__price #{data.price}

@@ -1,0 +1,40 @@
+mixin dev-footer(data)
+  footer.dev-footer&attributes(attributes)
+    .dev-footer__links(class=data.openFooter ? 'dev-footer__links--open' : '')
+      .dev-footer__links-wrapper
+        each item in data.sections_link
+          .dev-footer__col
+            .dev-footer__title #{item.section.title}
+            ul.dev-footer__list
+              each page in item.section.pages
+                li.dev-footer__item
+                  a.dev-footer__link(href=page.link) #{page.title}
+        .dev-footer__col
+          .dev-footer__title Социальные сети
+          .dev-footer__social
+            a.dev-footer__social-link(href='facebook.com')
+              svg.dev-footer__icon.dev-footer__icon--fb(width='18', height='18')
+                use(xlink:href=require('../assets/svg/fb.svg').url)
+            a.dev-footer__social-link(href='vk.ru')
+              svg.dev-footer__icon.dev-footer__icon--vk(width='23', height='13')
+                use(xlink:href=require('../assets/svg/vk.svg').url)
+            a.dev-footer__social-link(href='instagram.com')
+              svg.dev-footer__icon.dev-footer__icon--inst(width='18', height='18')
+                use(xlink:href=require('../assets/svg/inst.svg').url)
+              .dev-footer__icon.dev-footer__icon--inst-hover
+    .dev-footer__container
+      .dev-footer__logo
+        svg.dev-footer__logo-icon(width='32', height='32')
+          use(xlink:href=require('../assets/svg/logo_gray.svg').url)
+        svg.dev-footer__logo-title(width='66', height='13')
+          use(xlink:href=require('../assets/svg/ugoloc_gray.svg').url)
+      .dev-footer__toggle
+        ul.dev-footer__list.dev-footer__list-preview.dev-footer__list--row
+          each link in data.sections_link_show
+            li
+              a.dev-footer__link.dev-footer__link--separator.dev-footer__link--gray(href=link.link) #{link.title}
+        .dev-footer__more-links
+          .dev-footer__quantity!= data.sections_link_hide
+          .dev-footer__arrow
+            svg(width='12', height='8', fill='#d9d9d9')
+              use(xlink:href=require('../assets/svg/arrow_down.svg').url)

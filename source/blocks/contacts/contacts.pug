@@ -1,0 +1,12 @@
+mixin contacts(data)
+  .contacts
+    .contacts__title #{data.title}
+    .contacts__content-section
+      each item in data.content
+        .contacts__content-container
+          if (item.heading)
+            span.contacts__content.contacts__content--heading !{item.heading}
+          span.contacts__content !{item.text}
+    if (data.mapLon || data.mapLat)
+      .contacts__map-section
+        .contacts__map-container(data-lon=data.mapLon, data-lat=data.mapLat)

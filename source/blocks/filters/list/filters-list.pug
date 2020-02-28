@@ -1,0 +1,9 @@
+include ../item/filters-item.pug
+include ../checkbox/filters-checkbox.pug
+
+mixin filters-list(data)
+  form.filters-list(action='#')
+    .filters-list__container
+      each filter in data.filters
+        +filters-item(filter)
+      +filters-checkbox(data.map_checkbox)

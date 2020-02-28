@@ -1,0 +1,123 @@
+$parent: wysiwyg;
+
+@include block($parent) {
+  font-family: $montserrat;
+
+  h1 {
+    font-weight: 700;
+    font-size: rem(18);
+    line-height: rem(24);
+    margin-bottom: rem(20);
+    color: $dark;
+
+    @media (min-width: $lg) {
+      font-size: rem(24);
+      line-height: rem(29);
+      margin-bottom: rem(20);
+    }
+  }
+
+  h3 {
+    font-weight: 600;
+    font-size: rem(18);
+    line-height: rem(24);
+    margin-bottom: rem(20);
+    color: $dark;
+
+    @media (min-width: $lg) {
+      font-size: rem(21);
+      line-height: rem(25);
+      margin-bottom: rem(25);
+    }
+  }
+
+  p {
+    font-size: rem(14);
+    line-height: rem(24);
+    margin-bottom: rem(20);
+    color: $dark;
+
+    @media (min-width: $lg) {
+      font-size: rem(16);
+      line-height: rem(28);
+      margin-bottom: rem(38);
+    }
+  }
+
+  a {
+    position: relative;
+    font-size: rem(13);
+    line-height: rem(24);
+    // margin-bottom: rem(20);
+    text-decoration: none;
+    color: $marsh;
+
+    &[download] {
+      display: inline-block;
+      position: relative;
+      padding-right: rem(24);
+
+      &::after {
+        position: absolute;
+        content: "";
+        width: rem(20);
+        height: rem(10);
+        background-image: url('/images/insert_link.svg');
+        background-position: center;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+      }
+    }
+
+    @media (min-width: $mini-xs) {
+      font-size: rem(14);
+    }
+
+    @media (min-width: $lg) {
+      font-size: rem(16);
+      line-height: rem(28);
+      // margin-bottom: rem(38);
+    }
+
+    &:hover {
+      color: $marsh * 0.9;
+    }
+  }
+
+  ul {
+    padding-left: rem(25);
+    margin-bottom: rem(25);
+
+    @media (min-width: $lg) {
+      margin-bottom: rem(40);
+    }
+
+    li {
+      position: relative;
+      font-size: rem(14);
+      line-height: rem(40);
+      color: $dark;
+
+      &::before {
+        position: absolute;
+        content: '';
+        width: rem(4);
+        height: rem(4);
+        border-radius: 50%;
+        left: rem(-12.5);
+        top: 1rem;
+        background-color: $gray_9b;
+      }
+
+      @media (min-width: $lg) {
+        font-size: rem(16);
+      }
+    }
+  }
+
+  em,
+  i {
+    font-style: italic;
+  }
+}

@@ -1,0 +1,22 @@
+mixin checkout-selectInput(selectInput)
+  .checkout-selectInput
+    .checkout-selectInput__label #{selectInput.label}
+    .checkout-selectInput__input-box
+      span.checkout-selectInput__dropdown-svg
+        svg
+          use(xlink:href=require('../assets/svg/arrow_up.svg').url)
+      input.checkout-selectInput__input(type='number', name='seats', value='1', @change='setValue($event.target, "seats")', data-form='order')
+    .checkout-selectInput__dropdown
+      .checkout-selectInput__wrapper
+        ul.checkout-selectInput__list
+          each item, val in selectInput.items
+            if (val === 0)
+              li.checkout-selectInput__item.checkout-selectInput__item--active(data-value=item) #{item}
+                span
+                  svg
+                    use(xlink:href=require('../assets/svg/check.svg').url)
+            else
+              li.checkout-selectInput__item(data-value=item) #{item}
+                span
+                  svg
+                    use(xlink:href=require('../assets/svg/check.svg').url)

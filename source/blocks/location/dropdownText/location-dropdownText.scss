@@ -1,0 +1,59 @@
+$parent: location-dropdownText;
+
+@include block($parent) {
+  max-height: 100%;
+  overflow: hidden;
+  transition: height 0.25s linear;
+
+  @include element ($parent, 'hidden') {
+    display: none;
+    padding-left: rem(5);
+
+    @include modifier ($parent, 'showed') {
+      display: inline;
+    }
+  }
+
+  @include element ($parent, 'button') {
+    display: inline-block;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 rem(5);
+    cursor: pointer;
+    vertical-align: bottom;
+
+    svg {
+      width: rem(20);
+      height: rem(20);
+      fill: $marsh;
+      transition: transform 0.2s linear;
+    }
+
+    &:hover {
+      svg {
+        fill: $marsh * 0.9;
+      }
+    }
+
+    @include modifier ($parent, 'opened') {
+      svg {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  @include element ($parent, 'wrapper') {
+    span,
+    p,
+    div {
+      font-size: rem(14);
+      line-height: rem(24);
+      color: $dark;
+
+      @media (min-width: $md) {
+        font-size: rem(16);
+        line-height: rem(28);
+      }
+    }
+  }
+}

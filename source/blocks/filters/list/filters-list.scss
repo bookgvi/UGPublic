@@ -1,0 +1,35 @@
+$parent: filters-list;
+
+@include block ($parent) {
+  position: sticky;
+  top: rem(60);
+  border-bottom: 1px solid $gray-light-2;
+  background-color: $white;
+  z-index: 7;
+
+  @media (min-width: $md) {
+    top: rem(81);
+  }
+
+  @include element ($parent, 'container') {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: rem(10);
+    padding-bottom: 0;
+
+    @media (min-width: $md) {
+      position: relative;
+      padding: rem(10) rem(20);
+      padding-right: rem(180);
+      padding-bottom: 0;
+    }
+
+    @media (min-width: $tablet) {
+      align-items: center;
+      padding-right: rem(20);
+      // padding-bottom: rem(10);
+    }
+  }
+}

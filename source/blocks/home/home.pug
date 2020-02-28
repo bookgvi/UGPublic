@@ -1,0 +1,18 @@
+include banner/home-banner.pug
+include promo/home-promo.pug
+include popular/home-popular.pug
+include offer/home-offer.pug
+include list/home-list.pug
+include description/home-description.pug
+
+mixin home(data)
+  .home
+    +home-banner(data.banner)
+    .home__content-container
+      .home__wrapper
+        +home-promo(data.popular)(class='promo--first')
+          +home-popular(data.popularSlider)
+        +home-promo(data.offer)
+          +home-offer(data.offerData)
+        +home-list(data.news)
+        +home-description()

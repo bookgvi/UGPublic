@@ -1,0 +1,14 @@
+{
+	"data": {
+		"id": 30,
+		"replyTo": 2,
+		"author": {
+			"fullName": "Иван Иванов"
+		},
+		"createdAt": "2019-12-28T10:37:05.041Z",
+		"rating": 3,
+		"content": "Ответ",
+		"likes": 2,
+		"dislikes": 2
+	}
+}

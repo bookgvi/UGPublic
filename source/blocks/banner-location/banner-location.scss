@@ -1,0 +1,42 @@
+$parent: banner-location;
+
+@include block ($parent) {
+  @include element ($parent, 'wrapper') {
+    position: relative;
+    display: flex;
+    margin-bottom: rem(10);
+  }
+
+  @include element ($parent, 'img') {
+    width: 100%;
+    height: rem(220);
+    object-fit: cover;
+  }
+
+  @include element ($parent, 'status') {
+    position: absolute;
+    left: rem(10);
+    bottom: rem(9);
+    padding: 3px rem(10) 3px rem(10);
+    background-color: $white;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: rem(14);
+    line-height: rem(24);
+    letter-spacing: 0.4px;
+  }
+
+  @include element ($parent, 'title') {
+    font-weight: 700;
+    font-size: rem(18);
+    line-height: rem(24);
+    letter-spacing: -0.34px;
+  }
+
+  @include element ($parent, 'desc') {
+    font-weight: 500;
+    font-size: rem(15);
+    line-height: rem(21);
+    letter-spacing: -0.28px;
+  }
+}

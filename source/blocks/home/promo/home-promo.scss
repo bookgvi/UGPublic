@@ -1,0 +1,84 @@
+$parent: home-promo;
+
+@include block($parent) {
+  position: relative;
+  width: 100%;
+  padding-bottom: rem(30);
+
+  @media (min-width: $md) {
+    padding-bottom: rem(50);
+  }
+
+  @media (min-width: $lg) {
+    padding-bottom: rem(50);
+  }
+
+  @include modifier ($parent, 'first') {
+    padding-top: rem(20);
+
+    @media (min-width: $md) {
+      padding-top: rem(30);
+    }
+
+    @media (min-width: $lg) {
+      padding: rem(60) 0 rem(40);
+    }
+  }
+
+  @include element ($parent, 'heading-section') {
+    display: flex;
+    flex-direction: column;
+    padding: 0 rem(10) rem(12);
+
+    @media (min-width: $md) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 rem(20) rem(20);
+    }
+  }
+
+  @include element ($parent, 'title') {
+    position: relative;
+    display: inline-block;
+    padding-bottom: rem(7);
+    color: $dark;
+    font-family: $montserrat;
+    font-size: rem(18);
+    font-weight: 700;
+    line-height: rem(24);
+
+    @media (min-width: $md) {
+      font-size: rem(24);
+      line-height: rem(29);
+    }
+  }
+
+  @include element ($parent, 'all-link') {
+    position: relative;
+    display: inline-block;
+    padding-right: rem(24);
+    color: $marsh;
+    font-family: $montserrat;
+    font-size: rem(15);
+    font-weight: 500;
+    letter-spacing: rem(-0.28);
+    line-height: rem(21);
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: $marsh * 0.9;
+    }
+
+    svg {
+      position: absolute;
+      top: 0.5em;
+      right: 0;
+    }
+  }
+
+  @include element ($parent, 'content-section') {
+    width: 100%;
+    overflow: hidden;
+  }
+}

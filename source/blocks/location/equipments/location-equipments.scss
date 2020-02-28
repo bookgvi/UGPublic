@@ -1,0 +1,43 @@
+$parent: location-equipments;
+
+@include block($parent) {
+  @include element ($parent, 'item') {
+    display: inline-block;
+    font-size: rem(15);
+    line-height: rem(21);
+    color: $dark;
+    border: 1px solid $gray-light-border;
+    border-radius: rem(25);
+    padding: rem(8) rem(19);
+    margin-right: rem(10);
+    margin-bottom: rem(10);
+
+    @include modifier ($parent, 'hidden') {
+      display: none;
+    }
+  }
+
+  @include element ($parent, 'button') {
+    display: none;
+    font-size: rem(15);
+    line-height: rem(21);
+    color: $dark;
+    border: 1px solid $gray-light-border;
+    border-radius: rem(25);
+    padding: rem(8) rem(19);
+    margin-right: rem(10);
+    margin-bottom: rem(10);
+
+    @include modifier ($parent, 'show') {
+      display: inline-block;
+    }
+  }
+
+  @include element ($parent, 'link') {
+    color: $dark;
+  }
+
+  @include element ($parent, 'counter') {
+    padding-left: rem(4);
+  }
+}

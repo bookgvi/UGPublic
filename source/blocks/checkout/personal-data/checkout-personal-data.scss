@@ -1,0 +1,44 @@
+$parent: checkout-personal-data;
+
+@include block($parent) {
+  @include element($parent, 'title') {
+    color: $dark;
+    font-family: $montserrat;
+    font-size: rem(18);
+    font-weight: 600;
+    line-height: rem(22);
+    padding-bottom: rem(10);
+
+    @media (min-width: $md) {
+      font-size: rem(21);
+      line-height: rem(25);
+      padding-bottom: rem(21);
+    }
+  }
+
+  @include element($parent, 'inputs-section') {
+    @media (min-width: $md) {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      margin: rem(-10);
+    }
+  }
+
+  @include element($parent, 'input-wrapper') {
+    padding-bottom: rem(10);
+
+    @media (min-width: $md) {
+      flex: 1 1 50%;
+      max-width: 50%;
+      padding: rem(10);
+    }
+
+    @include modifier($parent, 'fixed-width') {
+      @media (min-width: $md) {
+        width: rem(260);
+        max-width: rem(260);
+      }
+    }
+  }
+}

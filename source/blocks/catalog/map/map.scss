@@ -1,0 +1,202 @@
+$parent: map;
+
+@include block($parent) {
+  position: absolute;
+  width: rem(400);
+  height: calc(100vh - 152px);
+  flex-basis: rem(400);
+  transition: opacity 0.2s;
+  opacity: 0;
+  overflow: hidden;
+  z-index: -1;
+
+  @media (min-width: $xl-max) {
+    width: calc(33.3333% - 40px);
+    flex-basis: calc(33.3333% - 40px);
+  }
+
+  @include modifier($parent, 'visible') {
+    opacity: 1;
+    z-index: 21;
+
+    @media (min-width: $md) {
+      z-index: 7;
+    }
+
+    &:not(.ieSticky) {
+      position: sticky;
+
+      @media (min-width: $md) {
+        top: rem(151);
+      }
+
+      @media (max-width: $md-min) {
+        position: fixed;
+      }
+    }
+  }
+
+  @media (min-width: $md) {
+    right: rem(20);
+  }
+
+  @media (max-width: $md-min) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: calc(100% + 37px);
+    height: 100%;
+    z-index: -1;
+  }
+
+  @include element ($parent, 'close') {
+    position: absolute;
+    top: rem(20);
+    right: rem(57);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: rem(32);
+    height: rem(32);
+    background-color: $white;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.3);
+    z-index: 12;
+
+    @media (max-width: $md-min) {
+      display: flex;
+    }
+  }
+
+  @include element ($parent, 'close-icon') {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: rem(24);
+    height: rem(24);
+  }
+
+  @include element($parent, 'img') {
+    width: rem(150);
+    height: rem(90);
+    object-fit: cover;
+  }
+
+  @include element($parent, 'subtitle') {
+    width: rem(150);
+    padding: 0 rem(10);
+    font-family: $montserrat;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: rem(24);
+    letter-spacing: -0.28px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  @include element($parent, 'price') {
+    width: rem(150);
+    padding: 0 rem(10);
+    font-family: $montserrat;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: rem(24);
+    letter-spacing: -0.28px;
+  }
+
+  .ymaps-2-1-72-balloon__content {
+    margin-right: 0 !important;
+    padding: 0;
+    padding-bottom: rem(10);
+  }
+
+  .ymaps-2-1-72-balloon_to_top .ymaps-2-1-72-balloon__tail {
+    left: 50%;
+    transform: translateX(-50%) rotate(-45deg);
+  }
+
+  .ymaps-2-1-72-placemark_theme_gray .ymaps-2-1-72-placemark__l,
+  .ymaps-2-1-72-placemark_theme_gray .ymaps-2-1-72-placemark__r {
+    display: none;
+  }
+
+  .ymaps-2-1-72-svg-icon {
+    background-image: none !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: rem(30) !important;
+    height: rem(30) !important;
+    background-color: $white;
+    border-radius: 50%;
+    letter-spacing: -0.26px;
+
+    .ymaps-2-1-72-svg-icon-content {
+      position: static !important;
+      top: auto !important;
+      left: auto !important;
+      width: 100% !important;
+      height: auto !important;
+      margin: 0;
+      font: 700 rem(14) $montserrat !important;
+      line-height: rem(24);
+    }
+  }
+
+  .ymaps-2-1-72-placemark {
+    right: 50%;
+    transform: translateX(50%);
+  }
+
+  .ymaps-2-1-72-placemark_theme_gray {
+    background-image: none;
+
+    .ymaps-2-1-72-placemark__content {
+      margin: 0 !important;
+    }
+
+    .ymaps-2-1-72-placemark__content-inner {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      width: rem(60);
+      height: rem(30);
+      font-weight: 500;
+      font-size: rem(14);
+      line-height: rem(24);
+      letter-spacing: -0.26px;
+      text-align: center;
+      color: $dark;
+      background-color: $white;
+      box-shadow: 0 2px 30px 0 rgba(0, 0, 0, 0.3);
+      overflow: visible;
+      transition: background-color 0.2s, color 0.2s;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: rem(-20);
+        left: 50%;
+        transform: translateX(-50%);
+        border: rem(10) solid $white;
+        border-left-color: transparent;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        transition: border-color 0.2s;
+      }
+    }
+
+    &:hover {
+      .ymaps-2-1-72-placemark__content-inner {
+        background-color: $marsh;
+        color: $white;
+
+        &::after {
+          border-color: $marsh;
+        }
+      }
+    }
+  }
+}

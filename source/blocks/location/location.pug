@@ -1,0 +1,50 @@
+mixin location(className, data)
+  //-
+    locations: [
+      {
+        images: [
+          {
+            src: require('../assets/img/test.jpg');
+            alt: 'text'
+          }
+        ],
+        type: 'Строка',
+        number_voters: Число,
+        name: 'Строка',
+        price: 'Строка',
+        hours: '· Строка',
+        status: 'Строка',
+        status_color: 'Строка'
+      }
+    }
+  .location(class=className)
+    .location__like
+      svg.location__like-icon(width='100%', height='100%')
+        use(xlink:href=require('../assets/svg/heart.svg').url)
+      svg.location__like-icon.location__like-icon--hidden(width='100%', height='100%')
+        use(xlink:href=require('../assets/svg/heart-active.svg').url)
+    .location__slider.swiper-container
+      .swiper-wrapper
+        each img in data.images
+          .swiper-slide
+            a.location__link.location__link--absolute(href=`${data.studio_link}`)
+            img.location__img(src=img.src, alt=img.alt)
+      .location__slider-pagination.swiper-pagination
+      .location__slider-btn.location__slider-btn--prev
+        svg()
+          use(xlink:href=require('../assets/svg/slider_prev.svg').url)
+      .location__slider-btn.location__slider-btn--next
+        svg()
+          use(xlink:href=require('../assets/svg/slider_next.svg').url)
+    .location__wrapper
+      .location__type #{data.type}
+      .location__rating
+        .location__rating-stars
+        .location__rating-num #{data.number_voters} 
+    .location__name 
+      a.location__link(href=`${data.studio_link}`) #{data.studio_name}
+      if data.hall
+        | &nbsp·&nbsp
+        a.location__link(href=`${data.hall_link}`) #{data.hall_name}
+    .location__price #{data.price} #{data.hours}
+    .location__status(style=`color: ${data.status_color}`) #{data.status}

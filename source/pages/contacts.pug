@@ -1,0 +1,33 @@
+extends ../layouts/main.pug
+include ../blocks/contacts/contacts.pug
+
+block content
+  +contacts({
+    title: 'Реквизиты',
+    mapLon: 55.76,
+    mapLat: 37.64,
+    content: [{
+      text: 'ООО «Менеджер локаций»'
+    }, {
+      heading: 'ИНН',
+      text: '7702389359'
+    }, {
+      heading: 'КПП',
+      text: '770201001'
+    }, {
+      heading: 'Р/С',
+      text: '40702810438000052928 в ПАО Сбербанк'
+    }, {
+      heading: 'БИК',
+      text: '044525225'
+    }, {
+      heading: 'К/С',
+      text: '30101810400000000225'
+    }, {
+      heading: 'Ген. директор',
+      text: '30101810400000000225'
+    }, {
+      heading: 'Адрес',
+      text: '107045, Москва, Большой Головин пер., дом 2'
+    }]
+  })

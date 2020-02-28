@@ -1,0 +1,29 @@
+include ../form/button/form-button.pug
+include item/comments-item.pug
+include rate/comments-rate.pug
+include ../pagination/pagination.pug
+include ../location/rate/location-rate.pug
+div
+  .comments__title(v-html='"Отзывы " + comments.length')
+  .comments__form
+    textarea.comments__textarea(v-model='comment')&attributes(info.textareaAtr)
+    .comments__btn-section
+      .comments__rate-wrapper
+        +location-rate({
+          count: 'rating',
+          rateId: info.id,
+        }, true)
+      .comments__btn-wrapper
+        +form-button({
+          text: 'Отправить',
+          attributes: {
+            type: 'button'
+          }
+        })(@click='addComment')
+  .comments__review-section
+    comment(v-for='comment in comments', :info='comment', :key='"comment-" + comment.id', @setVote='vote', @addAnswer='addComment', @editComment='editComment')
+
+  .comments__progress-section(v-if='showPagination')
+    .pagination.pagination--prev(v-bind:class='getPrevNextClass(-1)', @click='setPageDir(-1)')!= '<svg width="8" height="12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 12"><path d="M-8-6v24h24V-6z" fill="none" fill-rule="evenodd"/><path d="M7.41 1.41L2.83 6l4.58 4.59L6 12 0 6l6-6z"/></svg>'
+    +pagination('1')(v-for='page in showPages', v-html='page', @click='setPage(page)', v-bind:class='getPagesClass(page)')
+    .pagination.pagination--next(v-bind:class='getPrevNextClass(1)', @click='setPageDir(1)')!= '<svg width="8" height="12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 12"><path fill="none" d="M-8-6v24h24V-6H-8z"/><path d="M2 0l6 6-6 6-1.4-1.4L5.2 6 .6 1.4 2 0z"/></svg>'

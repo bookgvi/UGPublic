@@ -1,0 +1,59 @@
+include ../../../location/inputNumber/inputNumber.pug
+include ../../../form/input/form-input.pug
+
+mixin filters-tooltip-date(data)
+  .filters-tooltip-date&attributes(attributes)
+    .filters-tooltip-date__container.scroll
+      .filters-tooltip-date__column
+        .filters-tooltip-date__nav.filters-tooltip-date__nav--disabled
+          svg(width='8', height='12')
+            use(xlink:href=require('../assets/svg/arrow_prev.svg').url)
+        input(type='hidden', name='fd', id='dateCalendar')
+        .filters-tooltip-date__calendar(data-rel='dateCalendar')
+      .filters-tooltip-date__column
+        .filters-tooltip-date__title Интервал, 8 часов
+        .filters-tooltip-date__wrapper
+          +form-input({
+            type: 'text',
+            attributes: {
+              disabled: 'disabled',
+              name: 'fs',
+            }
+          })(class='filters-tooltip-date__time filters-tooltip-date__time--min')
+          +form-input({
+            type: 'text',
+            attributes: {
+              disabled: 'disabled',
+              name: 'fe',
+            }
+          })(class='filters-tooltip-date__time filters-tooltip-date__time--max')
+        input.filters-tooltip-date__range.js-range-slider(type='text', name='size_range', value='')  
+        .filters-tooltip-date__select
+          .filters-tooltip-date__header
+            .filters-tooltip-date__title Длительность, ч
+            .filters-tooltip-date__arrow
+              svg(width='12', height='8')
+                use(xlink:href=require('../assets/svg/arrow_down.svg').url)
+          .filters-tooltip-date__option
+            +location-inputNumber({
+              value: '4',
+              min: '1',
+              max: '24',
+              attributes: {
+                name: 'ft',
+              }
+            })(class='filters-tooltip-date__inputNumber')
+            .filters-tooltip-date__text Если вы точно знаете время вашей съемки — используйте этот контрол.
+    .filters-tooltip-date__buttons
+      +form-button({
+        text: 'Отменить',
+        attributes: {
+          type: 'button',
+        }
+      })(class='filters-tooltip-date__btn form-button--cancel', data-action='cancel')
+      +form-button({
+        text: 'Применить',
+        attributes: {
+          type: 'button'
+        }
+      })(class='filters-tooltip-date__btn', data-apply='Применить')

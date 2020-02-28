@@ -1,0 +1,43 @@
+include ../form/button/form-button.pug
+include item/comments-item.pug
+include rate/comments-rate.pug
+include ../pagination/pagination.pug
+include ../location/rate/location-rate.pug
+
+mixin comments(data)
+  .comments
+    div(render='true')
+      .comments__title #{data.title}
+      form.comments__form(action='/')&attributes(data.formAtr)
+        textarea.comments__textarea&attributes(data.textareaAtr)
+        .comments__btn-section
+          .comments__rate-wrapper
+            +location-rate({
+              count: '5',
+              rateId: data.id,
+            })
+          .comments__btn-wrapper
+            +form-button({
+              text: 'Отправить',
+              attributes: {
+                type: 'button'
+              }
+            })
+      .comments__review-section
+        each comment in data.dataComments
+          +comments-item({
+            rate: comment.rate,
+            like: comment.like,
+            dislike: comment.dislike,
+            dislikeSelect: comment.dislikeSelect,
+            reply: comment.reply,
+            name: comment.name,
+            logoColor: comment.logoColor,
+            respondent: comment.respondent,
+            date: comment.date,
+            content: comment.content,
+            edit: comment.edit
+          })(class=comment.class)
+      .comments__progress-section
+        each item in data.pagination
+          +pagination(item)

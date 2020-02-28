@@ -1,0 +1,554 @@
+$parent: dev-header;
+
+.#{$parent} {
+  position: fixed;
+  top: 0;
+  // bottom: 0;
+  width: 100%;
+  z-index: 10;
+  border-bottom: 1px solid $gray-light-2;
+
+  @include modifier ($parent, 'notification') {
+    @include element ($parent, 'notification') {
+      display: flex;
+    }
+  }
+
+  @include element ($parent, 'notification') {
+    display: none;
+    align-items: flex-start;
+    justify-content: space-between;
+    min-height: rem(60);
+    padding: rem(10);
+    background-color: #fffedb;
+    font-weight: 500;
+    font-size: rem(14);
+    line-height: rem(18);
+    letter-spacing: -0.26px;
+
+    @media (min-width: $md) {
+      align-items: center;
+      padding: rem(20);
+      font-weight: 600;
+    }
+  }
+
+  @include element ($parent, 'text') {
+    @media (max-width: $md-min) {
+      padding-right: rem(10);
+    }
+  }
+
+  @include element ($parent, 'close') {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: rem(24);
+    height: rem(24);
+    cursor: pointer;
+  }
+
+  @include element ($parent, 'container') {
+    display: flex;
+    align-items: flex-start;
+    flex-shrink: 0;
+    width: 100%;
+    height: rem(60);
+    padding: rem(10);
+    background-color: $white;
+
+    @media (min-width: $md) {
+      height: rem(80);
+      padding: rem(15) rem(20);
+    }
+
+    @media (max-width: $md-min) {
+      position: relative;
+    }
+  }
+
+  @include element ($parent, 'logo') {
+    display: flex;
+    align-items: center;
+  }
+
+  @include element ($parent, 'logo-icon') {
+    width: rem(40);
+    height: rem(40);
+
+    @media (min-width: $md) {
+      width: rem(50);
+      height: rem(50);
+    }
+  }
+
+  @include element ($parent, 'logo-name') {
+    @media (max-width: $md-min) {
+      display: none;
+    }
+  }
+
+  @include element ($parent, 'search') {
+    position: relative;
+    width: 100%;
+    margin-left: rem(10);
+    margin-right: rem(11);
+    transition: transform 0.2s ease;
+
+    @media (min-width: $md) {
+      margin-left: rem(20);
+      margin-right: rem(24);
+    }
+
+    @media (min-width: $lg) {
+      margin-left: rem(40);
+    }
+
+    @media (min-width: $xl) {
+      width: rem(480);
+    }
+
+    @include modifier ($parent, 'focus') {
+      position: absolute;
+      left: 0;
+      margin-left: 0;
+      margin-right: 0;
+      padding-left: rem(10);
+      padding-right: rem(20);
+      background-color: $white;
+
+      @include element ($parent, 'fillter') {
+        padding-right: rem(20);
+        padding-bottom: 0;
+        padding-left: rem(10);
+        border-top: 1px solid $white-2;
+      }
+
+      @include element ($parent, 'fillter-item') {
+        margin-bottom: rem(10);
+      }
+
+      @include element ($parent, 'search-cancel') {
+        display: block;
+      }
+    }
+
+    @include modifier ($parent, 'hidden') {
+      transform: translateY(rem(-100));
+    }
+  }
+
+  @include element ($parent, 'search-wrapper') {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  @include element ($parent, 'search-field') {
+    position: relative;
+    width: 100%;
+    height: rem(40);
+    border: 1px solid $gray-light;
+    border-radius: 2px;
+    background-color: $white;
+
+    @media (min-width: $md) {
+      height: rem(50);
+    }
+  }
+
+  @include element ($parent, 'search-cancel') {
+    display: none;
+    margin-left: rem(15);
+    font-weight: 500;
+    font-size: rem(14);
+    line-height: rem(18);
+    color: $dark;
+  }
+
+  @include element ($parent, 'search-icon') {
+    position: absolute;
+    top: 50%;
+    left: rem(10);
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: rem(24);
+    height: rem(24);
+  }
+
+  @include element ($parent, 'field') {
+    width: 100%;
+    height: 100%;
+    padding-left: rem(40);
+
+    &::-webkit-input-placeholder {
+      color: $dark;
+      font-weight: bold;
+      font-size: rem(14);
+      font-family: $montserrat;
+
+      @media (max-width: 374px) {
+        font-size: rem(12);
+      }
+
+      @media (min-width: $md) {
+        font-size: 16px;
+      }
+    }
+  }
+
+  @include element ($parent, 'search-fillters') {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    width: 100%;
+    border-radius: 2px;
+    background-color: $white;
+    box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.1);
+    visibility: hidden;
+    z-index: 3;
+
+    @include modifier ($parent, 'open') {
+      visibility: visible;
+    }
+  }
+
+  @include element ($parent, 'fillter') {
+    display: flex;
+    flex-wrap: wrap;
+    padding: rem(10) rem(40);
+    border-bottom: 1px solid $white-2;
+  }
+
+  @include element ($parent, 'fillter-item') {
+    display: flex;
+    align-items: center;
+    height: rem(30);
+    margin-right: rem(10);
+    padding: 0 rem(11);
+    border-radius: 2px;
+    border: 1px solid $gray-light-2;
+    background-color: $white;
+    color: $dark;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: -0.3px;
+    cursor: pointer;
+
+    @include modifier ($parent, 'active') {
+      border-color: $marsh;
+      background-color: $marsh;
+      color: $white;
+    }
+  }
+
+  @include element ($parent, 'wrapper-list') {
+    max-height: rem(50);
+    padding-left: rem(40);
+    padding-right: rem(10);
+    color: $dark;
+    font-weight: bold;
+    line-height: rem(50);
+    letter-spacing: -0.34px;
+    overflow: hidden;
+    transition: max-height 0.2s;
+  }
+
+  @include element ($parent, 'header') {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+
+  @include element ($parent, 'check') {
+    position: absolute;
+    top: 50%;
+    left: rem(-28);
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  @include element ($parent, 'value') {
+    position: relative;
+
+    @include modifier ($parent, 'active') {
+      color: $marsh;
+
+      @include element ($parent, 'check') {
+        opacity: 1;
+      }
+    }
+
+    span {
+      margin-left: rem(15);
+      font-size: 14px;
+      color: #b5b5b5;
+    }
+  }
+
+  @include element ($parent, 'list') {
+    padding-bottom: rem(20);
+
+    @include element ($parent, 'value') {
+      cursor: pointer;
+      pointer-events: auto;
+
+      @include modifier ($parent, 'active') {
+        cursor: default;
+        pointer-events: none;
+      }
+    }
+  }
+
+  @include element ($parent, 'menu') {
+    display: none;
+    height: 100%;
+    margin-left: auto;
+
+    @media (min-width: $xl) {
+      display: block;
+    }
+  }
+
+  @include element ($parent, 'menu-list') {
+    display: flex;
+    height: inherit;
+  }
+
+  @include element ($parent, 'menu-item') {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: inherit;
+    padding: 0 rem(10);
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: rem(-15);
+      left: 50%;
+      width: calc(100% - 20px);
+      height: 2px;
+      transform: translateX(-50%);
+      background-color: $dark;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    &:hover {
+      &::after {
+        @media (min-width: $xl) {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  @include element ($parent, 'menu-link') {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  @include element ($parent, 'menu-title') {
+    position: relative;
+    font-weight: 500;
+    font-size: rem(14);
+    line-height: rem(18);
+    letter-spacing: -0.3px;
+    color: $dark;
+  }
+
+  @include element ($parent, 'menu-notice') {
+    position: absolute;
+    top: rem(-10);
+    right: rem(-11);
+    width: rem(6);
+    height: rem(6);
+    border-radius: 50%;
+    background-color: $red;
+  }
+
+  @include element ($parent, 'arrow') {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: rem(24);
+    transition: transform 0.2s;
+
+    @include modifier ($parent, 'close') {
+      transform: rotate(180deg);
+    }
+  }
+
+  @include element ($parent, 'profile') {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin-left: auto;
+    cursor: pointer;
+
+    @media (min-width: $md) {
+      position: relative;
+    }
+
+    @media (min-width: $xl) {
+      margin-left: rem(10);
+    }
+
+    @media (max-width: $tablet) and (max-height: 500px) {
+      position: initial;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: rem(-15);
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: $dark;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    &:hover {
+      &::after {
+        @media (min-width: $xl) {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  @include element ($parent, 'profile-img') {
+    display: none;
+    width: rem(30);
+    height: rem(30);
+    margin-right: rem(20);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 50%;
+    flex-shrink: 0;
+
+    @media (min-width: $md) {
+      display: block;
+    }
+
+    @media (min-width: $xl) {
+      margin-right: 0;
+    }
+  }
+
+  @include element ($parent, 'profile-arrow') {
+    @media (min-width: $xl) {
+      display: none;
+    }
+
+    @include modifier ($parent, 'close') {
+      transform: rotate(180deg);
+    }
+  }
+
+  @include element ($parent, 'profile-menu') {
+    visibility: hidden;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: auto;
+    display: block;
+    width: 100%;
+    height: auto;
+    padding: rem(20) 0;
+    background-color: $white;
+    border-top: 1px solid $gray-light;
+    box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.1);
+    z-index: 3;
+
+    @media (min-width: $md) {
+      top: calc(100% + 15px);
+      left: auto;
+      right: 0;
+      width: rem(320);
+      border-top: none;
+    }
+
+    @media (max-width: $tablet) and (max-height: 500px) {
+      top: 100%;
+      left: 0;
+      right: auto;
+      width: 100%;
+      height: calc(100vh - 80px);
+      overflow: auto;
+    }
+
+    @media (max-width: $md) and (max-height: 500px) {
+      height: calc(100vh - 60px);
+    }
+
+    @include modifier ($parent, 'open') {
+      visibility: visible;
+    }
+  }
+
+  @include element ($parent, 'profile-link') {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+  }
+
+  @include element ($parent, 'profile-item') {
+    position: relative;
+    padding: 0 rem(20);
+    font-weight: 500;
+    font-size: rem(14);
+    line-height: rem(40);
+    color: $dark;
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: $gray_f8;
+    }
+
+    &:last-of-type {
+      color: $gray;
+    }
+
+    @include modifier ($parent, 'active') {
+      background-color: #f8f8f8;
+    }
+
+    @include modifier ($parent, 'hide-desctop') {
+      @media (min-width: $xl) {
+        display: none;
+      }
+    }
+  }
+
+  @include element ($parent, 'profile-title') {
+    position: relative;
+    display: inline;
+  }
+
+  @include element ($parent, 'profile-notice') {
+    position: absolute;
+    top: rem(-10);
+    right: rem(-15);
+    width: rem(10);
+    height: rem(10);
+    border: 2px solid $white;
+    border-radius: 50%;
+    background-color: $red;
+  }
+}

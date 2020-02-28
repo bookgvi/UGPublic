@@ -1,0 +1,10 @@
+mixin form-checkbox(data, isVue)
+  .form-checkbox&attributes(attributes)
+    if (isVue)
+      input.form-checkbox__input(type='checkbox', id=data.inputID, value=data.value, @change='setValue($event.target, "'+ data.attributes.name +'", true)', data-form='true')&attributes(data.attributes)
+    else
+      input.form-checkbox__input(type='checkbox', id=data.inputID, value=data.value)&attributes(data.attributes)
+    label.form-checkbox__checkbox-label(for=data.inputID, tabindex='1')
+      span.form-checkbox__text !{data.label}
+      if (data.linkText)
+        a.form-checkbox__link(href=data.link) !{data.linkText}

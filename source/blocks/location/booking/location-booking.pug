@@ -1,0 +1,86 @@
+include ../../../blocks/form/button/form-button.pug
+include ../../../blocks/form/input/form-input.pug
+include ../dropdown/location-dropdown.pug
+
+mixin location-booking(booking)
+  .location-booking
+    .location-booking__price #{booking.price}
+    .location-booking__time #{booking.time}
+    form.location-booking__form(name='bookingForm', method='post', action='/')
+      .location-booking__form-item
+        .form-select
+          span.form-select__dropdown-svg
+            svg
+              use(xlink:href=require('../assets/svg/arrow_up.svg').url)
+          select(id='bookingSelect', name='bookingSelect')
+            option(value='12', selected) Зал №12
+            option(value='13') Зал №13
+            option(value='14') Зал №14
+            option(value='15') Зал №15
+            option(value='16') Зал №16
+      .location-booking__form-item
+        .location-booking__calendar-box
+          span.location-booking__calendar-svg
+            svg
+              use(xlink:href=require('../assets/svg/arrow_up.svg').url)
+          input.location-booking__calendar-input(type='text', name='locationCalendarName', value='20 декабря', data-status='closed', readonly)
+          .location-booking__calendar-container
+            .location-booking__calendar
+            .location-booking__button-box
+              .location-booking__item
+                +form-button({
+                  text: 'Отменить',
+                  attributes: {
+                    type: 'button',
+                  }
+                })(class='form-button--cancel location-booking__cancel')
+              .location-booking__item
+                +form-button({
+                  text: 'Применить',
+                  attributes: {
+                    type: 'button',
+                  }
+                })(class='location-booking__apply')
+      .location-booking__form-item.location-booking__form-item--button
+        +location-dropdown(booking.dropdown2, true)
+          .location-dropdown__heading!= 'Интервал, '
+            span 3 часа
+          .location-dropdown__input-box
+            .location-dropdown__item
+              +form-input({
+                type: 'text',
+                attributes: {
+                  name: 'timeFrom',
+                  value: '13:00',
+                  'data-type': 'date',
+                }
+              })(class='location-dropdown__input location-dropdown__input--from')
+            .location-dropdown__item
+              +form-input({
+                type: 'text',
+                attributes: {
+                  name: 'timeTo',
+                  value: '16:00',
+                  'data-type': 'date',
+                }
+              })(class='location-dropdown__input location-dropdown__input--to')
+          .location-dropdown__info Зеленым отмечено свободное время
+          .location-dropdown__histo-range(id='histogramRange')
+          .location-dropdown__button-box
+            .location-dropdown__item
+              +form-button({
+                text: 'Отменить',
+                attributes: {
+                  type: 'button',
+                }
+              })(class='form-button--cancel location-dropdown__cancel')
+            .location-dropdown__item
+              +form-button({
+                text: 'Применить',
+                attributes: {
+                  type: 'button',
+                }
+              })(class='location-dropdown__apply')
+      .location-booking__form-item
+        a.location-page__link.location-hall-page__link(href='#') Забронировать
+    .location-booking__info !{booking.info}

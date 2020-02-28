@@ -1,0 +1,45 @@
+$parent: recommendations;
+
+@include block ($parent) {
+  margin-top: rem(20);
+
+  @media (min-width: $md) {
+    margin-top: rem(40);
+  }
+
+  @include element ($parent, 'title') {
+    font-weight: 600;
+    font-size: rem(18);
+    line-height: rem(22);
+
+    @media (min-width: $md) {
+      font-size: rem(21);
+      line-height: rem(25);
+    }
+  }
+
+  @include element ($parent, 'wrapper') {
+    margin-top: rem(10);
+
+    @media (min-width: $md) {
+      display: flex;
+      justify-content: space-between;
+      margin-top: rem(20);
+    }
+  }
+
+  @include element ($parent, 'location') {
+    @media (min-width: $md) {
+      width: calc(50% - 10px);
+    }
+  }
+
+  @include element ($parent, 'btn') {
+    width: rem(200);
+    margin-top: rem(20);
+
+    @media (min-width: $md) {
+      width: rem(140);
+    }
+  }
+}

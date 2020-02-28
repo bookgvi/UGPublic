@@ -1,0 +1,31 @@
+.location.catalog__item
+  .location__like
+    .location__like-icon
+      include ../../../assets/svg/heart.svg
+    .location__like-icon.location__like-icon--hidden
+      include ../../../assets/svg/heart-active.svg
+  .location__slider.swiper-container
+    .swiper-wrapper
+      .swiper-slide(v-for='img in objectdata.images')
+        a.location__link.location__link--absolute(:href='objectdata.studio_link', target='_blank')
+        img.location__img.swiper-lazy(:data-src='img', alt='')
+    .location__slider-pagination.swiper-pagination
+    .location__slider-btn.location__slider-btn--prev
+      svg
+        use(xlink:href='/assets/front/static/assets/sprite.svg#slider_prev-usage')
+    .location__slider-btn.location__slider-btn--next
+      svg
+        use(xlink:href='/assets/front/static/assets/sprite.svg#slider_next-usage')
+  .location__wrapper
+    .location__type {{ objectdata.type }}
+    .location__rating
+      .location__rating-stars
+      .location__rating-num {{ objectdata.commentsCount }}
+  .location__name
+    a.location__link(:href='objectdata.studio_link', target='_blank') {{ objectdata.name }}
+    span(v-if='objectdata.hall_name')
+      | &nbsp·&nbsp
+      a.location__link(:href='objectdata.hall_link', target='_blank') {{ objectdata.hall_name }}
+  .location__price(v-if='objectdata.price > 0') {{ objectdata.price }} ₽ в час
+    span &nbsp;({{ declOfNum(objectdata.hours,['час','часа','часов']) }} минимум)
+  .location__status(:style='{ color: objectdata.status_color }') {{ objectdata.status }}

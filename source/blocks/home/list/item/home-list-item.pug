@@ -1,0 +1,15 @@
+mixin home-list-item(data)
+  .home-list-item&attributes(attributes)
+    picture.home-list-item__image
+      if (data.img1024)
+        source(media='(min-width: 1024px)', srcset=data.img1024, type='image/jpg')
+      source(media='(min-width: 320px)', srcset=data.img320, type='image/jpg')
+      img(src=data.img320, alt='alt')
+    .home-list-item__gradient(style=data.gradient)
+    if (data.gradientHor)
+      .home-list-item__gradient.home-list-item__gradient--horizontal(style=data.gradientHor)
+    .home-list-item__content
+      .home-list-item__heading !{data.heading}
+      if (data.text)
+        .home-list-item__text !{data.text}
+    a.home-list-item__link(href=data.link) #{data.linkText}

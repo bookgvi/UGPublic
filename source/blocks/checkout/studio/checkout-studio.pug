@@ -1,0 +1,19 @@
+mixin checkout-studio(studio)
+  .checkout-studio(id=studio.id)&attributes(attributes)
+    .checkout-studio__slider
+      .checkout-studio__wrapper
+        each item in studio.items
+          .checkout-studio__slider-item
+            img(src=item.img, alt='alt')
+      .checkout-studio__slider-btn.checkout-studio__slider-btn--prev
+        svg
+          use(xlink:href=require('../assets/svg/slider_prev.svg').url)
+      .checkout-studio__slider-btn.checkout-studio__slider-btn--next
+        svg
+          use(xlink:href=require('../assets/svg/slider_next.svg').url)
+      .checkout-studio__slider-pagination
+    .checkout-studio__info
+      .checkout-studio__title #{studio.title}
+      .checkout-studio__price #{studio.price}
+    a.checkout-studio__btn-link(href=studio.btnLink)
+      span Подробнее о студии

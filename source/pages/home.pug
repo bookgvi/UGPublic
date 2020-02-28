@@ -1,0 +1,373 @@
+extends ../layouts/main.pug
+include ../blocks/home/home.pug
+
+block content
+  -
+    var dataHome = {
+        banner: {
+          formImage: require('../assets/images/home-0.jpg'),
+          formImageAlt: 'chear',
+          formImages: [
+            {
+              media: '(min-width: 768px)',
+              srcset: require('../assets/images/home-0.jpg'),
+              type: 'image/jpg'
+            }, {
+              media: '(min-width: 320px)',
+              srcset: require('../assets/images/home-0.jpg'),
+              type:'image/jpg'
+            }
+        ],
+        title: 'Лучшее место для<br>поиска и бронирования фотостудий',
+        btnFind: 'Найти',
+        btnSearch: 'Смотреть подборки',
+        input1: {
+          icon: require('../assets/svg/search.svg'),
+          type: 'text',
+          inputAtr: {
+            name: 'location',
+            placeholder: 'Локация',
+            value: 'Фотосъемка · Москва · Все локации'
+          }
+        },
+          input2: {
+          icon: require('../assets/svg/calendar.svg'),
+          type: 'text',
+          inputAtr: {
+            name: 'date',
+            placeholder: 'Дата и время',
+            value: 'Дата и время · Длительность · Интервал'
+          }
+        },
+        description: 'Смотрите отобранные вручную студии по темам для всех случаев жизни, например: Свдебная фотосъемка.',
+        slider: [{
+          title: 'Студии для свадебной съемки от 200 р.',
+          text: 'Студии с изысканными интерьерами где будет прекрасно смотреться пара молодоженых или просто невеста в свадебном платье.',
+          btnText: 'Посмотреть — 26 студий',
+          mainImg: require('../assets/images/home-1.jpg'),
+          altImg: 'girl',
+          images: [
+            {
+            media: '(min-width: 768px)',
+            srcset: require('../assets/images/home-1.jpg'),
+            type: 'image/jpg'
+            }, {
+            media: '(min-width: 320px)',
+            srcset: require('../assets/images/home-1.jpg'),
+            type:'image/jpg'
+            }
+          ],
+        }, {
+          title: 'Студии для свадебной съемки от 200 р.',
+          text: 'Студии с изысканными интерьерами где будет прекрасно смотреться пара молодоженых или просто невеста в свадебном платье.',
+          btnText: 'Посмотреть — 26 студий',
+          mainImg: require('../assets/images/popular/bright-studio.jpg'),
+          altImg: 'girl',
+          images: [
+            {
+            media: '(min-width: 768px)',
+            srcset: require('../assets/images/popular/bright-studio.jpg'),
+            type: 'image/jpg'
+            }, {
+            media: '(min-width: 320px)',
+            srcset: require('../assets/images/popular/bright-studio.jpg'),
+            type:'image/jpg'
+            }
+          ],
+        }
+
+        ]
+      },
+      popular: {
+      title: 'Популярное сегодня',
+      allText: 'Показать все',
+      allLink: '/'
+      },
+      popularSlider: [
+      {
+      imgSrc: require('../assets/images/popular/spring-studio-big.jpg'),
+      imgAlt: 'bright studio',
+      title: 'Baby Born Studio — идеальное место для съемки новорожденных',
+      linkText: 'Посмотреть',
+      link: '/'
+      }, {
+      imgSrc: require('../assets/images/popular/bright-studio.jpg'),
+      imgAlt: 'bright',
+      title: 'Baby Born Studio — идеальное место для съемки новорожденных',
+      linkText: 'Посмотреть',
+      link: '/'
+      }, {
+      imgSrc: require('../assets/images/popular/bryta-mouse-studio.jpg'),
+      imgAlt: 'bright',
+      title: 'Baby Born Studio — идеальное место для съемки новорожденных',
+      linkText: 'Посмотреть',
+      link: '/'
+      }, {
+      imgSrc: require('../assets/images/popular/chaos-space.jpg'),
+      imgAlt: 'bright',
+      title: 'Baby Born Studio — идеальное место для съемки новорожденных',
+      linkText: 'Посмотреть',
+      link: '/'
+      }, {
+      imgSrc: require('../assets/images/popular/kaps-rental-studios.jpg'),
+      imgAlt: 'bright',
+      title: 'Baby Born Studio — идеальное место для съемки новорожденных',
+      linkText: 'Посмотреть',
+      link: '/'
+      }, {
+      imgSrc: require('../assets/images/popular/level-studio.jpg'),
+      imgAlt: 'bright',
+      title: 'Baby Born Studio — идеальное место для съемки новорожденных',
+      linkText: 'Посмотреть',
+      link: '/'
+      }, {
+      imgSrc: require('../assets/images/popular/lobster-studio.jpg'),
+      imgAlt: 'bright',
+      title: 'Baby Born Studio — идеальное место для съемки новорожденных',
+      linkText: 'Посмотреть',
+      link: '/'
+      }, {
+      imgSrc: require('../assets/images/popular/moscow.jpg'),
+      imgAlt: 'bright',
+      title: 'Baby Born Studio — идеальное место для съемки новорожденных',
+      linkText: 'Посмотреть',
+      link: '/'
+      }, {
+      imgSrc: require('../assets/images/popular/naked-sky.jpg'),
+      imgAlt: 'bright',
+      title: 'Baby Born Studio — идеальное место для съемки новорожденных',
+      linkText: 'Посмотреть',
+      link: '/'
+      }, {
+      imgSrc: require('../assets/images/popular/prisma-studio .jpg'),
+      imgAlt: 'bright',
+      title: 'Baby Born Studio — идеальное место для съемки новорожденных',
+      linkText: 'Посмотреть',
+      link: '/'
+      }, {
+      imgSrc: require('../assets/images/popular/prostranstvo.jpg'),
+      imgAlt: 'bright',
+      title: 'Baby Born Studio — идеальное место для съемки новорожденных',
+      linkText: 'Посмотреть',
+      link: '/'
+      }, {
+      imgSrc: require('../assets/images/popular/qweex-campus.jpg'),
+      imgAlt: 'bright',
+      title: 'Baby Born Studio — идеальное место для съемки новорожденных',
+      linkText: 'Посмотреть',
+      link: '/'
+      }
+      ],
+      offer: {
+      title: 'Выгодные предложения',
+      allText: 'Показать все',
+      allLink: '/'
+      },
+      offerData: [
+      {
+      images: [
+      {
+      src: require('../assets/images/location/level-studio.jpg'),
+      alt: 'level-studio'
+      },
+      {
+      src: require('../assets/images/location/level-studio.jpg'),
+      alt: 'naked-sky'
+      },
+      {
+      src: require('../assets/images/location/level-studio.jpg'),
+      alt: 'level-studio'
+      },
+      {
+      src: require('../assets/images/location/level-studio.jpg'),
+      alt: 'naked-sky'
+      },
+      {
+      src: require('../assets/images/location/level-studio.jpg'),
+      alt: 'level-studio'
+      }
+      ],
+      type: 'Студия',
+      number_voters: 21,
+      studio_name: 'Level Studio',
+      studio_link: '/#',
+      price: '1500₽ в час',
+      hours: '· 2 ч. минимум',
+      status: '',
+      status_color: ''
+      },
+      {
+      images: [
+      {
+      src: require('../assets/images/location/naked-sky.jpg'),
+      alt: 'naked-sky'
+      },
+      {
+      src: require('../assets/images/location/naked-sky.jpg'),
+      alt: 'level-studio'
+      },
+      {
+      src: require('../assets/images/location/naked-sky.jpg'),
+      alt: 'naked-sky'
+      },
+      {
+      src: require('../assets/images/location/naked-sky.jpg'),
+      alt: 'level-studio'
+      },
+      {
+      src: require('../assets/images/location/naked-sky.jpg'),
+      alt: 'naked-sky'
+      }
+      ],
+      type: 'Студия · Зал',
+      number_voters: 36,
+      studio_name: 'Naked Sky Studio',
+      studio_link: '/#',
+      hall_name: 'Angels',
+      hall_link: '/#',
+      hall: true,
+      price: '2400₽ в час',
+      hours: '',
+      status: 'Популярная',
+      status_color: '#8791c3;'
+      },
+      {
+      images: [
+      {
+      src: require('../assets/images/location/naked-sky.jpg'),
+      alt: 'naked-sky'
+      },
+      {
+      src: require('../assets/images/location/naked-sky.jpg'),
+      alt: 'level-studio'
+      },
+      {
+      src: require('../assets/images/location/naked-sky.jpg'),
+      alt: 'naked-sky'
+      },
+      {
+      src: require('../assets/images/location/naked-sky.jpg'),
+      alt: 'level-studio'
+      },
+      {
+      src: require('../assets/images/location/naked-sky.jpg'),
+      alt: 'naked-sky'
+      }
+      ],
+      type: 'Студия · Зал',
+      number_voters: 36,
+      studio_name: 'Naked Sky Studio',
+      studio_link: '/#',
+      hall_name: 'Angels',
+      hall_link: '/#',
+      hall: true,
+      price: '2400₽ в час',
+      hours: '',
+      status: 'Популярная',
+      status_color: '#8791c3;'
+      }
+      ],
+      news: {
+      networks: [{
+      dataSharer: 'facebook',
+      href: '#',
+      svg: 'fb.svg',
+      svg_boolean: true,
+      networkMod: 'facebook',
+      }, {
+      dataSharer: 'vk',
+      href: '#',
+      svg: 'vk.svg',
+      svg_boolean: true,
+      networkMod: 'vk',
+      }, {
+      dataSharer: 'instagram',
+      href: '#',
+      svg: 'inst.svg',
+      svg_boolean: true,
+      networkMod: 'instagram',
+      }],
+      prew: [
+      {
+      content: {
+      img320: require('../assets/images/news/news-1.jpg'),
+      gradient: 'background: linear-gradient(180deg, rgba(58,48,42,0) 0%, #3A302A 50%);',
+      heading: 'Главный плотник Москвы — WoodStudios',
+      text: 'Внесла большой вклад в развитие индустрии фотостудий. Иное применение обыденных вещей заставило по-новому взглянуть на привычные материалы и использовать их для декорирования студии.',
+      linkText: 'ПРОЧИТАТЬ',
+      link: '/'
+      }
+      },
+      {
+        mod: 'home-list-item--big-width',
+        content: {
+        img320: require('../assets/images/news/news-2.jpg'),
+        gradient: 'background: linear-gradient(180deg, rgba(82,95,187,0) 0%, #525FBB 50%);',
+        gradientHor: 'background: linear-gradient(270deg, rgba(82,95,187,0) 0%, #525FBB 50%);',
+        heading: 'Неделя моды едет на юг — Sochi Fasion Week 2019',
+        text: 'В этом году неделя моды впервые пройдет в Сочи. 12 августа В ресторане «трамплин» на террасе «Воробьи» на Воробъёвых горах в Москве прошла торжественная презентация предстоящего сочинского события.',
+        linkText: 'ПРОЧИТАТЬ',
+        link: '/'
+      }
+      },
+      {
+        mod: 'home-list-item--black-font home-list-item--big-width home-list-item--big-heading',
+        content: {
+        img320: require('../assets/images/news/news-3.jpg'),
+        gradient: 'background: linear-gradient(180deg, rgba(238,238,238,0) 0%, #EEEEEE 50%);',
+        gradientHor: 'background: linear-gradient(270deg, rgba(238,238,238,0) 0%, #EEEEEE 50%);',
+        heading: 'Куда нужно приводить требовательных клиентов?',
+        text: 'Со временем привыкаешь к тому, что все студии располагаются на промышленных территориях, бывших заводах и складах. Становится обыденным алгоритм действий: найти проходную, показать паспорт и отправиться на поиски.',
+        linkText: 'ПРОЧИТАТЬ',
+        link: '/'
+      }
+      },
+      {
+        mod: 'home-list-item--big-heading',
+        content: {
+        img320: require('../assets/images/news/news-4.jpg'),
+        gradient: 'background: linear-gradient(180deg, rgba(0,0,0,0) 0%, #000 50%);',
+        heading: 'Blaze — мобильный видеосвет помощник на любой съемке ',
+        linkText: 'ПРОЧИТАТЬ',
+        link: '/'
+      }
+      }
+      ],
+      mailing: {
+      heading: 'Узнай первым о скидках и новостях подпишись на рассылку',
+      mainImg: require('../assets/images/news/subscribe-1.jpg'),
+      altImg: 'girl',
+      images: [
+      {
+      media: '(min-width: 768px)',
+      srcset: require('../assets/images/news/subscribe-1.jpg'),
+      type: 'image/jpg'
+      }, {
+      media: '(min-width: 320px)',
+      srcset: require('../assets/images/news/subscribe-1.jpg'),
+      type:'image/jpg'
+      }
+      ],
+      inputLabel: 'Email',
+      inputClass: 'form-input--check-ok',
+      inputCheckOk: true,
+      inputAttr: {
+      name: 'eMail',
+      placeholder: 'Email',
+      value: 'andre@revin.ru'
+      },
+      btnText: 'Подписаться'
+      },
+      locations: [
+      {
+      heading: '814',
+      text: 'ЛОКАЦИЙ'
+      }, {
+      heading: '95748',
+      text: 'БРОНИРОВАНИЙ'
+      }
+      ]
+      }
+    }
+
+  +home(dataHome)

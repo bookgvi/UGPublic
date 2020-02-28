@@ -1,0 +1,27 @@
+.fcs {
+  &-left {
+    color: $dark;
+    font-family: $montserrat;
+    font-size: rem(21);
+    font-weight: 600;
+    line-height: rem(25);
+  }
+
+  &-month-button {
+    width: rem(40);
+    height: rem(40);
+    padding: 0 !important;
+    background: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  &-icon--month-icon {
+    width: rem(24);
+    height: rem(24);
+    background-image: url('./assets/images/calendar.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}

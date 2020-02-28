@@ -1,0 +1,49 @@
+$parent: pagination;
+
+@include block ($parent) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: rem(40);
+  height: rem(40);
+  margin: 0 5px;
+  border: 1px solid $gray_ec;
+  background-color: $white;
+  font-weight: 600;
+  font-size: rem(14);
+  line-height: rem(18);
+  color: $dark;
+  transition: background-color 0.2s;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #f2f2f2;
+  }
+
+  @include modifier ($parent, 'active') {
+    background-color: $marsh;
+    border-color: $marsh;
+    color: $white;
+  }
+
+  @include modifier ($parent, 'disabled') {
+    pointer-events: none;
+    cursor: default;
+
+    svg {
+      fill: #d9d9d9;
+    }
+  }
+
+  @include modifier ($parent, 'prev') {
+    margin-left: 0;
+  }
+
+  @include modifier ($parent, 'right') {
+    margin-right: 0;
+  }
+
+  svg {
+    fill: $dark;
+  }
+}

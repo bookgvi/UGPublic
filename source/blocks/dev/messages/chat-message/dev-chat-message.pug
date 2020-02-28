@@ -1,0 +1,5 @@
+mixin dev-chat-message(data)
+  each itemMessage in data
+    .dev-chat-message(class=itemMessage.status_sent ? 'dev-chat-message--sent' : '')
+      .dev-chat-message__time #{itemMessage.time}
+      .dev-chat-message__text #{itemMessage.text}

@@ -1,0 +1,60 @@
+$parent: contacts;
+
+@include block($parent) {
+  width: 100%;
+  max-width: rem(580);
+  padding: rem(19) rem(10) rem(35);
+
+  @media (min-width: $lg) {
+    margin: 0 auto;
+    padding: rem(40) rem(0) rem(40);
+  }
+
+  @include element($parent, 'title') {
+    padding-bottom: rem(11);
+    color: $dark;
+    font-family: $montserrat;
+    font-size: rem(18);
+    font-weight: 700;
+    line-height: rem(24);
+
+    @media (min-width: $lg) {
+      padding-bottom: rem(20);
+      font-size: rem(24);
+      line-height: rem(29);
+    }
+  }
+
+  @include element($parent, 'content-section') {
+    padding-bottom: rem(20);
+  }
+
+  @include element($parent, 'content') {
+    color: $dark;
+    font-family: $montserrat;
+    font-size: rem(14);
+    font-weight: 500;
+    line-height: rem(28);
+
+    @media (min-width: $lg) {
+      font-size: rem(16);
+      line-height: rem(30);
+    }
+
+    @include modifier($parent, 'heading') {
+      color: $gray-light-border;
+      padding-right: rem(5);
+    }
+  }
+
+  @include element($parent, 'map-section') {
+    position: relative;
+    width: 100%;
+    height: rem(240);
+  }
+
+  @include element($parent, 'map-container') {
+    width: 100%;
+    height: 100%;
+  }
+}

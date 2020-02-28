@@ -1,0 +1,90 @@
+$parent: news-control;
+
+@include block($parent) {
+  display: inline-block;
+
+  @include modifier($parent, 'news-detail-page') {
+    display: none;
+
+    @media (min-width: $lg) {
+      font-size: rem(21);
+      display: inline-block;
+    }
+  }
+
+  @include element($parent, 'wrapper') {
+    display: flex;
+    align-items: center;
+  }
+
+  @include element($parent, 'all') {
+    position: relative;
+    font-weight: 600;
+    font-size: rem(14);
+    line-height: rem(18);
+    color: $dark;
+    text-decoration: none;
+    border: 1px solid $gray-light-border;
+    padding: rem(10) rem(20);
+    margin-right: rem(10);
+    transition: background-color 0.25s linear;
+
+    &::after {
+      position: absolute;
+      content: '';
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+
+    &:hover {
+      background-color: transparentize($black, 0.95);
+    }
+  }
+
+  @include element($parent, 'pagination') {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: rem(40);
+    height: rem(40);
+    margin-left: -1px;
+    border: 1px solid $gray-light-border;
+    transition: background-color 0.25s linear;
+
+    @include modifier($parent, 'disabled') {
+      &:hover {
+        background-color: $white;
+      }
+
+      svg {
+        opacity: 0.5;
+      }
+    }
+
+    &::after {
+      position: absolute;
+      content: '';
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+
+    &:hover {
+      background-color: transparentize($black, 0.95);
+    }
+
+    @include modifier($parent, 'next') {
+      transform: rotate(180deg);
+    }
+
+    svg {
+      fill: $dark;
+    }
+  }
+}

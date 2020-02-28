@@ -1,0 +1,251 @@
+$parent: home-list;
+
+@include block($parent) {
+  width: 100%;
+  padding: 0 rem(10) rem(20);
+  overflow: hidden;
+
+  @media (min-width: $md) {
+    padding: 0 rem(20) rem(20);
+  }
+
+  @include element ($parent, 'title') {
+    display: inline-block;
+    padding-bottom: rem(21);
+    color: $dark;
+    font-family: $montserrat;
+    font-size: rem(18);
+    font-weight: 700;
+    line-height: rem(24);
+
+    @media (min-width: $md) {
+      font-size: rem(24);
+      line-height: rem(29);
+    }
+
+    @media (min-width: $lg) {
+      width: 100%;
+      padding-bottom: rem(40);
+      font-size: rem(36);
+      line-height: rem(44);
+      text-align: center;
+    }
+  }
+
+  @include element ($parent, 'content-section') {
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: $md) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      width: auto;
+      margin: rem(-10);
+      padding-bottom: rem(10);
+    }
+  }
+
+  @include element ($parent, 'content-wrapper') {
+    width: 100%;
+    height: rem(380);
+    margin-bottom: rem(20);
+
+    @media (min-width: $md) {
+      flex: 1 1 50%;
+      max-width: 50%;
+      height: rem(420);
+      padding: rem(10);
+      margin-bottom: 0;
+    }
+
+    @media (min-width: $lg) {
+      flex: 1 1 33.33%;
+      max-width: 33.33%;
+      height: rem(470);
+    }
+
+    @include modifier ($parent, 'big-width') {
+      @media (min-width: $lg) {
+        flex: 1 1 66.66%;
+        max-width: 66.66%;
+      }
+    }
+  }
+
+  @include element ($parent, 'subscribtion') {
+    display: flex;
+    flex-direction: column-reverse;
+    margin: rem(-10);
+
+    @media (min-width: $md) {
+      overflow: hidden;
+      flex-direction: column;
+    }
+
+    @media (min-width: $lg) {
+      flex-direction: row;
+    }
+  }
+
+  @include element ($parent, 'mailing-section') {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    height: rem(266);
+    margin: rem(10);
+    padding: rem(10);
+
+    @media (min-width: $md) {
+      height: rem(280);
+      padding: rem(20);
+    }
+
+    @media (min-width: $lg) {
+      flex: 1 1 66%;
+      justify-content: flex-start;
+      max-width: 66.66%;
+      height: rem(300);
+      padding: rem(30);
+    }
+  }
+
+  @include element ($parent, 'mailing-image-wrapper') {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center right;
+    font-family: 'object-fit: contain; object-position: right;';
+    z-index: -1;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: top right;
+      font-family: 'object-fit: contain; object-position: top right;';
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(180deg, rgba(238, 238, 238, 0) 0%, #eee 70%);
+
+      @media (min-width: $md) {
+        background: linear-gradient(270deg, rgba(238, 238, 238, 0) 0%, #eee 50%);
+      }
+    }
+  }
+
+  @include element ($parent, 'mailing-heading') {
+    max-width: rem(200);
+    padding-bottom: rem(10);
+    color: $black;
+    font-family: $montserrat;
+    font-size: rem(18);
+    font-weight: 600;
+    line-height: rem(22);
+
+    @media (min-width: $md) {
+      max-width: rem(340);
+      padding-bottom: rem(20);
+      font-size: rem(21);
+      line-height: rem(25);
+    }
+  }
+
+  @include element ($parent, 'mailing-input-wrapper') {
+    width: 100%;
+    max-width: rem(400);
+    padding-bottom: rem(10);
+  }
+
+  @include element ($parent, 'mailing-btn-wrapper') {
+    width: rem(180);
+  }
+
+  @include element ($parent, 'info-section') {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    @media (min-width: $md) {
+      flex-direction: row;
+    }
+
+    @media (min-width: $lg) {
+      flex-direction: column;
+      flex: 1 1 34%;
+      max-width: 33.33%;
+    }
+  }
+
+  @include element ($parent, 'info-wrapper') {
+    display: flex;
+    flex: 1 1 50%;
+    min-height: rem(140);
+    margin: rem(10);
+    padding: rem(30);
+    border: 1px solid $white-2;
+
+    @media (min-width: $md) {
+      flex: 1 1 100%;
+    }
+
+    @media (min-width: $lg) {
+      flex: 1 1 50%;
+    }
+
+    @include modifier ($parent, 'marsh') {
+      flex-direction: column;
+      background-color: $marsh;
+      border-color: $marsh;
+    }
+  }
+
+  @include element ($parent, 'info-counter') {
+    padding-right: rem(24);
+  }
+
+  @include element ($parent, 'info-counter-heading') {
+    color: $black;
+    font-family: $montserrat;
+    font-size: rem(36);
+    font-weight: 700;
+    line-height: rem(44);
+  }
+
+  @include element ($parent, 'info-counter-text') {
+    color: $gray;
+    font-family: $montserrat;
+    font-size: rem(14);
+    font-weight: 500;
+    line-height: rem(24);
+  }
+
+  @include element ($parent, 'info-social-wrapper') {
+    padding-bottom: rem(12);
+  }
+
+  @include element ($parent, 'info-link') {
+    color: $white;
+    font-family: $montserrat;
+    font-size: rem(14);
+    font-weight: 500;
+    line-height: rem(24);
+    letter-spacing: 1px;
+    transition: opacity 0.2s ease;
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+}

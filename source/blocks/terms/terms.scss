@@ -1,0 +1,38 @@
+$parent: terms;
+
+@include block($parent) {
+  font-family: $montserrat;
+  padding: rem(10);
+
+  @media (min-width: $lg) {
+    padding: rem(40) rem(60);
+  }
+
+  @include element($parent, 'container') {
+    width: 100%;
+
+    @media (min-width: $lg) {
+      display: flex;
+    }
+  }
+
+  @include element($parent, 'menu') {
+    @media (min-width: $lg) {
+      flex: 0 0 25%;
+      max-width: 25%;
+      margin-right: rem(40);
+    }
+
+    @media (min-width: $xl) {
+      flex: 0 0 21.5%;
+      max-width: 21.5%;
+    }
+  }
+
+  @include element($parent, 'content') {
+    @media (min-width: $lg) {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+  }
+}

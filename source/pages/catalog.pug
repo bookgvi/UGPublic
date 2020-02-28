@@ -1,0 +1,989 @@
+extends ../layouts/catalog.pug
+include ../blocks/filters/list/filters-list.pug
+include ../blocks/catalog/catalog.pug
+block scripts
+  script(src='//code.jquery.com/ui/1.12.1/jquery-ui.js')
+  script(src='//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js')
+  script(src=require('../assets/js/histogram.slider.js'))
+  script(src=require('../assets/js/ion.rangeSlider.min.js'))
+  script(src=require('../assets/js/datepicker.min.js'))
+  script(src=require('../assets/js/jquery.mask.js'))
+  script(src=require('../assets/js/jquery.rateyo.min.js'))
+block content
+  -
+    var dataLocation = {
+      locations: [
+        {
+          images: [
+            {
+              src: require('../assets/images/location/level-studio.jpg'),
+              alt: 'level-studio'
+            },
+            {
+              src: require('../assets/images/location/level-studio.jpg'),
+              alt: 'naked-sky'
+            },
+            {
+              src: require('../assets/images/location/level-studio.jpg'),
+              alt: 'level-studio'
+            },
+            {
+              src: require('../assets/images/location/level-studio.jpg'),
+              alt: 'naked-sky'
+            },
+            {
+              src: require('../assets/images/location/level-studio.jpg'),
+              alt: 'level-studio'
+            }
+          ],
+          type: 'Студия',
+          number_voters: 21,
+          studio_name: 'Level Studio',
+          studio_link: '/#',
+          price: '1500₽ в час',
+          hours: '· 2 ч. минимум',
+          status: '',
+          status_color: ''
+        },
+        {
+          images: [
+            {
+              src: require('../assets/images/location/naked-sky.jpg'),
+              alt: 'naked-sky'
+            },
+            {
+              src: require('../assets/images/location/naked-sky.jpg'),
+              alt: 'level-studio'
+            },
+            {
+              src: require('../assets/images/location/naked-sky.jpg'),
+              alt: 'naked-sky'
+            },
+            {
+              src: require('../assets/images/location/naked-sky.jpg'),
+              alt: 'level-studio'
+            },
+            {
+              src: require('../assets/images/location/naked-sky.jpg'),
+              alt: 'naked-sky'
+            }
+          ],
+          type: 'Студия · Зал',
+          number_voters: 36,
+          studio_name: 'Naked Sky Studio',
+          studio_link: '/#',
+          hall_name: 'Angels',
+          hall_link: '#',
+          hall: true,
+          price: '2400₽ в час',
+          hours: '',
+          status: 'Популярная',
+          status_color: '#8791c3;'
+        },
+        {
+          images: [
+            {
+              src: require('../assets/images/location/moscow.jpg'),
+              alt: 'interior studio moscow'
+            },
+            {
+              src: require('../assets/images/location/moscow.jpg'),
+              alt: 'interior studio moscow'
+            },
+            {
+              src: require('../assets/images/location/moscow.jpg'),
+              alt: 'interior studio moscow'
+            },
+            {
+              src: require('../assets/images/location/moscow.jpg'),
+              alt: 'interior studio moscow'
+            },
+            {
+              src: require('../assets/images/location/moscow.jpg'),
+              alt: 'interior studio moscow'
+            }
+          ],
+          type: 'Студия',
+          number_voters: 18,
+          studio_name: 'Интерьерная студия Москва',
+          studio_link: '/#',
+          price: '1500₽ в час',
+          hours: '',
+          status: 'Популярная',
+          status_color: '#50595b'
+        },
+        {
+          images: [
+            {
+              src: require('../assets/images/location/spring-studio.jpg'),
+              alt: 'spring studio'
+            },
+            {
+              src: require('../assets/images/location/spring-studio.jpg'),
+              alt: 'spring studio'
+            },
+            {
+              src: require('../assets/images/location/spring-studio.jpg'),
+              alt: 'spring studio'
+            },
+            {
+              src: require('../assets/images/location/spring-studio.jpg'),
+              alt: 'spring studio'
+            },
+            {
+              src: require('../assets/images/location/spring-studio.jpg'),
+              alt: 'spring studio'
+            }
+          ],
+          type: 'Студия',
+          number_voters: 25,
+          studio_name: 'Spring Studio',
+          studio_link: '/#',
+          price: '1000₽ в час',
+          hours: '',
+          status: 'Скидка днем',
+          status_color: '#81aeb6'
+        },
+        {
+          images: [
+            {
+              src: require('../assets/images/location/prostranstvo.jpg'),
+              alt: 'prostranstvo'
+            },
+            {
+              src: require('../assets/images/location/prostranstvo.jpg'),
+              alt: 'prostranstvo'
+            },
+            {
+              src: require('../assets/images/location/prostranstvo.jpg'),
+              alt: 'prostranstvo'
+            },
+            {
+              src: require('../assets/images/location/prostranstvo.jpg'),
+              alt: 'prostranstvo'
+            },
+            {
+              src: require('../assets/images/location/prostranstvo.jpg'),
+              alt: 'prostranstvo'
+            }
+          ],
+          type: 'Студия',
+          number_voters: 36,
+          studio_name: 'Пространство',
+          studio_link: '/#',
+          price: '1300₽ в час',
+          hours: '',
+          status: 'Новое',
+          status_color: '#dcaf68'
+        },
+        {
+          images: [
+            {
+              src: require('../assets/images/location/lobster-studio.jpg'),
+              alt: 'lobster studio',
+            },
+            {
+              src: require('../assets/images/location/lobster-studio.jpg'),
+              alt: 'lobster studio',
+            },
+            {
+              src: require('../assets/images/location/lobster-studio.jpg'),
+              alt: 'lobster studio',
+            },
+            {
+              src: require('../assets/images/location/lobster-studio.jpg'),
+              alt: 'lobster studio',
+            },
+            {
+              src: require('../assets/images/location/lobster-studio.jpg'),
+              alt: 'lobster studio',
+            }
+          ],
+          type: 'Студия',
+          number_voters: 41,
+          studio_name: 'Lobster Studio',
+          studio_link: '/#',
+          price: '1300₽ в час',
+          hours: '· 2 ч. минимум',
+          status: '',
+          status_color: ''
+        }
+      ],
+      locationsBanner: [
+        {
+          img: {
+            src: require('../assets/images/location/spring-studio.jpg'),
+            alt: 'spring studio'
+          },
+          title: 'Qweex Campus',
+          price: '· 800₽ в час',
+          description: 'Студия отличается оригинальными решениями в дизайне. Сочетание уникальных и разнообразных фактур и световых панелей.',
+          status: 'Популярная студия',
+          status_color: '#8791c3'
+        },
+        {
+          img: {
+            src: require('../assets/images/location/brytalmouse-studio.jpg'),
+            alt: 'brytalmouse studio'
+          },
+          title: 'Bright Studio',
+          price: '· 900₽ в час',
+          description: 'Одна из немногих студий с наполняемой ванной',
+          status: 'Популярная студия',
+          status_color: '#8791c3'
+        }
+      ],
+      pagination: [
+        {
+          num: '<svg width="8" height="12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 12"><path d="M-8-6v24h24V-6z" fill="none" fill-rule="evenodd"/><path d="M7.41 1.41L2.83 6l4.58 4.59L6 12 0 6l6-6z"/></svg>',
+          is_disabled: true,
+          is_class: true,
+          class: 'pagination--prev'
+        },
+        {
+          num: 1,
+          is_active: true
+        },
+        {
+          num: 2
+        },
+        {
+          num: 3
+        },
+        {
+          num: '...'
+        },
+        {
+          num: 12
+        },
+        {
+          num: '<svg width="8" height="12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 12"><path fill="none" d="M-8-6v24h24V-6H-8z"/><path d="M2 0l6 6-6 6-1.4-1.4L5.2 6 .6 1.4 2 0z"/></svg>',
+          is_class: true,
+          class: 'pagination--next'
+        }
+      ],
+      filters: [
+        {
+          title: 'Дата и время',
+          tooltip: {
+            type: 'date',
+            data: []
+          }
+        },
+        {
+          title: 'Цена',
+          tooltip: {
+            type: 'price',
+            data: []
+          }
+        },
+        {
+          title: 'Фильтры',
+          is_visible: true,
+          tooltip: {
+            type: 'select',
+            data: [
+              {
+                title: 'Генераторный свет',
+                name: 'v[]',
+                list: [
+                  {
+                    title: 'Bowens',
+                    for: 'Bowens-m'
+                  },
+                  {
+                    title: 'Broncolor',
+                    for: 'Broncolor-m'
+                  },
+                  {
+                    title: 'Einstein',
+                    for: 'Einstein-m'
+                  },
+                  {
+                    title: 'Elinchrom',
+                    for: 'Elinchrom-m'
+                  },
+                  {
+                    title: 'Hensel',
+                    for: 'Hensel-m',
+                    is_check: 'checked'
+                  },
+                  {
+                    title: 'Profoto',
+                    for: 'Profoto-m'
+                  }
+                ]
+              },
+              {
+                title: 'Моноблоки',
+                name: 'v[]',
+                list: [
+                  {
+                    title: 'Моноблок 1',
+                    for: 'Моноблок-1-m'
+                  }
+                ]
+              },
+              {
+                title: 'Системы крепления',
+                name: 'v[]',
+                list: [
+                  {
+                    title: 'Системы крепления 1',
+                    for: 'Системы-крепления-1-m'
+                  }
+                ]
+              },
+              {
+                title: 'Постоянный свет',
+                name: 'v[]',
+                list: [
+                  {
+                    title: 'Постоянный свет 1',
+                    for: 'Постоянный-свет-1-m'
+                  }
+                ]
+              },
+              {
+                title: 'Мгновенное бронирование',
+                not_select: true,
+                list: []
+              },
+              {
+                title: 'Предметы интерьера',
+                name: 'v[]',
+                list: [
+                  {
+                    title: 'Авто-мотоциклы',
+                    for: 'Авто-мотоциклы-m'
+                  },
+                  {
+                    title: 'Балетный станок',
+                    for: 'Балетный-станок-m'
+                  },
+                  {
+                    title: 'Барный стул',
+                    for: 'Барный-стул-m'
+                  },
+                  {
+                    title: 'Бочка',
+                    for: 'Бочка-m'
+                  },
+                  {
+                    title: 'Ванна',
+                    for: 'Ванна-m'
+                  },
+                  {
+                    title: 'Вешала (рейл) для одежды',
+                    for: 'Вешала-для-одежды-m',
+                  },
+                  {
+                    title: 'Гримерный стол',
+                    for: 'Гримерный-стол-m',
+                  },
+                  {
+                    title: 'Диван',
+                    for: 'Диван-m',
+                  },
+                  {
+                    title: 'Диско-шар',
+                    for: 'Диско-шар-m',
+                  },
+                  {
+                    title: 'Журнальный столик',
+                    for: 'Журнальный-столик-m',
+                  },
+                  {
+                    title: 'Зеркало',
+                    for: 'Зеркало-m',
+                  },
+                  {
+                    title: 'Камин',
+                    for: 'Камин-m',
+                  },
+                  {
+                    title: 'Картины',
+                    for: 'Картины-m',
+                  },
+                  {
+                    title: 'Качели',
+                    for: 'Качели-m',
+                  },
+                  {
+                    title: 'Книжный шкаф',
+                    for: 'Книжный-шкаф-m',
+                  },
+                  {
+                    title: 'Ковёр',
+                    for: 'Ковёр-m',
+                  },
+                  {
+                    title: 'Колонна',
+                    for: 'Колонна-m',
+                  },
+                  {
+                    title: 'Комод',
+                    for: 'Комод-m',
+                  },
+                  {
+                    title: 'Кофейный столик',
+                    for: 'Кофейный-столик-m',
+                  },
+                  {
+                    title: 'Кресло',
+                    for: 'Кресло-m',
+                  },
+                  {
+                    title: 'Кровать',
+                    for: 'Кровать-m',
+                  },
+                  {
+                    title: 'Куб',
+                    for: 'Куб-m',
+                  },
+                  {
+                    title: 'Кухня',
+                    for: 'Кухня-m',
+                  },
+                  {
+                    title: 'Лестница',
+                    for: 'Лестница-m',
+                  }
+                ],
+              },
+              {
+                title: 'Фон',
+                name: 'v[]',
+                list: [
+                  {
+                    title: 'Фон 1',
+                    for: 'Фон-1-m'
+                  },
+                  {
+                    title: 'Фон 2',
+                    for: 'Фон-2-m'
+                  },
+                  {
+                    title: 'Фон 3',
+                    for: 'Фон-3-m'
+                  },
+                  {
+                    title: 'Фон 4',
+                    for: 'Фон-4-m'
+                  },
+                  {
+                    title: 'Фон 5',
+                    for: 'Фон-5-m'
+                  },
+                  {
+                    title: 'Фон 6',
+                    for: 'Фон-6-m'
+                  },
+                  {
+                    title: 'Фон 7',
+                    for: 'Фон-7-m'
+                  },
+                  {
+                    title: 'Фон 8',
+                    for: 'Фон-8-m'
+                  },
+                  {
+                    title: 'Фон 9',
+                    for: 'Фон-9-m'
+                  }
+                ]
+              },
+              {
+                title: 'Удобства и услуги',
+                name: 'v[]',
+                list: [
+                  {
+                    title: 'Услуга 1',
+                    for: 'Услуга-1-m'
+                  },
+                  {
+                    title: 'Услуга 2',
+                    for: 'Услуга-2-m'
+                  },
+                  {
+                    title: 'Услуга 3',
+                    for: 'Услуга-3-m'
+                  },
+                  {
+                    title: 'Услуга 4',
+                    for: 'Услуга-4-m'
+                  },
+                  {
+                    title: 'Услуга 5',
+                    for: 'Услуга-5-m'
+                  },
+                  {
+                    title: 'Услуга 6',
+                    for: 'Услуга-6-m'
+                  },
+                  {
+                    title: 'Услуга 7',
+                    for: 'Услуга-7-m'
+                  },
+                  {
+                    title: 'Услуга 8',
+                    for: 'Услуга-8-m'
+                  },
+                  {
+                    title: 'Услуга 9',
+                    for: 'Услуга-9-m'
+                  },
+                ]
+              },
+              {
+                title: 'Помещение',
+                name: 'v[]',
+                list: [
+                  {
+                    title: 'Высокий потолок  5 - 7 м',
+                    for: 'Высокий потолок  5 - 7 м m'
+                  },
+                  {
+                    title: 'Площадь до 100 кв. м',
+                    for: 'Площадь до 100 кв. м m'
+                  },
+                  {
+                    title: '100 - 200 кв. м',
+                    for: '100 - 200 кв. м m'
+                  },
+                  {
+                    title: '200 - 300 кв. м',
+                    for: '200 - 300 кв. м m'
+                  },
+                  {
+                    title: '300 кв. м и больше',
+                    for: '300 кв. м и больше m'
+                  },
+                  {
+                    title: 'Помещение 1',
+                    for: 'Помещение 1 m'
+                  },
+                  {
+                    title: 'Помещение 2',
+                    for: 'Помещение 2 m'
+                  },
+                  {
+                    title: 'Помещение 3',
+                    for: 'Помещение 3 m'
+                  },
+                  {
+                    title: 'Помещение 4',
+                    for: 'Помещение 4 m'
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          title: 'Оборудование',
+          is_hidden: true,
+          tooltip: {
+            type: 'select',
+            data: [
+              {
+                title: 'Генераторный свет',
+                name: 'v[]',
+                list: [
+                  {
+                    value: 28,
+                    title: 'Bowens',
+                    for: 'Bowens'
+                  },
+                  {
+                    value: 11,
+                    title: 'Broncolor',
+                    for: 'Broncolor'
+                  },
+                  {
+                    title: 'Einstein',
+                    for: 'Einstein'
+                  },
+                  {
+                    title: 'Elinchrom',
+                    for: 'Elinchrom'
+                  },
+                  {
+                    title: 'Hensel',
+                    for: 'Hensel',
+                    is_check: 'checked'
+                  },
+                  {
+                    title: 'Profoto',
+                    for: 'Profoto'
+                  }
+                ],
+                more_options: true,
+                more_text: 'Еще'
+              },
+              {
+                title: 'Моноблоки',
+                name: 'v[]',
+                list: [
+                  {
+                    title: 'Моноблок 1',
+                    for: 'Моноблок 1'
+                  }
+                ]
+              },
+              {
+                title: 'Системы крепления',
+                name: 'v[]',
+                list: [
+                  {
+                    title: 'Системы крепления 1',
+                    for: 'Системы крепления 1'
+                  }
+                ]
+              },
+              {
+                title: 'Постоянный свет',
+                name: 'v[]',
+                list: [
+                  {
+                    title: 'Постоянный свет 1',
+                    for: 'Постоянный свет 1'
+                  }
+                ]
+              }
+            ]
+          }
+        }, 
+        {
+          title: 'Очистить все',
+          option: true,
+          is_visible: true,
+        },
+        {
+          title: 'Мгновенное бронирование',
+          is_hidden: true,
+          tooltip: {
+            type: 'message',
+            data: []
+          }
+        },
+        {
+          title: 'Еще',
+          is_hidden: true,
+          tooltip: {
+            type: 'select',
+            data: [
+              {
+                title: 'Предметы интерьера',
+                name: 'v[]',
+                list: [
+                  {
+                    title: 'Авто-мотоциклы',
+                    for: 'Авто-мотоциклы'
+                  },
+                  {
+                    title: 'Балетный станок',
+                    for: 'Балетный станок'
+                  },
+                  {
+                    title: 'Барный стул',
+                    for: 'Барный стул'
+                  },
+                  {
+                    title: 'Бочка',
+                    for: 'Бочка'
+                  },
+                  {
+                    title: 'Ванна',
+                    for: 'Ванна'
+                  },
+                  {
+                    title: 'Вешала (рейл) для одежды',
+                    for: 'Вешала-для-одежды',
+                  },
+                  {
+                    title: 'Гримерный стол',
+                    for: 'Гримерный-стол',
+                  },
+                  {
+                    title: 'Диван',
+                    for: 'Диван',
+                  },
+                  {
+                    title: 'Диско-шар',
+                    for: 'Диско-шар',
+                  },
+                  {
+                    title: 'Журнальный столик',
+                    for: 'Журнальный-столик',
+                  },
+                  {
+                    title: 'Зеркало',
+                    for: 'Зеркало',
+                  },
+                  {
+                    title: 'Камин',
+                    for: 'Камин',
+                  },
+                  {
+                    title: 'Картины',
+                    for: 'Картины',
+                  },
+                  {
+                    title: 'Качели',
+                    for: 'Качели',
+                  },
+                  {
+                    title: 'Книжный шкаф',
+                    for: 'Книжный-шкаф',
+                  },
+                  {
+                    title: 'Ковёр',
+                    for: 'Ковёр',
+                  },
+                  {
+                    title: 'Колонна',
+                    for: 'Колонна',
+                  },
+                  {
+                    title: 'Комод',
+                    for: 'Комод',
+                  },
+                  {
+                    title: 'Кофейный столик',
+                    for: 'Кофейный-столик',
+                  },
+                  {
+                    title: 'Кресло',
+                    for: 'Кресло',
+                  },
+                  {
+                    title: 'Кровать',
+                    for: 'Кровать',
+                  },
+                  {
+                    title: 'Куб',
+                    for: 'Куб',
+                  },
+                  {
+                    title: 'Кухня',
+                    for: 'Кухня',
+                  },
+                  {
+                    title: 'Лестница',
+                    for: 'Лестница',
+                  }
+                ],
+                more_options: true,
+                more_text: 'Еще'
+              },
+              {
+                title: 'Фон',
+                name: 'v[]',
+                list: [
+                  {
+                    title: 'Фон 1',
+                    for: 'Фон 1'
+                  },
+                  {
+                    title: 'Фон 2',
+                    for: 'Фон 2'
+                  },
+                  {
+                    title: 'Фон 3',
+                    for: 'Фон 3'
+                  },
+                  {
+                    title: 'Фон 4',
+                    for: 'Фон 4'
+                  },
+                  {
+                    title: 'Фон 5',
+                    for: 'Фон 5'
+                  },
+                  {
+                    title: 'Фон 6',
+                    for: 'Фон 6'
+                  },
+                  {
+                    title: 'Фон 7',
+                    for: 'Фон 7'
+                  },
+                  {
+                    title: 'Фон 8',
+                    for: 'Фон 8'
+                  },
+                  {
+                    title: 'Фон 9',
+                    for: 'Фон 9'
+                  }
+                ],
+                more_options: true,
+                more_text: 'Еще'
+              },
+              {
+                title: 'Удобства и услуги',
+                name: 'v[]',
+                list: [
+                  {
+                    title: 'Услуга 1',
+                    for: 'Услуга 1'
+                  },
+                  {
+                    title: 'Услуга 2',
+                    for: 'Услуга 2'
+                  },
+                  {
+                    title: 'Услуга 3',
+                    for: 'Услуга 3'
+                  },
+                  {
+                    title: 'Услуга 4',
+                    for: 'Услуга 4'
+                  },
+                  {
+                    title: 'Услуга 5',
+                    for: 'Услуга 5'
+                  },
+                  {
+                    title: 'Услуга 6',
+                    for: 'Услуга 6'
+                  },
+                  {
+                    title: 'Услуга 7',
+                    for: 'Услуга 7'
+                  },
+                  {
+                    title: 'Услуга 8',
+                    for: 'Услуга 8'
+                  },
+                  {
+                    title: 'Услуга 9',
+                    for: 'Услуга 9'
+                  },
+                ],
+                more_options: true,
+                more_text: 'Еще'
+              },
+              {
+                title: 'Помещение',
+                name: 'v[]',
+                list: [
+                  {
+                    title: 'Высокий потолок  5 - 7 м',
+                    for: 'Высокий потолок  5 - 7 м'
+                  },
+                  {
+                    title: 'Площадь до 100 кв. м',
+                    for: 'Площадь до 100 кв. м'
+                  },
+                  {
+                    title: '100 - 200 кв. м',
+                    for: '100 - 200 кв. м'
+                  },
+                  {
+                    title: '200 - 300 кв. м',
+                    for: '200 - 300 кв. м'
+                  },
+                  {
+                    title: '300 кв. м и больше',
+                    for: '300 кв. м и больше'
+                  },
+                  {
+                    title: 'Помещение 1',
+                    for: 'Помещение 1'
+                  },
+                  {
+                    title: 'Помещение 2',
+                    for: 'Помещение 2'
+                  },
+                  {
+                    title: 'Помещение 3',
+                    for: 'Помещение 3'
+                  },
+                  {
+                    title: 'Помещение 4',
+                    for: 'Помещение 4'
+                  }
+                ],
+                more_options: true,
+                more_text: 'Еще'
+              }
+            ]
+          }
+        },
+        {
+          title: 'Размеры',
+          is_hidden: true,
+          tooltip: {
+            type: 'choice',
+            data: []
+          }
+        }
+      ],
+      devFooter: {
+        openFooter: false,
+        sections_link: [
+          {
+            section: {
+              title: 'Ugoloc',
+              pages: [
+                {
+                  title: 'О нас',
+                  link: '#'
+                },
+                {
+                  title: 'Реквизиты',
+                  link: '#'
+                },
+                {
+                  title: 'FAQ',
+                  link: '#'
+                },
+                {
+                  title: 'Пользовательское соглашение',
+                  link: '#'
+                }
+              ]
+            }
+          },
+          {
+            section: {
+              title: 'Партнерство',
+              pages: [
+                {
+                  title: 'Размещение рекламы',
+                  link: '#'
+                },
+                {
+                  title: 'Разместить свою локацию',
+                  link: '#'
+                },
+                {
+                  title: 'Система управления бронированиями',
+                  link: '#'
+                }
+              ]
+            }
+          },
+        ],
+        sections_link_show: [
+          {
+            title: 'О нас',
+            link: '#'
+          },
+          {
+            title: 'FAQ',
+            link: '#'
+          }
+        ],
+        sections_link_hide: '<span class="dev-footer__text-hide">Показать</span>&nbsp;' + 'еще 5'
+      },
+      map_checkbox: {
+        title: 'Карта',
+        is_active: false,
+      }
+    }
+
+  +filters-list(dataLocation)
+  +catalog(dataLocation)

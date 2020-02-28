@@ -1,0 +1,13 @@
+mixin location-specifications(specifications, className, vueData)
+  .location-specifications(class=className)&attributes(attributes)
+    .location-specifications__title #{specifications.title}
+    .location-specifications__wrapper
+      if (vueData)
+        .location-specifications__row(v-for='element in ' + vueData)
+          span.location-specifications__left-value(v-html='element.title')
+          span.location-specifications__right-value(v-html='element.value')
+      else
+        each row in specifications.rows
+          .location-specifications__row
+            span.location-specifications__left-value #{row.left}
+            span.location-specifications__right-value #{row.right}

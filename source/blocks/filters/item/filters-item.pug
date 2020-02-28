@@ -1,0 +1,26 @@
+include ../tooltip/booking/filters-tooltip-booking.pug
+include ../tooltip/date/filters-tooltip-date.pug
+include ../tooltip/price/filters-tooltip-price.pug
+include ../tooltip/select/filters-tooltip-select.pug
+include ../tooltip/size/filters-tooltip-size.pug
+
+mixin filters-item(data)
+  if !data.option
+    .filters-item(class=data.is_hidden ? 'filters-item--hidden-mobile' : data.is_visible ? 'filters-item--visible-mobile' : '')
+      .filters-item__title #{data.title}
+      if `${data.tooltip.type}` === `date`
+        +filters-tooltip-date()(class='filters-item__tooltip')
+      if `${data.tooltip.type}` === `select`
+        +filters-tooltip-select(data.tooltip.data)(class='filters-item__tooltip')
+      if `${data.tooltip.type}` === `price`
+        +filters-tooltip-price()(class='filters-item__tooltip')
+      if `${data.tooltip.type}` === `message`
+        +filters-tooltip-booking('Мгновенное бронирование', 'Локации, которые можно забронировать не дожидаясь подтверждения владельца.')(class='filters-item__tooltip')
+      if `${data.tooltip.type}` === `choice`
+        +filters-tooltip-size()(class='filters-item__tooltip')
+  else
+    .filters-item.filters-item--active-option(class=data.is_visible ? 'filters-item--visible-mobile' : '')
+      .filters-item__title #{data.title}
+      .filters-item__close
+        svg(width='14', height='14')
+          use(xlink:href='/assets/front/static/assets/sprite.svg#close-usage')

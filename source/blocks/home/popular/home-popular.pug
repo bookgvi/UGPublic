@@ -1,0 +1,14 @@
+include item/home-popular-item.pug
+
+mixin home-popular(data)
+  .home-popular&attributes(attributes)
+    .home-popular__wrapper
+      each item in data
+        .home-popular__slide
+          +home-popular-item(item)
+    .home-popular__button.home-popular__button--prev
+      svg
+        use(xlink:href=require('../assets/svg/arrow_prev.svg').url)
+    .home-popular__button.home-popular__button--next
+      svg
+        use(xlink:href=require('../assets/svg/arrow_prev.svg').url)

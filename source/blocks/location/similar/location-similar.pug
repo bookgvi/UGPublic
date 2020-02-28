@@ -1,0 +1,10 @@
+include ../location.pug
+
+mixin location-similar(data)
+  .location-similar
+    .location-similar__title Похожие локации
+    .location-similar__slider
+      .location-similar__wrapper
+        each slide in data
+          .location-similar__slide
+            +location('location-similar__location', slide)

@@ -1,0 +1,2 @@
+mixin pagination(data, className)
+  .pagination(class=data.is_active ? 'pagination--active' : data.is_disabled ? 'pagination--disabled' : data.is_class ? `${data.class}` : '')&attributes(attributes)!= data.num

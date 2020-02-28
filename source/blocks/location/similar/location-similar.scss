@@ -1,0 +1,43 @@
+$parent: location-similar;
+
+@include block($parent) {
+  overflow: hidden;
+  padding-left: rem(10);
+
+  @media (min-width: $md) {
+    padding-left: rem(20);
+  }
+
+  @include element($parent, 'title') {
+    color: $dark;
+    font-family: $montserrat;
+    font-size: rem(18);
+    font-weight: 600;
+    line-height: rem(22);
+    padding-bottom: rem(15);
+
+    @media (min-width: $md) {
+      padding-bottom: rem(20);
+      font-size: rem(21);
+      line-height: rem(25);
+    }
+  }
+
+  @include element($parent, 'slider') {
+    position: relative;
+    width: 100%;
+    padding-bottom: rem(40);
+  }
+
+  @include element($parent, 'wrapper') {
+    position: relative;
+    display: flex;
+    width: 100%;
+  }
+
+  @include element($parent, 'slide') {
+    position: relative;
+    overflow: hidden;
+    flex: 0 0 295px;
+  }
+}

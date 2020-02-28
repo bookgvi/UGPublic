@@ -1,0 +1,6 @@
+mixin banner-input(data)
+  .home-banner-input&attributes(attributes)
+    .home-banner-input__icon-section
+      svg
+        use(xlink:href=(data.icon).url)
+    input.home-banner-input__input(type=data.type)&attributes(data.inputAtr)

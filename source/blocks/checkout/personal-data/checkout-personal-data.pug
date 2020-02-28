@@ -1,0 +1,15 @@
+include ../../form/input/form-input.pug
+
+mixin checkout-personal-data(data)
+  .checkout-personal-data
+    .checkout-personal-data__title #{data.title}
+    .checkout-personal-data__inputs-section
+      input(type='hidden', value='', name='consumerId')
+      each input in data.inputs
+        .checkout-personal-data__input-wrapper(class=input.wrapperClass)
+          +form-input({
+            type: input.type,
+            label: input.label,
+            checkOk: input.checkOk,
+            attributes: input.inputAttributes
+          }, '', 'personal')(class=input.inputClass, :class='validateInput("'+ input.inputAttributes.name +'")')

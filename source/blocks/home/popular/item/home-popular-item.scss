@@ -1,0 +1,90 @@
+$parent: home-popular-item;
+
+@include block($parent) {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  padding: rem(10);
+
+  @media (min-width: $md) {
+    padding: rem(20);
+  }
+
+  @include element ($parent, 'wrapper-img') {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      font-family: 'object-fit: cover;';
+      z-index: -1;
+    }
+  }
+
+  @include element ($parent, 'title') {
+    display: inline-block;
+    color: $white;
+    font-family: $montserrat;
+    font-size: rem(18);
+    font-weight: 700;
+    line-height: rem(22);
+    padding-bottom: rem(10);
+
+    @media (min-width: $md) {
+      font-size: rem(21);
+      line-height: rem(25);
+    }
+  }
+
+  @include element ($parent, 'link-text') {
+    display: inline-block;
+    color: $white;
+    font-family: $montserrat;
+    font-size: rem(12);
+    font-weight: 500;
+    letter-spacing: rem(0.9);
+    line-height: rem(21);
+    transition: opacity 0.2s ease;
+    text-transform: uppercase;
+
+    @media (min-width: $md) {
+      font-size: rem(14);
+    }
+  }
+
+  @include element ($parent, 'link') {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+
+    &:hover {
+      & ~ .#{$parent}__link-text {
+        opacity: 0.5;
+      }
+    }
+  }
+}

@@ -1,0 +1,144 @@
+$parent: reviews-item;
+
+@include block ($parent) {
+  margin-bottom: rem(42);
+  background-color: $white;
+  transition: background-color 0.2s;
+
+  @media (min-width: $md) {
+    margin-bottom: 0;
+    padding: rem(30) rem(20);
+  }
+
+  &:hover {
+    @media (min-width: $md) {
+      background-color: $gray_f8;
+    }
+  }
+
+  @include element ($parent, 'header') {
+    display: flex;
+    align-items: center;
+
+    @media (max-width: $md-min) {
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  }
+
+  @include element ($parent, 'title') {
+    font-weight: 600;
+    font-size: rem(16);
+    line-height: rem(19);
+    color: $marsh;
+
+    @media (max-width: $md-min) {
+      flex-basis: 100%;
+      margin-bottom: rem(8);
+    }
+  }
+
+  @include element ($parent, 'rating') {
+    @media (min-width: $md) {
+      margin-left: rem(10);
+    }
+
+    .star {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: rem(18);
+      height: rem(18);
+      color: #e5eef0;
+      cursor: pointer;
+
+      &.glow {
+        color: $marsh;
+      }
+    }
+  }
+
+  @include element ($parent, 'date') {
+    margin-left: auto;
+    font-weight: 500;
+    font-size: rem(14);
+    line-height: rem(18);
+    color: $gray_9b;
+
+    @media (max-width: $md-min) {
+      flex-basis: 50%;
+      text-align: right;
+    }
+  }
+
+  @include element ($parent, 'content') {
+    padding-top: rem(10);
+    padding-bottom: rem(14);
+    font-weight: 400;
+    font-size: rem(16);
+    line-height: rem(28);
+
+    @media (min-width: $md) {
+      padding-top: rem(20);
+      padding-bottom: rem(24);
+    }
+  }
+
+  @include element ($parent, 'link') {
+    font-weight: 600;
+    font-size: rem(14);
+    line-height: rem(18);
+    color: $gray;
+    text-transform: uppercase;
+  }
+
+  @include element ($parent, 'footer') {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media (min-width: $md) {
+      justify-content: flex-start;
+    }
+  }
+
+  @include element ($parent, 'ratio') {
+    display: flex;
+    width: 100%;
+    max-width: rem(138);
+  }
+
+  @include element ($parent, 'item') {
+    display: flex;
+    align-items: center;
+    flex-basis: 50%;
+
+    @include modifier ($parent, 'click') {
+      @include element ($parent, 'icon') {
+        fill: $marsh;
+      }
+    }
+  }
+
+  @include element ($parent, 'icon-wrp') {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: rem(24);
+    height: rem(24);
+    cursor: pointer;
+  }
+
+  @include element ($parent, 'icon') {
+    fill: $gray;
+  }
+
+  @include element ($parent, 'count') {
+    display: inline-block;
+    margin-left: rem(12);
+    color: $gray;
+    font-weight: 600;
+    font-size: rem(14);
+    line-height: rem(18);
+  }
+}

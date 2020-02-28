@@ -1,0 +1,31 @@
+mixin location-pavilions(pavilions, isVue)
+  .location-pavilions(class=pavilions.containerMod)
+    .location-pavilions__title #{pavilions.title}
+    .location-pavilions__container
+      .location-pavilions__wrapper
+        each pavilion, index in pavilions.list
+          .location-pavilions__pavilion
+            if pavilion.overlook
+              .location-pavilions__overlook #{pavilion.overlook}
+            button.location-pavilions__slider-button
+              svg
+                use(xlink:href=require('../assets/svg/camera.svg').url)
+            if (isVue)
+              input.location-pavilions__input(type='radio', name='id', id='pavilions' + index, checked=pavilion.checked, value=pavilion.id, @change='setValue($event.target, "id")', data-form='order')
+            else
+              input.location-pavilions__input(type='radio', name='id', id='pavilions' + index)
+            label.location-pavilions__label(for='pavilions' + index)
+              .location-pavilions__label-wrapper
+                svg
+                  use(xlink:href=require('../assets/svg/checked.svg').url)
+              .location-pavilions__slider-box
+                .location-pavilions__slider-wrapper
+                  each internalSlide in pavilion.internalSlides
+                    .location-pavilions__slider-item
+                      img(src=internalSlide.img, alt='alt')
+                .location-pavilions__slider-pagination
+            .location-pavilions__info
+              span.location-pavilions__facility #{pavilion.facility}
+              span.location-pavilions__footage #{pavilion.footage}<sup>2</sup>
+            .location-pavilions__price #{pavilion.price}
+            .location-pavilions__equipments #{pavilion.equipments}

@@ -1,0 +1,8 @@
+mixin order-payment(data)
+  .order-payment
+    .order-payment__title #{data.title}
+    .order-payment__container
+      each item in data.payment_check
+        .order-payment__row
+          .order-payment__item #{item.title}
+          .order-payment__item.order-payment__item--black #{item.description}

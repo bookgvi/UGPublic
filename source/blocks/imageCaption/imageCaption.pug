@@ -1,0 +1,5 @@
+mixin imageCaption(params)
+  .imageCaption(class=(params.align !== '') ? 'imageCaption--'+params.align : '')&attributes(attributes)
+    if params.src
+      img(src=params.src, title=params.title, alt=params.title)&attributes(params.attribute)
+      .imageCaption__text= params.title

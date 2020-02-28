@@ -1,0 +1,26 @@
+include ../dropdownText/location-dropdownText.pug
+include ../rate/location-rate.pug
+
+mixin location-info(info)
+  .location-info&attributes(attributes)
+    .location-info__header
+      .location-info__type #{info.type}
+      .location-info__favorite
+        .location-info__favorite-wrapper
+          span.location-info__favorite-text В избранное
+          .location-info__svg-box
+            span.location-info__svg.location-info__svg--liked.location-info__svg--hidden
+              svg(width='20', height='19')
+                use(xlink:href=require('../assets/svg/heart_like.svg').url)
+            span.location-info__svg
+              svg(width='20', height='19')
+                use(xlink:href=require('../assets/svg/favorite.svg').url)
+    .location-info__title #{info.title}
+    .location-info__address-box
+      span.location-info__address(id='locationAddress') #{info.address}
+      span.location-info__phone #{info.phone}
+    .location-info__text-box
+      +location-dropdownText(info.droptext)
+    if info.rate
+      .location-info__rate-box
+        +location-rate(info.rate)

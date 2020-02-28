@@ -1,0 +1,7 @@
+include ../location/location.pug
+
+mixin offer(data)
+  .offer
+    each location in data
+      .offer__location-wrapper
+        +location('recommendations__location', location)

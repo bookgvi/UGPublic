@@ -1,0 +1,107 @@
+$parent: form-checkbox;
+
+@include block($parent) {
+  position: relative;
+  width: 100%;
+  outline: 0;
+  padding-left: rem(34);
+
+  @include element($parent, 'input') {
+    display: none;
+    width: auto;
+    height: auto;
+
+    &:checked + .#{$parent}__checkbox-label {
+      &::before {
+        border-color: $marsh;
+        background-color: $marsh;
+      }
+
+      &::after {
+        visibility: visible;
+      }
+
+      &:hover {
+        &::before {
+          border-color: $marshDarker;
+          background-color: $marshDarker;
+        }
+      }
+    }
+  }
+
+  @include element($parent, 'checkbox-label') {
+    display: inline-block;
+    width: 100%;
+    cursor: pointer;
+    transition: color 0.25s linear;
+    outline: 0;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: rem(2);
+      top: 0.5em;
+      width: rem(18);
+      height: rem(18);
+      border: 2px solid $gray-light-border;
+      transform: translateY(-50%);
+      border-radius: rem(3);
+      transition: 0.4s ease;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      height: rem(13);
+      width: 5px;
+      border-right: 2px solid #fff;
+      border-bottom: 2px solid #fff;
+      left: 9px;
+      top: -1px;
+      transform: rotate(45deg);
+      visibility: hidden;
+    }
+
+    &:hover {
+      &::before {
+        border-color: $gray_c2;
+      }
+    }
+  }
+
+  @include element($parent, 'checkbox-label') {
+    color: $dark;
+
+    &:hover {
+      color: $marsh;
+    }
+  }
+
+  @include element($parent, 'text') {
+    font-family: $montserrat;
+    font-size: rem(14);
+    font-weight: 500;
+    line-height: rem(18);
+  }
+
+  @include element($parent, 'link') {
+    color: $marsh;
+    font-family: $montserrat;
+    font-size: rem(14);
+    font-weight: 500;
+    line-height: rem(18);
+
+    &:hover {
+      color: $marsh * 0.9;
+    }
+  }
+
+  @include modifier($parent, 'fail') {
+    @include element($parent, 'checkbox-label') {
+      &::before {
+        border-color: $red-error-border;
+      }
+    }
+  }
+}

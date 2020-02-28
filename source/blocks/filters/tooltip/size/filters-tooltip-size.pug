@@ -1,0 +1,48 @@
+include ../../../location/inputNumber/inputNumber.pug
+include ../../../form/input/form-input.pug
+
+mixin filters-tooltip-size(data)
+  .filters-tooltip-size&attributes(attributes)
+    .filters-tooltip-size__title Размеры помещения
+    .filters-tooltip-size__settings
+      .filters-tooltip-size__item
+        .filters-tooltip-size__subtitle Высота потолка, м
+        +location-inputNumber({
+            value: '1',
+            min: '1',
+            max: '3',
+            attributes: {
+              name: 'hmin',
+            }
+          })(class='filters-tooltip-size__inputNumber')
+      .filters-tooltip-size__item
+        .filters-tooltip-size__subtitle Площадь, кв. м
+        .filters-tooltip-size__wrapper
+          +form-input({
+            type: 'number',
+            attributes: {
+              name: 'smin',
+              disabled: 'disabled' 
+            }
+          })(class='filters-tooltip-size__input filters-tooltip-size__input--min')
+          +form-input({
+            type: 'number',
+            attributes: {
+              name: 'smax',
+              disabled: 'disabled'
+            }
+          })(class='filters-tooltip-size__input filters-tooltip-size__input--max')
+        .filters-tooltip-size__range.js-range-slider
+      .filters-tooltip-size__buttons
+        +form-button({
+          text: 'Отменить',
+          attributes: {
+            type: 'button',
+          }
+        })(class='filters-tooltip-size__btn form-button--cancel', data-action='cancel')
+        +form-button({
+          text: 'Применить',
+          attributes: {
+            type: 'button'
+          }
+        })(class='filters-tooltip-size__btn', data-apply='Применить')

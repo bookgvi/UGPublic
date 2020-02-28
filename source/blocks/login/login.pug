@@ -1,0 +1,69 @@
+include ../form/input/form-input.pug
+include ../form/image-button/form-image-button.pug
+include ../form/button/form-button.pug
+
+mixin login(data)
+  .login
+    .login__title Вход
+    form.login__form(action='/')
+      .login__authorization-wrapper.login__authorization-wrapper--desktop-padding
+        +form-input({
+          type: 'text',
+          checkOk: false,
+          attributes: {
+            name: 'eMail',
+            placeholder: 'Эл. почта',
+            value: ''
+          },
+          label: 'Эл. почта'
+        })(class='form-input--email')
+      .login__authorization-wrapper
+        +form-input({
+          type: 'password',
+          checkOk: true,
+          attributes: {
+            name: 'password',
+            placeholder: 'Пароль',
+            value: ''
+          },
+          label: 'Пароль'
+        })(class='form-input--pass')
+      .login__recovery-password-container
+        a.login__recovery-password-link(href='/') Восстановить пароль?
+      .login__button-login-wrapper
+        +form-button({
+          text: 'Войти',
+          attributes: {
+            type: 'submit'
+          }
+        })
+      .login__split-or-container
+        span или
+      .login__social-btns-container
+        .login__authorization-wrapper.login__authorization-wrapper--social
+          +form-image-button({
+            formSvg: 'vk.svg',
+            formSvgMod: 'form-image-button__svg-box--vk',
+            text: 'Вконтакте',
+            attributes: {
+              href: '/'
+            }
+          })
+        .login__authorization-wrapper.login__authorization-wrapper--social
+          +form-image-button({
+            formSvg: 'fb.svg',
+            formSvgMod: 'form-image-button__svg-box--facebook',
+            text: 'Facebook',
+            attributes: {
+              href: '/'
+            }
+          })
+        .login__authorization-wrapper.login__authorization-wrapper--social
+          +form-image-button({
+            img: require('../assets/images/google.png'),
+            alt: 'google',
+            text: 'Google',
+            attributes: {
+              href: '/'
+            }
+          })

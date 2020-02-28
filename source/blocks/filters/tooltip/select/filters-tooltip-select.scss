@@ -1,0 +1,223 @@
+$parent: filters-tooltip-select;
+
+@include block ($parent) {
+  @media (max-width: $md-min) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  @include modifier ($parent, 'open') {
+    display: block;
+  }
+
+  @include element ($parent, 'wrp') {
+    @media (max-width: $md-min) {
+      overflow-y: auto;
+    }
+  }
+
+  @include element ($parent, 'item') {
+    width: 100%;
+
+    @include modifier ($parent, 'open') {
+      margin-bottom: rem(20);
+
+      @include element ($parent, 'header') {
+        @media (max-width: $md-min) {
+          background-color: #f7f7f7;
+        }
+      }
+
+      @include element ($parent, 'container') {
+        max-height: 100%;
+      }
+
+      @include element ($parent, 'arrow') {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  @include element ($parent, 'header') {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: rem(40);
+    cursor: pointer;
+
+    @media (max-width: $md-min) {
+      height: rem(50);
+      padding-left: rem(20);
+      padding-right: rem(10);
+    }
+  }
+
+  @include element ($parent, 'title') {
+    font-weight: 700;
+    font-size: rem(16);
+    line-height: rem(19);
+  }
+
+  @include element ($parent, 'count') {
+    display: none;
+    margin-left: rem(5);
+    color: $marsh;
+    font-weight: 700;
+    font-size: rem(16);
+    line-height: rem(19);
+  }
+
+  @include element ($parent, 'count-point') {
+    margin-right: rem(5);
+  }
+
+  @include element ($parent, 'number') {
+    margin-left: rem(10);
+    color: $gray;
+    font-size: rem(14);
+    font-weight: 700;
+    line-height: rem(18);
+
+    @media (max-width: $md-min) {
+      opacity: 0;
+    }
+  }
+
+  @include element ($parent, 'arrow') {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: rem(24);
+    height: rem(24);
+    transition: transform 0.2s;
+
+    svg {
+      fill: $gray-light-border;
+    }
+  }
+
+  @include element ($parent, 'container') {
+    max-height: 0;
+    overflow: hidden;
+
+    @media (max-width: $md-min) {
+      padding-left: rem(20);
+    }
+
+    .filters-tooltip-booking {
+      position: static;
+      padding-right: rem(20);
+      box-shadow: none;
+    }
+
+    .filters-tooltip-booking__title {
+      display: none;
+    }
+  }
+
+  @include element ($parent, 'wrapper') {
+    position: relative;
+    overflow: hidden;
+    padding-top: rem(12);
+
+    @media (max-width: $md-min) {
+      padding-top: 0;
+    }
+
+    @media (min-width: $md) {
+      max-height: rem(200);
+    }
+  }
+
+  @include element ($parent, 'more') {
+    display: flex;
+    align-items: center;
+    height: rem(40);
+    font-weight: 500;
+    font-size: rem(14);
+    line-height: rem(18);
+    color: $marsh;
+    cursor: pointer;
+
+    @include modifier ($parent, 'show') {
+      @include element ($parent, 'more-arrow') {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  @include element ($parent, 'more-arrow') {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: rem(24);
+    height: rem(24);
+    margin-right: rem(10);
+    transition: transform 0.2s;
+
+    svg {
+      fill: $gray-light-border;
+    }
+  }
+
+  @include element ($parent, 'checkbox') {
+    height: rem(40);
+    padding-left: rem(40);
+
+    .form-checkbox__checkbox-label {
+      &::before {
+        width: rem(16);
+        height: rem(16);
+        border-width: 2px;
+        border-color: $gray-light-border;
+      }
+    }
+
+    .form-checkbox__input:checked + .form-checkbox__checkbox-label {
+      &::before {
+        border-color: $marsh;
+      }
+    }
+
+    @media (max-width: $md-min) {
+      display: flex;
+      align-items: center;
+      height: rem(50);
+      padding-left: 0;
+      padding-right: rem(10);
+      border-bottom: 1px solid $gray-light-border;
+
+      .form-checkbox__checkbox-label {
+        position: relative;
+
+        &::before,
+        &::after {
+          top: 50%;
+          left: auto;
+          right: rem(2);
+          transform: translateY(-50%);
+        }
+
+        &::after {
+          right: rem(5);
+        }
+      }
+    }
+  }
+
+  @include element ($parent, 'buttons') {
+    display: flex;
+    justify-content: space-between;
+    flex-shrink: 0;
+    margin-top: rem(20);
+
+    @media (max-width: $md-min) {
+      padding: rem(10) rem(10) 0;
+      border-top: 1px solid #e5e5e5;
+    }
+  }
+
+  @include element ($parent, 'btn') {
+    flex-basis: calc(50% - 5px);
+  }
+}

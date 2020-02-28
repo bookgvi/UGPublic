@@ -1,0 +1,21 @@
+mixin form-input(data, className, isVue, label)
+  .form-input(class=className)&attributes(attributes)
+    if (data.label || data.error)
+      .form-input__text-section
+        if (label)
+          .form-input__input-name
+            span!= label
+        if (data.label)
+            .form-input__input-name
+              span #{data.label}
+        if (data.error)
+          .form-input__input-error
+            span !{data.error}
+    .form-input__input-container
+      if (isVue)
+        input.form-input__input(type=data.type, @change='setValue($event.target, "'+ data.attributes.name +'", false, false, false)', data-form=isVue)&attributes(data.attributes)
+      else
+        input.form-input__input(type=data.type)&attributes(data.attributes)
+      .form-input__check-ok
+        svg
+          use(xlink:href=require('../assets/svg/check.svg').url)

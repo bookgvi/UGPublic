@@ -1,0 +1,172 @@
+$parent: location-additionalService;
+
+@include block($parent) {
+  @include element ($parent, 'service') {
+    border-bottom: 1px solid $gray-light-border;
+    margin-bottom: rem(10);
+    padding-bottom: rem(19);
+    transition: background-color 0.25s linear;
+
+    @media (min-width: $md) {
+      padding: rem(9) rem(10);
+      margin-bottom: 0;
+    }
+
+    @media (min-width: $lg) {
+      &:hover {
+        background-color: $gray_f8;
+      }
+    }
+  }
+
+  @include element ($parent, 'header') {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: rem(40);
+    cursor: pointer;
+
+    @media (min-width: $md) {
+      flex-wrap: nowrap;
+    }
+
+    @include modifier ($parent, 'opened') {
+      @include element ($parent, 'arrow') {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  @include element ($parent, 'arrow') {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: rem(18);
+    margin-left: rem(8);
+    transition: transform 0.25s linear;
+
+    &::after {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    svg {
+      width: rem(12);
+      height: rem(12);
+      fill: $gray-light-border;
+    }
+
+    @media (min-width: $mini-xs) {
+      width: rem(25);
+    }
+  }
+
+  @include element ($parent, 'title') {
+    font-weight: 600;
+    font-size: rem(18);
+    line-height: rem(22);
+    color: $dark;
+    margin-bottom: rem(31);
+
+    @media (min-width: $md) {
+      font-size: rem(21);
+      line-height: rem(25);
+      margin-bottom: rem(26);
+    }
+  }
+
+  @include element ($parent, 'checkbox') {
+    display: flex;
+    margin-right: auto;
+    width: auto;
+
+    span {
+      font-weight: 600;
+      font-size: rem(14);
+
+      @media (min-width: $mini-xs) {
+        font-size: rem(16);
+      }
+    }
+  }
+
+  @include element ($parent, 'checkbox-text') {
+    font-weight: 600;
+    font-size: rem(15);
+    line-height: rem(20);
+
+    @media (min-width: $md) {
+      font-size: rem(16);
+    }
+  }
+
+  @include element ($parent, 'number-box') {
+    width: 100%;
+    order: 1;
+    margin-top: rem(19);
+    background-color: $white;
+
+    @media (min-width: $md) {
+      width: auto;
+      order: 0;
+      margin-top: 0;
+    }
+  }
+
+  @include element ($parent, 'content') {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.25s linear;
+  }
+
+  @include element ($parent, 'wrapper') {
+    padding: rem(21) rem(10) rem(13);
+
+    p {
+      font-size: rem(14);
+      line-height: rem(24);
+      color: $dark;
+
+      @media (min-width: $md) {
+        font-size: rem(15);
+        line-height: rem(28);
+      }
+    }
+
+    @media (min-width: $md) {
+      padding: rem(21) 0 rem(13);
+    }
+  }
+
+  @include element ($parent, 'image-box') {
+    display: inline-block;
+    float: right;
+    padding-left: rem(20);
+    padding-bottom: rem(5);
+
+    img {
+      width: rem(100);
+      height: rem(100);
+      object-fit: cover;
+      font-family: 'object-fit: cover;';
+    }
+  }
+
+  @include element ($parent, 'price-box') {
+    width: auto;
+    text-align: right;
+
+    span {
+      font-weight: 600;
+      font-size: rem(16);
+      color: $dark;
+    }
+
+    @media (min-width: $md) {
+      width: rem(95);
+    }
+  }
+}

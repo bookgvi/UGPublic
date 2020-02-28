@@ -1,0 +1,47 @@
+include ../../../form/button/form-button.pug
+
+mixin filters-tooltip-price(data)
+  .filters-tooltip-price&attributes(attributes)
+    .filters-tooltip-price__container.scroll
+      .filters-tooltip-price__title Цена, ₽
+      .filters-tooltip-price__period
+        .filters-tooltip-price__tab
+          input(type='radio', name='time', value='time_2', data-name='full-time', id='times')
+          label(for='times')
+            span.filters-tooltip-price__value За все время
+        .filters-tooltip-price__tab
+          input(type='radio', name='time', value='time_1', data-name='hour', id='hour')
+          label(for='hour')
+            span.filters-tooltip-price__value За час
+      .filters-tooltip-price__content
+        .filters-tooltip-price__select(data-name='full-time')
+          .filters-tooltip-price__wrapper
+            .filters-tooltip-price__price 
+              span 800 — 4800 
+              | ₽
+            .filters-tooltip-price__location ~ 24 локации
+          input(type='hidden', name='min', value='0')
+          input(type='hidden', name='max', value='5000')
+          .filters-tooltip-price__graph(id='histogramSlider', data-rel-min='min', data-rel-max='max', data-id='histogramSlider')
+        .filters-tooltip-price__select.filters-tooltip-price__select--active(data-name='hour')
+          .filters-tooltip-price__wrapper
+            .filters-tooltip-price__price
+              span 800 — 4800 
+              | ₽
+            .filters-tooltip-price__location ~ 24 локации
+          input(type='hidden', name='price_time_from', value='0')
+          input(type='hidden', name='price_time_to', value='5000')
+          .filters-tooltip-price__graph(id='histogramSliderTime', data-rel-min='price_time_from', data-rel-max='price_time_to', data-id='histogramSlider')
+    .filters-tooltip-price__buttons
+      +form-button({
+        text: 'Отменить',
+        attributes: {
+          type: 'button',
+        }
+      })(class='filters-tooltip-price__btn form-button--cancel', data-action='cancel')
+      +form-button({
+        text: 'Применить',
+        attributes: {
+          type: 'button'
+        }
+      })(class='filters-tooltip-price__btn', data-apply='Применить')

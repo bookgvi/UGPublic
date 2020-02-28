@@ -1,0 +1,155 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: $montserrat;
+  font-size: rem(16);
+  color: $dark;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+
+  &.overlay {
+    .content {
+      position: relative;
+    }
+
+    .content__overlay {
+      background-color: rgba($white, 0.8);
+      pointer-events: all;
+      opacity: 1;
+    }
+
+    .dev-header {
+      @media (max-width: $md-min) {
+        z-index: 11;
+      }
+    }
+  }
+}
+
+a {
+  text-decoration: none;
+  outline: 0;
+  cursor: pointer;
+}
+
+button {
+  background: none;
+  cursor: pointer;
+}
+
+input,
+textarea {
+  cursor: text;
+}
+
+button,
+input,
+textarea,
+select {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 19px;
+  font-family: $montserrat;
+  letter-spacing: -0.34px;
+  border: 0;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+
+  &::-ms-clear,
+  &::-ms-reveal {
+    display: none;
+  }
+
+  &::-webkit-search-decoration,
+  &::-webkit-search-cancel-button,
+  &::-webkit-search-results-button,
+  &::-webkit-search-results-decoration {
+    display: none;
+  }
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+
+  &[type=number] {
+    -moz-appearance: textfield;
+  }
+
+  &::-moz-focus-inner,
+  &::-moz-focus-outer {
+    border: 0;
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    outline: none;
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+b {
+  font-weight: 700;
+}
+
+.disabled {
+  overflow: hidden;
+}
+
+.sprite-symbol-usage {
+  display: inline-block !important;
+}
+
+.sticky-polifill {
+  @media (min-width: $lg) {
+    position: -webkit-sticky;
+    position: sticky;
+
+    &::before {
+      content: '';
+      display: table;
+    }
+
+    &::after {
+      content: '';
+      display: table;
+    }
+  }
+}
+
+.bin.in-range {
+  border-right: 1px solid $white;
+}
+
+.bin.out-of-range {
+  border-right: 1px solid $white;
+}
+
+.bin.bin-color-optimal {
+  background-color: $white-2;
+}
+
+.bin.bin-color-optimal-selected {
+  background-color: $marsh;
+}

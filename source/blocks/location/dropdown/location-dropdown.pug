@@ -1,0 +1,14 @@
+mixin location-dropdown(dropdown, date)
+  .location-dropdown(class=(date ? 'location-dropdown--date' : ''))
+    .location-dropdown__title(data-status='closed')
+      span.location-dropdown__dropdown-svg
+        svg
+          use(xlink:href=require('../assets/svg/arrow_up.svg').url)
+      if dropdown.input
+        input.location-dropdown__input(type='text', name='bookingDate', value=dropdown.input)
+      if dropdown.value
+        span.location-dropdown__value #{dropdown.value}
+      if dropdown.value2
+        span.location-dropdown__value.location-dropdown__value-sec #{dropdown.value2}
+    .location-dropdown__content
+      block

@@ -1,0 +1,91 @@
+extends ../layouts/main.pug
+include ../blocks/dev/messages/dev-messages.pug
+
+block content
+  -
+    var dataMessages = {
+      title: 'Мои  сообщения',
+      numberMessages: '• 2 новых',
+      isSelected: true,
+      messages: [
+        {
+          avatar_color: '#edd6b3',
+          title: 'Prostranstvo',
+          text: 'Ответ: Отлично! Спасибо за ответ…',
+          date: '',
+          time: '',
+          is_new: true,
+          is_selected: false,
+          chat: []
+        },
+        {
+          avatar_color: '#c2c7e0',
+          title: 'Kap\'s Studios м. Бауманская',
+          text: 'Можно ли принести с собой …',
+          date: '20.10',
+          time: '',
+          is_new: false,
+          is_selected: true,
+          chat: [
+            {
+              date: 'Ноябрь 2',
+              message: [
+                {
+                  time: '20:18',
+                  text: 'Привет, это чат номер 2',
+                  status_sent: true
+                },
+                {
+                  time: '22:35',
+                  text: 'Привет всем',
+                  status_sent: false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          avatar_color: '#bfd6da',
+          title: 'Loft',
+          text: 'Ответ: Договорились',
+          date: '18.10',
+          time: '22:35',
+          is_new: false,
+          is_selected: false,
+          chat: [
+            {
+              date: 'Октябрь 20',
+              message: [
+                {
+                  time: '20:18',
+                  text: 'Как мне пронести баллон с гелием в студию для съемки? Возможно ли это и какой порядок действий?',
+                  status_sent: true
+                },
+                {
+                  time: '22:35',
+                  text: 'Да все возможно!',
+                  status_sent: false
+                }
+              ]
+            },
+            {
+              date: 'Октябрь 21',
+              message: [
+                {
+                  time: '20:18',
+                  text: 'Как мне пронести баллон с гелием в студию для съемки? Возможно ли это и какой порядок действий?',
+                  status_sent: false
+                },
+                {
+                  time: '22:35',
+                  text: 'Да все возможно!',
+                  status_sent: true
+                }
+              ]
+            }
+          ]
+        }
+      ],
+    }
+
+  +dev-messages(dataMessages)

@@ -1,0 +1,19 @@
+mixin map-contact(data)
+  .map-contact&attributes(attributes)
+    .map-contact__contacts
+      .map-contact__street #{data.location}
+      if (data.phone)
+        .map-contact__phone #{data.phone}
+    .map-contact__map(id='map', data-lat=`${data.lat}`, data-lon=`${data.lon}`)
+    .map-contact__route
+      .map-contact__wrp
+        .map-contact__wrp-text.map-contact__wrp-text--active(data-route='on-foot') #{data.route}
+        .map-contact__wrp-text(data-route='by-car') #{data.route_auto}
+      .map-contact__tabs
+        .map-contact__tab.map-contact__tab--active(data-route='on-foot')
+          svg(width='24', height='24')
+            use(xlink:href=require('../assets/svg/walk.svg').url)
+        if !data.routeSingle
+          .map-contact__tab(data-route='by-car')
+            svg(width='24', height='24')
+              use(xlink:href=require('../assets/svg/auto.svg').url)

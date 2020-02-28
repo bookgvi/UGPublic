@@ -1,0 +1,7 @@
+mixin location-rate(rate, isVue)
+  .location-rate
+    .location-rate__rate-stars(id=rate.rateId)
+    if (isVue)
+      .location-rate__rating-num(v-html=rate.count)
+    else
+      .location-rate__rating-num #{rate.count}

@@ -1,0 +1,8 @@
+mixin social(networks)
+  .social&attributes(attributes)
+    .social__wrapper
+      each network in networks
+        a.social__network(data-type=network.dataSharer, href=network.href, class=network.networkMod ? 'social__network--' + network.networkMod : '')
+          if network.svg_boolean
+            svg(width='20', height='18')
+              use(xlink:href=require('../assets/svg/' + network.svg).url)

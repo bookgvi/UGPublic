@@ -1,0 +1,8 @@
+include ../order-item/order-item.pug
+
+mixin order-list(data)
+  .order-list
+    .order-list__container
+      .order-list__title #{data.title} • #{data.order.length}
+      each order in data.order
+        +order-item(order)

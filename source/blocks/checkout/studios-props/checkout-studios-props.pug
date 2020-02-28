@@ -1,0 +1,32 @@
+include ../../form/input/form-input.pug
+include ../selectInput/checkout-selectInput.pug
+
+mixin checkout-studios-props(data)
+  .checkout-studios-props
+    .checkout-studios-props__wrapper
+      .checkout-studios-props__title Цель
+      .form-select.form-select--vue
+        span.form-select__dropdown-svg
+          svg
+            use(xlink:href=require('../assets/svg/arrow_up.svg').url)
+        select(id='target', name='priceType', @change='setValue($event.target, "priceType", false, true)', data-form='order')
+          option(value='photo', selected) Фотосъемка
+          option(value='video') Видеосъемка
+          option(value='event') Мероприятие
+    .checkout-studios-props__wrapper
+      +checkout-selectInput({
+        label: 'Кол-во, не более 20 чел.',
+        items: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20'],
+      })
+    .checkout-studios-props__wrapper
+      .form-input.form-input--label-string(:class='validateInput("promocode")')
+        .form-input__text-section
+          .form-input__input-name
+            span Промо код
+          .form-input__input-error(v-if='info.price.promocode && info.price.promocode.length > 0')
+            span(v-html='"Скидка -" + info.price.promocode[0].amount')
+        .form-input__input-container
+          input.form-input__input(type='text', @change='setValue($event.target, "promocode")', name="promocode", placeholder='Промо код', value='fall300', data-form='true')
+          .form-input__check-ok
+            svg
+              use(xlink:href=require('../assets/svg/check.svg').url)

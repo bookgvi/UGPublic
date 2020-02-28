@@ -1,0 +1,86 @@
+include ../gallery/location-gallery.pug
+include ../info/location-info.pug
+include ../specifications/location-specifications.pug
+include ../equipments/location-equipments.pug
+include ../pavilions/location-pavilions.pug
+include ../../comments/comments.pug
+include ../service/location-service.pug
+include ../additionalService/additionalService.pug
+include ../../wysiwyg/wysiwyg.pug
+include ../booking/location-booking.pug
+
+mixin location-page(data)
+  .location-page&attributes(attributes)
+    .location-page__gallery
+      +location-gallary(data.gallery)
+    .location-page__content
+      .location-page__information
+        .location-page__info-box
+          +location-info(data.info)
+        .location-page__pavilions
+          +location-pavilions(data.pavilions)
+        .location-page__specifications
+          +location-specifications(data.specifications)
+        .location-page__equipment-list
+          +location-equipments(data.equipmentList)
+        .location-page__service
+          +location-service(data.service)
+        .location-page__service
+          +location-additionalService(data.additionalService)
+        .location-page__equipment
+          +location-specifications(data.equipments, 'location-specifications--equipments')
+        .location-page__service
+          .location-page__title Правила
+          +wysiwyg()(class='location-page__rules')
+            p Правила являются публичной офертой. Любое лицо с момента бронирования помещения Фотостудии либо фактического начала пользования помещениями Фотостудии признается совершившим акцепт публичной оферты в полном объёме и обязуется следовать Правилам.
+            div
+              a(href='#', download) Правила полный текст
+            div
+              a(href='#', download) Дополнительные правила от локации
+        .location-page__comments-section
+          +comments(data.comments)
+        .location-page__map(id='locationMap')
+          +map-contact(data.mapContact)(class='map-contact--location')
+      .location-page__book-up-wrapper(id=data.id)
+        .location-page__book-up.sticky-polifill
+          .location-page__booking
+            +location-booking(data.booking)
+          .location-page__buttons-box
+            .location-page__button
+              a.location-page__link.js-scroll-to(href='#bookingLocationPage')
+                span.location-page__link-text.location-page__link-text--mobile К бронированию
+                span.location-page__link-text Перейти к бронированию
+            .location-page__button.location-page__button--showed
+              a.location-page__link(href='#')
+                span.location-page__link-svg
+                  svg
+                    use(xlink:href=require('../assets/svg/chat.svg').url)
+                span.location-page__link-text.location-page__link-text--mobile Сообщение
+                span.location-page__link-text Отправить сообщение
+          .location-page__instagram
+            ul.location-page__instagram-list
+              li.location-page__instagram-item
+                a.location-page__instagram-link(href='#')
+                  img(src=require('../assets/images/profile-img.png'), alt='alt')
+              li.location-page__instagram-item
+                a.location-page__instagram-link(href='#')
+                  img(src=require('../assets/images/profile-img.png'), alt='alt')
+              li.location-page__instagram-item
+                a.location-page__instagram-link(href='#')
+                  img(src=require('../assets/images/profile-img.png'), alt='alt')
+              li.location-page__instagram-item
+                a.location-page__instagram-link(href='#')
+                  img(src=require('../assets/images/profile-img.png'), alt='alt')
+              li.location-page__instagram-item
+                a.location-page__instagram-link(href='#')
+                  img(src=require('../assets/images/profile-img.png'), alt='alt')
+              li.location-page__instagram-item
+                a.location-page__instagram-link(href='#')
+                  img(src=require('../assets/images/profile-img.png'), alt='alt')
+            a.location-page__instagram-info(href='#')
+              span.location-page__instagram-svg
+                svg
+                  use(xlink:href=require('../assets/svg/inst.svg').url)
+              .location-page__instagram-address Kaps Studios м. Бауманская
+    .location-page__location-similar
+      +location-similar(data.locationSimilar)

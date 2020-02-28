@@ -1,0 +1,33 @@
+include ../../form/button/form-button.pug
+include ./message/dev-message.pug
+include ./chat-message/dev-chat-message.pug
+
+mixin dev-messages(data)
+  .dev-messages
+    .dev-messages__title
+      | #{data.title} #{data.numberMessages}
+    .dev-messages__container
+      .dev-messages__list
+        each message in data.messages
+          +dev-message(message, false)
+      .dev-messages__dialog
+        each message in data.messages
+          if message.is_selected === data.isSelected
+            +dev-message(message, true)(class='dev-messages__dialog-header')
+        each message in data.messages
+          .dev-messages__wrapper-chat(class=message.is_selected ? 'dev-messages__wrapper-chat--open' : '', data-name=`${message.title}`)
+            each chat in message.chat
+              .dev-messages__message-date #{chat.date}
+              .dev-messages__chat
+                +dev-chat-message(chat.message)
+        .dev-messages__wrapper-textarea
+          each message in data.messages
+            if message.is_selected === data.isSelected
+              textarea.dev-messages__textarea(placeholder=`Сообщение для ${message.title}`)
+          +form-button({
+            text: 'Отправить',
+            attributes: {
+              type: 'button',
+              disabled: 'disabled'
+            }
+          })(class='dev-messages__btn-send')

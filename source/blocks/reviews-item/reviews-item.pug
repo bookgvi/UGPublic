@@ -1,0 +1,32 @@
+mixin reviews-item(data)
+  //-
+    Expected data for output, withdrawal
+    Example: +reviews-item(
+      reviewsArr: {
+        title: 'title',
+        date: '01.01.1970',
+        text: 'text',
+        like: number,
+        dislike: number
+      }
+    )
+
+  .reviews-item
+    .reviews-item__header
+      .reviews-item__title #{data.title}
+      .reviews-item__rating
+      .reviews-item__date #{data.date}
+    .reviews-item__content #{data.text}
+    .reviews-item__footer
+      .reviews-item__ratio
+        .reviews-item__item
+          .reviews-item__icon-wrp
+            svg.reviews-item__icon(width='20', height='18')
+              use(xlink:href=require('../assets/svg/like.svg').url)
+          span.reviews-item__count #{data.like}
+        .reviews-item__item
+          .reviews-item__icon-wrp
+            svg.reviews-item__icon(width='20', height='18')
+              use(xlink:href=require('../assets/svg/dislike.svg').url)
+          span.reviews-item__count #{data.dislike}
+      a.reviews-item__link(href='#') Редактировать

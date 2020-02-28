@@ -1,0 +1,169 @@
+$parent: profile-settings;
+
+@include block($parent) {
+  @media (min-width: $md) {
+    margin-bottom: rem(102);
+  }
+
+  @include element($parent, 'title') {
+    font-weight: 700;
+    margin-bottom: rem(11);
+    font-size: rem(18);
+    line-height: rem(24);
+
+    @media (min-width: $md) {
+      margin-bottom: rem(18);
+      font-size: rem(24);
+      line-height: rem(29);
+    }
+  }
+
+  @include element($parent, 'sub-title') {
+    font-weight: 600;
+    margin-top: rem(30);
+    margin-bottom: rem(20);
+    font-size: rem(18);
+    line-height: rem(22);
+
+    @media (min-width: $md) {
+      margin-top: rem(50);
+      font-size: rem(21);
+      line-height: rem(25);
+    }
+  }
+
+  @include element($parent, 'container') {
+    padding: rem(20) rem(10);
+
+    @media (min-width: $md) {
+      width: rem(580);
+      padding: rem(40) 0;
+      margin: 0 auto;
+    }
+  }
+
+  @include element($parent, 'image') {
+    width: rem(80);
+    height: rem(80);
+    margin-right: rem(10);
+    border-radius: 50%;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+
+    @media (min-width: $md) {
+      margin-right: rem(13);
+    }
+  }
+
+  @include element($parent, 'load') {
+    display: none;
+  }
+
+  @include element($parent, 'load-label') {
+    display: inline-block;
+    align-self: flex-start;
+    background-color: $white;
+    border: 1px solid $gray-laght-btn-cancel;
+    font-weight: 500;
+    color: $dark;
+    font-size: rem(14);
+    line-height: rem(18);
+    margin-right: rem(10);
+    margin-bottom: rem(10);
+    padding: rem(10) rem(20);
+    cursor: pointer;
+
+    &:hover {
+      background-color: $gray-laght-btn-cancel;
+    }
+
+    @media (min-width: $md) {
+      margin-bottom: 0;
+    }
+  }
+
+  @include element($parent, 'input-box') {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: rem(20);
+  }
+
+  @include element($parent, 'photo-settings') {
+    @media (min-width: $md) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  @include element($parent, 'delete-btn') {
+    width: 48%;
+
+    @media (min-width: $md) {
+      width: 25%;
+    }
+  }
+
+  @include element($parent, 'save-btn') {
+    width: 100%;
+
+    @media (min-width: $md) {
+      width: 48%;
+    }
+
+    button {
+      height: rem(50);
+      font-size: rem(16);
+      line-height: rem(19);
+    }
+  }
+
+  @include element($parent, 'input') {
+    margin-bottom: rem(10);
+
+    @media (min-width: $md) {
+      margin-bottom: rem(20);
+    }
+
+    @include modifier ($parent, 'half-size') {
+      width: 100%;
+
+      @media (min-width: $md) {
+        width: 48%;
+      }
+    }
+
+    @include modifier ($parent, 'email') {
+      margin-bottom: rem(15);
+    }
+  }
+
+  @include element($parent, 'photo-box') {
+    display: flex;
+    margin-bottom: rem(20);
+
+    @media (min-width: $md) {
+      margin-bottom: rem(42);
+    }
+  }
+
+  @include element($parent, 'format') {
+    margin-top: rem(10);
+    font-size: rem(14);
+    line-height: rem(18);
+    letter-spacing: rem(-0.3);
+    color: $gray_9b;
+  }
+
+  @include element($parent, 'checkout') {
+    .#{parent}__label {
+      &:hover {
+        color: $dark;
+      }
+    }
+  }
+}

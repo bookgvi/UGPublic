@@ -1,0 +1,197 @@
+$parent: location-gallary;
+
+@include block($parent) {
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  @include modifier ($parent, 'single-image') {
+    .#{$parent}__item {
+      display: none;
+    }
+
+    .#{$parent}__item.#{$parent}__item--main {
+      width: 100%;
+    }
+  }
+
+  @include element ($parent, 'wrapper') {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 100%;
+    width: 100%;
+  }
+
+  @include element ($parent, 'item') {
+    display: none;
+    flex-basis: 49.5%;
+    height: 50%;
+    max-height: 50%;
+    width: 35%;
+
+    @media (min-width: $md) {
+      display: block;
+      border-bottom: 2px solid $white;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      font-family: 'object-fit: cover;';
+    }
+
+    @include modifier ($parent, 'main') {
+      display: block;
+      width: 100%;
+      flex-basis: 100%;
+      height: 100%;
+      max-height: 100%;
+
+      @media (min-width: $md) {
+        width: 65%;
+        border-right: 2px solid $white;
+      }
+    }
+  }
+
+  @include element ($parent, 'button-box') {
+    position: absolute;
+    left: rem(10);
+    bottom: rem(10);
+
+    @media (min-width: $md) {
+      left: rem(20);
+      bottom: rem(20);
+    }
+  }
+
+  @include element ($parent, 'button') {
+    padding: 0 rem(27);
+  }
+
+  @include element ($parent, 'popup') {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: transparentize($black, 0.15);
+    z-index: -1;
+    opacity: 0;
+    padding: rem(10);
+    transition: opacity 0.2s linear;
+
+    @include modifier ($parent, 'opened') {
+      z-index: 10;
+      opacity: 1;
+    }
+
+    @media (min-width: $md) {
+      width: 100%;
+    }
+  }
+
+  @include element ($parent, 'modal') {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+  }
+
+  @include element ($parent, 'studio') {
+    display: inline-block;
+    font-weight: 600;
+    font-size: rem(14);
+    line-height: rem(24);
+    color: $white;
+  }
+
+  @include element ($parent, 'exit') {
+    position: absolute;
+    top: rem(10);
+    right: rem(10);
+    z-index: 10;
+
+    svg {
+      fill: $white;
+    }
+  }
+
+  @include element ($parent, 'slider-box') {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: rem(280);
+
+    @media (min-width: $md) {
+      height: rem(380);
+      padding: 0 rem(25);
+    }
+
+    @media (min-width: $lg) {
+      height: 80%;
+      padding: 0 rem(50);
+    }
+  }
+
+  @include element ($parent, 'slider') {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  @include element ($parent, 'slider-wrapper') {
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
+
+  @include element ($parent, 'slider-item') {
+    flex-shrink: 0;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      font-family: 'object-fit: contain;';
+    }
+  }
+
+  @include element ($parent, 'slider-btn') {
+    position: absolute;
+    width: rem(25);
+    height: rem(25);
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    outline: none;
+    cursor: pointer;
+
+    svg {
+      width: rem(20);
+      height: rem(24);
+    }
+
+    @include modifier ($parent, 'next') {
+      left: auto;
+      right: 0;
+    }
+  }
+
+  @include element ($parent, 'slider-pagination') {
+    position: absolute;
+    bottom: rem(10);
+    left: 50%;
+    transform: translateX(-50%);
+
+    span {
+      transition: left 0.25s linear;
+      margin: 0 rem(3);
+    }
+  }
+}

@@ -1,0 +1,20 @@
+mixin dev-message(data, openMessage)
+  if openMessage
+    .dev-message&attributes(attributes)  
+      .dev-message__arrow-back
+        svg(width='8', height='12', fill='#4a4a4a')
+          use(xlink:href=require('../assets/svg/arrow_prev.svg').url)
+      .dev-message__avatar(style=`background-color:${data.avatar_color}`) #{data.title[0]}
+      .dev-message__wrapper
+        .dev-message__name #{data.title}
+        .dev-message__text.dev-message__text--gray Прочитан в #{data.time} сегодня
+  else
+    .dev-message(class=data.is_new ? 'dev-message--new': data.is_selected ? 'dev-message--selected' : 'dev-message--read', data-name=`${data.title}`)
+      .dev-message__avatar(style=`background-color:${data.avatar_color}`) #{data.title[0]}
+      .dev-message__wrapper
+        .dev-message__name #{data.title}
+        .dev-message__text #{data.text}
+      if data.is_new
+        .dev-message__status
+      else
+        .dev-message__date #{data.date}

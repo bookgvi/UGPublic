@@ -1,0 +1,105 @@
+$parent: leftMenu;
+
+@include block($parent) {
+  line-height: 21px;
+  font-size: 15px;
+  height: 100%;
+
+  @include element($parent, 'select-title') {
+    display: inline-block;
+    width: 100%;
+    position: relative;
+    padding: rem(7) rem(16);
+    border: 1px solid #d9d9d9;
+    line-height: 24px;
+    margin-bottom: 10px;
+    color: $dark;
+
+    @media (min-width: $lg) {
+      display: none;
+    }
+  }
+
+  @include element($parent, 'arrow') {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 16px;
+
+    svg {
+      transition: transform 0.2s ease;
+    }
+  }
+
+  @include element($parent, 'dropdown-box') {
+    position: relative;
+    max-height: calc(100vh - 120px);
+
+    @media (min-width: $md) {
+      max-height: calc(100vh - 140px);
+    }
+
+    @media (min-width: $lg) {
+      position: sticky;
+      top: rem(120);
+      max-height: calc(100vh - 120px);
+    }
+  }
+
+  @include element($parent, 'dropdown') {
+    display: none;
+
+    @media (min-width: $lg) {
+      display: block;
+    }
+
+    @include modifier($parent, 'opened') {
+      display: block;
+      height: calc(100vh - 120px);
+    }
+  }
+
+  @include element($parent, 'title') {
+    display: inline-block;
+    width: 100%;
+    padding: rem(9) rem(10);
+    color: $dark;
+    font-size: rem(15);
+    line-height: rem(21);
+    font-weight: 500;
+
+    &.#{$parent}__link-active {
+      color: $marsh;
+      background-color: #f2f6f7;
+    }
+  }
+
+  @include element($parent, 'list') {
+    padding-bottom: rem(75);
+
+    @media (min-width: $md) {
+      padding-bottom: 0;
+    }
+  }
+
+  @include element($parent, 'link') {
+    display: inline-block;
+    width: 100%;
+    font-weight: 500;
+    color: $dark;
+    padding: rem(9) rem(10);
+
+    &.#{$parent}__link-active {
+      color: $marsh;
+      background-color: #f2f6f7;
+    }
+  }
+
+  @include modifier($parent, 'opened') {
+    @include element($parent, 'arrow') {
+      svg {
+        transform: rotate(-180deg);
+      }
+    }
+  }
+}

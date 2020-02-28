@@ -1,0 +1,177 @@
+$parent: location;
+
+@include block ($parent) {
+  position: relative;
+  margin-bottom: rem(10);
+
+  @include element ($parent, 'like-icon') {
+    height: 100%;
+    width: 100%;
+
+    svg {
+      display: block;
+      height: 100%;
+      width: 100%;
+    }
+
+    @include modifier ($parent, 'hidden') {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+    }
+  }
+
+  @include element ($parent, 'like') {
+    position: absolute;
+    top: rem(10);
+    right: rem(20);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: rem(24);
+    height: rem(24);
+    z-index: 2;
+    cursor: pointer;
+
+    @include modifier ($parent, 'active') {
+      .location__like-icon--hidden {
+        opacity: 1;
+      }
+    }
+  }
+
+  @include element ($parent, 'slider-btn') {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    width: rem(24);
+    height: rem(24);
+    z-index: 1;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+
+    svg {
+      display: block;
+      height: 100%;
+      width: 100%;
+    }
+
+    @include modifier ($parent, 'prev') {
+      left: 2px;
+    }
+
+    @include modifier ($parent, 'next') {
+      right: 2px;
+    }
+  }
+
+  @include element ($parent, 'slider') {
+    position: relative;
+    height: rem(220);
+    margin-bottom: rem(10);
+
+    &:hover {
+      @include element ($parent, 'slider-btn') {
+        opacity: 1;
+
+        &.swiper-button-disabled {
+          opacity: 0;
+          pointer-events: none;
+        }
+      }
+    }
+  }
+
+  @include element ($parent, 'img') {
+    width: 100%;
+    height: 100%;
+    max-height: 250px;
+    object-fit: cover;
+    font-family: 'object-fit: cover;';
+    object-position: center;
+    display: block;
+  }
+
+  @include element ($parent, 'wrapper') {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  @include element ($parent, 'rating') {
+    display: flex;
+    align-items: center;
+    pointer-events: none;
+  }
+
+  @include element ($parent, 'rating-stars') {
+    display: flex;
+
+    .star {
+      display: flex;
+      justify-content: center;
+      width: rem(18);
+      color: #e5eef0;
+      line-height: rem(18);
+      cursor: pointer;
+
+      &.glow {
+        color: $marsh;
+      }
+    }
+  }
+
+  @include element ($parent, 'rating-num') {
+    margin-left: rem(10);
+    color: $gray_0;
+    font-weight: 500;
+    font-size: rem(14);
+    line-height: rem(18);
+    text-align: right;
+  }
+
+  @include element ($parent, 'type') {
+    color: $gray_0;
+    font-weight: 500;
+    font-size: rem(14);
+    line-height: rem(18);
+  }
+
+  @include element ($parent, 'name') {
+    font-weight: 700;
+    font-size: rem(16);
+    line-height: rem(24);
+    letter-spacing: -0.3px;
+  }
+
+  @include element ($parent, 'link') {
+    color: $dark;
+
+    @include modifier ($parent, 'absolute') {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  @include element ($parent, 'price') {
+    font-weight: 500;
+    font-size: rem(16);
+    line-height: rem(24);
+    letter-spacing: -0.3px;
+  }
+
+  @include element ($parent, 'status') {
+    font-weight: 700;
+    font-size: rem(13);
+    line-height: rem(24);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+}

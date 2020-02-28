@@ -1,0 +1,31 @@
+include ../../../blocks/form/button/form-button.pug
+
+mixin location-gallary(gallery)
+  .location-gallary(class=gallery.containerMod)
+    if gallery.button
+      .location-gallary__button-box
+        +form-button(gallery.button)(class='form-button--cancel')
+    .location-gallary__wrapper
+      each item in gallery.items
+        .location-gallary__item(class=item.itemClass)
+          img(src=item.image, alt='alt')
+    if gallery.popup.settings
+      .location-gallary__popup
+        .location-gallary__modal
+          button.location-gallary__exit
+            svg(width='15', height='15')
+              use(xlink:href=require('../assets/svg/close-button.svg').url)
+          .location-gallary__studio #{gallery.popup.settings.studio}
+          .location-gallary__slider-box
+            .location-gallary__slider
+              .location-gallary__slider-wrapper
+                each item in gallery.items
+                  .location-gallary__slider-item
+                    img(src=item.image, alt='alt')
+              .location-gallary__slider-btn.location-gallary__slider-btn--prev
+                svg
+                  use(xlink:href=require('../assets/svg/slider_prev.svg').url)
+              .location-gallary__slider-btn.location-gallary__slider-btn--next
+                svg
+                  use(xlink:href=require('../assets/svg/slider_next.svg').url)
+          .location-gallary__slider-pagination

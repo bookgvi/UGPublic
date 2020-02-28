@@ -1,0 +1,121 @@
+$parent: login;
+
+@include block($parent) {
+  width: 100%;
+  max-width: rem(580);
+  padding: rem(20) rem(10) rem(17);
+
+  @media (min-width: $lg) {
+    margin: 0 auto;
+    padding: rem(40) rem(0) rem(40);
+  }
+
+  @include element($parent, 'title') {
+    padding-bottom: rem(11);
+    color: $dark;
+    font-family: $montserrat;
+    font-size: rem(18);
+    font-weight: 700;
+    line-height: rem(24);
+
+    @media (min-width: $lg) {
+      padding-bottom: rem(20);
+      font-size: rem(24);
+      line-height: rem(29);
+    }
+  }
+
+  @include element($parent, 'authorization-wrapper') {
+    padding-bottom: rem(10);
+
+    @include modifier ($parent, 'desktop-padding') {
+      @media (min-width: $lg) {
+        padding-bottom: rem(20);
+      }
+    }
+
+    @include modifier ($parent, 'social') {
+      @media (min-width: $lg) {
+        flex: 1 1 33.33%;
+        margin: 0 rem(10);
+        padding: 0;
+      }
+    }
+  }
+
+  @include element($parent, 'recovery-password-container') {
+    padding-bottom: rem(20);
+
+    @media (min-width: $lg) {
+      padding-bottom: rem(30);
+    }
+  }
+
+  @include element($parent, 'recovery-password-link') {
+    color: $marsh;
+    font-family: $montserrat;
+    font-size: rem(14);
+    font-weight: 500;
+    line-height: rem(18);
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: $marsh * 0.9;
+    }
+  }
+
+  @include element($parent, 'button-login-wrapper') {
+    padding-bottom: rem(20);
+
+    button {
+      height: rem(50);
+    }
+  }
+
+  @include element($parent, 'split-or-container') {
+    position: relative;
+    width: 100%;
+    color: $gray;
+    font-family: $montserrat;
+    font-size: rem(14);
+    font-weight: 500;
+    line-height: rem(24);
+    text-align: center;
+    margin-bottom: rem(20);
+
+    @media (min-width: $lg) {
+      margin-bottom: rem(30);
+    }
+
+    span {
+      &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: calc(50% + 45px);
+        height: 1px;
+        background-color: #eee;
+        transform: translateY(-50%);
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: calc(50% + 45px);
+        right: 0;
+        height: 1px;
+        background-color: #eee;
+        transform: translateY(-50%);
+      }
+    }
+  }
+
+  @include element($parent, 'social-btns-container') {
+    @media (min-width: $lg) {
+      display: flex;
+      margin: 0 rem(-10);
+    }
+  }
+}

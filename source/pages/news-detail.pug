@@ -1,0 +1,43 @@
+extends ../layouts/main.pug
+include ../blocks/news/detail/news-detail.pug
+
+block content
+  -
+    var dataNews = {
+      heading: 'Новая универсальная фотостудия Prostranstvo',
+      params: {
+        src: require('../assets/images/news-detail.jpg'),
+        title: 'Белый Зал в студии Prostranstvo',
+      },
+      networks: [{
+          dataSharer: 'facebook',
+          href: '#',
+          svg: 'fb.svg',
+          svg_boolean: true,
+          networkMod: 'facebook',
+        }, {
+          dataSharer: 'vk',
+          href: '#',
+          svg: 'vk.svg',
+          svg_boolean: true,
+          networkMod: 'vk',
+        }, {
+          dataSharer: 'instagram',
+          href: '#',
+          svg: 'inst.svg',
+          svg_boolean: true,
+          networkMod: 'instagram',
+        }],
+      control: {
+          allArticles: '#',
+          allArticlesText: 'Все статьи',
+          pagination: {
+            prevArticle: '#',
+            prevDisable: false,
+            nextArticle: '#',
+            nextDisable: false,
+          },
+        }
+    }
+
+  +news-detail(dataNews)

@@ -1,0 +1,429 @@
+extends ../layouts/main.pug
+include ../blocks/location/page/location-page.pug
+
+block scripts
+  script(src='https://code.jquery.com/jquery-3.3.1.min.js')
+  script(src='//code.jquery.com/ui/1.12.1/jquery-ui.js')
+  script(src='//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js')
+  script(src=require('../assets/js/histogram.slider.js'))
+  script(src=require('../assets/js/ion.rangeSlider.min.js'))
+  script(src=require('../assets/js/datepicker.min.js'))
+  script(src=require('../assets/js/jquery.rateyo.min.js'))
+include ../blocks/location/similar/location-similar.pug
+include ../blocks/map-contact/map-contact.pug
+
+block content
+  -
+    var page_class = 'dev-footer--location-page';
+    var locations = {
+      id: 'bookingLocationPage',
+      gallery: {
+        items: [{
+          itemClass: 'location-gallary__item--main',
+          image: require('../assets/images/studio/studio-4.jpg'),
+        }, {
+          image: require('../assets/images/studio/studio-2.jpg'),
+        }, {
+          image: require('../assets/images/studio/studio-3.jpg'),
+        }],
+        button: {
+          text: 'Смотреть фото',
+          attributes: {
+            class: 'location-gallary__button',
+          },
+        },
+        popup: {
+          settings: {
+            studio: 'Kap`s Studios м. Бауманская',
+          },
+        },
+      },
+      info: {
+        type: 'Студия · 7 залов',
+        title: 'Kap`s Studios м. Бауманская',
+        address: 'м. Бауманская • Старокирочный переулок, 2',
+        phone: '+7 495 123 * * * 9',
+        droptext: {
+          visible: 'Kap`s Rental Studios (Бауманская) — это один из самых больших студийных комплексов в Москве. Семь съёмочных павильонов, отдельная гримерная зона на 4 рабочих места, просторный двухэтажный ресепшн и общие зоны. Изобилие съёмочного оборудования и вспомогательного реквизита помогут в реализации любой поставленной задачи',
+          hidden: 'Какой-то скрытый текст. Какой-то скрытый текст. Какой-то скрытый текст. Какой-то скрытый текст. Какой-то скрытый текст. Какой-то скрытый текст. Какой-то скрытый текст. Какой-то скрытый текст.'
+        },
+        rate: {
+          count: '23',
+          rateId: 'locationInfo',
+        },
+      },
+      specifications: {
+        title: 'Характеристики',
+        rows: [{
+          left: 'Площадь, м',
+          right: '700',
+        }, {
+          left: 'Потолок, м',
+          right: '7',
+        }, {
+          left: 'Залы, м',
+          right: '7',
+        }]
+      },
+      equipments: {
+        title: 'Оборудование',
+        rows: [{
+          left: 'Моноблоки',
+          right: 'Profoto, Manfrotto',
+        }, {
+          left: 'Постоянный свет',
+          right: 'Arri',
+        }, {
+          left: 'Системы крепления',
+          right: 'Avenger',
+        }]
+      },
+      equipmentList: {
+        list: ['Циклорама', 'Дневной свет', 'Условия для семинаров', 'Циклорама', 'Дневной свет', 'Условия для семинаров', 'Дневной свет'],
+        loadMore: 'Ещё',
+        loadMoreCount: '4',
+        link: '#'
+      },
+      pavilions: {
+        title: 'Залы',
+        list: [{
+          internalSlides: [{
+            img: require('../assets/images/studio/studio-4.jpg'),
+          }, {
+            img: require('../assets/images/studio/studio-4.jpg'),
+          }, {
+            img: require('../assets/images/studio/studio-4.jpg'),
+          }, {
+            img: require('../assets/images/studio/studio-4.jpg'),
+          }, {
+            img: require('../assets/images/studio/studio-4.jpg'),
+          }],
+          facility: 'Зал №11',
+          footage: '50 м',
+          price: '700₽ в час • 2 ч. минимум ',
+          equipments: 'Барный стул • Гримерный стол • Зеркало • Кресло • Белая циклорама • Хромакей'
+        }, {
+          internalSlides: [{
+            img: require('../assets/images/studio/studio-4.jpg'),
+          }, {
+            img: require('../assets/images/studio/studio-4.jpg'),
+          }, {
+            img: require('../assets/images/studio/studio-4.jpg'),
+          }, {
+            img: require('../assets/images/studio/studio-4.jpg'),
+          }, {
+            img: require('../assets/images/studio/studio-4.jpg'),
+          }],
+          facility: 'Зал №12',
+          footage: '50 м',
+          price: '700₽ в час • 2 ч. минимум ',
+          equipments: 'Барный стул • Гримерный стол • Зеркало • Кресло • Белая циклорама • Хромакей'
+        }, {
+          internalSlides: [{
+            img: require('../assets/images/studio/studio-4.jpg'),
+          }, {
+            img: require('../assets/images/studio/studio-4.jpg'),
+          }, {
+            img: require('../assets/images/studio/studio-4.jpg'),
+          }, {
+            img: require('../assets/images/studio/studio-4.jpg'),
+          }, {
+            img: require('../assets/images/studio/studio-4.jpg'),
+          }],
+          facility: 'Apartments',
+          footage: '82 м',
+          price: '1800₽ в час',
+          equipments: 'Барный стул • Гримерный стол • Зеркало • Кресло • Белая циклорама • Хромакей'
+        }, {
+          internalSlides: [{
+            img: require('../assets/images/studio/studio-4.jpg'),
+          }, {
+            img: require('../assets/images/studio/studio-4.jpg'),
+          }, {
+            img: require('../assets/images/studio/studio-4.jpg'),
+          }, {
+            img: require('../assets/images/studio/studio-4.jpg'),
+          }, {
+            img: require('../assets/images/studio/studio-4.jpg'),
+          }],
+          facility: 'Зал №15',
+          footage: '70 м',
+          price: '700₽ в час • 2 ч. минимум ',
+          equipments: 'Ванна • Барный стул • Гримерный стол • Зеркало • Кресло'
+        }, {
+          internalSlides: [{
+            img: require('../assets/images/studio/studio-4.jpg'),
+          }, {
+            img: require('../assets/images/studio/studio-4.jpg'),
+          }, {
+            img: require('../assets/images/studio/studio-4.jpg'),
+          }, {
+            img: require('../assets/images/studio/studio-4.jpg'),
+          }, {
+            img: require('../assets/images/studio/studio-4.jpg'),
+          }],
+          facility: 'Зал №16',
+          footage: '65 м',
+          price: '700₽ в час • 2 ч. минимум ',
+          equipments: 'Барный стул • Гримерный стол • Зеркало • Кресло • Белая циклорама • Хромакей'
+        }, {
+          internalSlides: [{
+            img: require('../assets/images/studio/studio-4.jpg'),
+          }, {
+            img: require('../assets/images/studio/studio-4.jpg'),
+          }, {
+            img: require('../assets/images/studio/studio-4.jpg'),
+          }, {
+            img: require('../assets/images/studio/studio-4.jpg'),
+          }, {
+            img: require('../assets/images/studio/studio-4.jpg'),
+          }],
+          facility: 'Зал №17',
+          footage: '48 м',
+          price: '700₽ в час • 2 ч. минимум ',
+          equipments: 'Барный стул • Гримерный стол • Зеркало • Кресло • Белая циклорама • Хромакей'
+        }]
+      },
+      service: {
+        title: 'Удобства и услуги',
+        listLeft: ['Отдельная гримерная', 'Wi-Fi', 'Душ', 'Снэк-автомат'],
+        listRight: ['Организация мероприятий', 'Прокат оборудования', 'Бесплатная парковка'],
+      },
+      additionalService: {
+        title: 'Дополнительные услуги',
+        list: [{
+          checkboxId: 'additionalService1',
+          title: 'Покраска циклорамы',
+          price: '500',
+          input: {
+            value: '1',
+            min: '1',
+            max: '99',
+          },
+          text: 'Набор ванны водой возможен при аренде от 2-х часов для стилизации съеми. В стоимость включены наполнение ванны водой и уборка ванны после Клиента без использования Клиентом цветов, лепестков, красок. Набор ванны производится в течении 15 минут с начала съемочного процесса за это время набирается около 100 л (общий объем ванны 360 л), при необходимости набор можно продолжить по желанию клиента. Слив воды и мойка ванны осуществляются за 15-20 минут до окончания арендуемого времени.',
+          image: require('../assets/images/studio/studio-4.jpg'),
+        }, {
+          checkboxId: 'additionalService2',
+          title: 'Набор ванны водой',
+          price: '300',
+          text: 'Набор ванны водой возможен при аренде от 2-х часов для стилизации съеми. В стоимость включены наполнение ванны водой и уборка ванны после Клиента без использования Клиентом цветов, лепестков, красок. Набор ванны производится в течении 15 минут с начала съемочного процесса за это время набирается около 100 л (общий объем ванны 360 л), при необходимости набор можно продолжить по желанию клиента. Слив воды и мойка ванны осуществляются за 15-20 минут до окончания арендуемого времени.',
+          image: require('../assets/images/studio/studio-4.jpg'),
+        }],
+      },
+      booking: {
+        id: 'bookingLocationPage',
+        price: '1500₽ в час',
+        time: '2 ч. минимум',
+        info: 'Промокод <span>FALL300</span> Скидка 300₽ при заказе от 2000₽ до 30 ноября',
+        dropdown: {
+          input: '12 октября',
+        },
+        dropdown2: {
+          value: 'Выберите',
+          value2: ' ',
+        },
+      },
+      comments: {
+        title: 'Отзывы 8',
+        textareaAtr: {
+          value: '',
+          placeholder: 'Ваш отзыв. Например: Отличная студия, буду рекомендовать своим знокомым!',
+        },
+        id: 'locationComments',
+        dataComments: [{
+          name: 'София',
+          logoColor: '#c2c7e0',
+          date: '21 апреля 2017',
+          rate: 4,
+          content: 'Постоянно меняющийся интерьер с интересными деталями, различными фонами и большим количеством света. Отзывчивые и позитивные владельцы готовые оказать необходимую помощь, начиная от бодрого настроя, отличного кофе, настроек света, заканчивая поиском реквизита.',
+          like: 3,
+          dislike: 1,
+          dislikeSelect: true,
+          reply: true,
+          edit: true,
+        }, {
+          name: 'Андрей',
+          logoColor: '#ede683',
+          respondent: 'Ответ владельца',
+          date: 'Только что',
+          content: 'Отзывчивые и позитивные владельцы готовые оказать необходимую помощь. Да точно — мы такие и спасибо за отзыв. Ждем вас еще :)',
+          edit: true,
+          class: 'comments-item--respondent'
+        }],
+        pagination: [
+          {
+            num: '<svg width="8" height="12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 12"><path d="M-8-6v24h24V-6z" fill="none" fill-rule="evenodd"/><path d="M7.41 1.41L2.83 6l4.58 4.59L6 12 0 6l6-6z"/></svg>',
+            is_disabled: true,
+            is_class: true,
+            class: 'pagination--prev'
+          }, {
+            num: 1,
+            is_active: true
+          }, {
+            num: 2
+          }, {
+            num: 3
+          }, {
+            num: '...'
+          }, {
+            num: 12
+          }, {
+            num: '<svg width="8" height="12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 12"><path fill="none" d="M-8-6v24h24V-6H-8z"/><path d="M2 0l6 6-6 6-1.4-1.4L5.2 6 .6 1.4 2 0z"/></svg>',
+            is_class: true,
+            class: 'pagination--next'
+          }
+        ]
+      },
+      locationSimilar: [{
+          images: [{
+              src: require('../assets/images/location/level-studio.jpg'),
+              alt: 'level-studio'
+            },
+            {
+              src: require('../assets/images/location/level-studio.jpg'),
+              alt: 'naked-sky'
+            },
+            {
+              src: require('../assets/images/location/level-studio.jpg'),
+              alt: 'level-studio'
+            },
+            {
+              src: require('../assets/images/location/level-studio.jpg'),
+              alt: 'naked-sky'
+            },
+            {
+              src: require('../assets/images/location/level-studio.jpg'),
+              alt: 'level-studio'
+            }
+          ],
+          type: 'Студия',
+          number_voters: 21,
+          name: 'Level Studio',
+          price: '1500₽ в час',
+          hours: '· 2 ч. минимум',
+          status: '',
+          status_color: ''
+        },
+        {
+          images: [{
+              src: require('../assets/images/location/naked-sky.jpg'),
+              alt: 'naked-sky'
+            },
+            {
+              src: require('../assets/images/location/naked-sky.jpg'),
+              alt: 'level-studio'
+            },
+            {
+              src: require('../assets/images/location/naked-sky.jpg'),
+              alt: 'naked-sky'
+            },
+            {
+              src: require('../assets/images/location/naked-sky.jpg'),
+              alt: 'level-studio'
+            },
+            {
+              src: require('../assets/images/location/naked-sky.jpg'),
+              alt: 'naked-sky'
+            }
+          ],
+          type: 'Студия · Зал',
+          number_voters: 36,
+          studio_name: 'Naked Sky Studio',
+          studio_link: '/#',
+          hall_name: 'Angels',
+          hall_link: '/#',
+          hall: true,
+          price: '2400₽ в час',
+          hours: '',
+          status: 'Популярная',
+          status_color: '#8791c3;'
+        },
+        {
+          images: [{
+              src: require('../assets/images/location/naked-sky.jpg'),
+              alt: 'naked-sky'
+            },
+            {
+              src: require('../assets/images/location/naked-sky.jpg'),
+              alt: 'level-studio'
+            },
+            {
+              src: require('../assets/images/location/naked-sky.jpg'),
+              alt: 'naked-sky'
+            },
+            {
+              src: require('../assets/images/location/naked-sky.jpg'),
+              alt: 'level-studio'
+            },
+            {
+              src: require('../assets/images/location/naked-sky.jpg'),
+              alt: 'naked-sky'
+            }
+          ],
+          type: 'Студия · Зал',
+          number_voters: 36,
+          studio_name: 'Naked Sky Studio',
+          studio_link: '/#',
+          hall_name: 'Angels',
+          hall_link: '/#',
+          hall: true,
+          price: '2400₽ в час',
+          hours: '',
+          status: 'Популярная',
+          status_color: '#8791c3;'
+        }, {
+          images: [{
+              src: require('../assets/images/location/naked-sky.jpg'),
+              alt: 'naked-sky'
+            },
+            {
+              src: require('../assets/images/location/naked-sky.jpg'),
+              alt: 'level-studio'
+            },
+            {
+              src: require('../assets/images/location/naked-sky.jpg'),
+              alt: 'naked-sky'
+            },
+            {
+              src: require('../assets/images/location/naked-sky.jpg'),
+              alt: 'level-studio'
+            },
+            {
+              src: require('../assets/images/location/naked-sky.jpg'),
+              alt: 'naked-sky'
+            }
+          ],
+          type: 'Студия · Зал',
+          number_voters: 36,
+          studio_name: 'Naked Sky Studio',
+          studio_link: '/#',
+          hall_name: 'Angels',
+          hall_link: '/#',
+          hall: true,
+          price: '2400₽ в час',
+          hours: '',
+          status: 'Популярная',
+          status_color: '#8791c3;'
+        }
+      ],
+      mapContact: {
+        location: 'м. Бауманская • Старокирочный переулок, 2',
+        lat: 55.768782,
+        lon: 37.681864,
+        route: 'Выйдя из метро идите вдоль торговых рядов вдоль и железной дороги. Перейдя железнодорожные пути пройдите через шлагбаум на территорию бывшего завода Станколит. На территории будет стоять отдельно стоящее здание рядом с Автомойкой на фасаде которого большими цифрами написано 38. Это то, что нужно Вам Вход №1.',
+        route_auto: 'Проезжая мимо метро, торговых рядов вдоль и железной дороги. Перейдя железнодорожные пути пройдите через шлагбаум на территорию бывшего завода Станколит. На территории будет стоять отдельно стоящее здание рядом с Автомойкой на фасаде которого большими цифрами написано 38. Это то, что нужно Вам Вход №1.',
+      },
+    }
+  script.
+    window.authorized = {
+      fullName: 'Иван Иванов'
+    };
+    window.comments = {
+      studioID: 1,
+      id: 'locationComments',
+      textareaAtr: {
+        value: '',
+        placeholder: 'Ваш отзыв. Например: Отличная студия, буду рекомендовать своим знакомым!',
+      },
+    };
+  +location-page(locations)

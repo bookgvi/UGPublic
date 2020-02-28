@@ -1,0 +1,9 @@
+include ../location/location.pug
+
+mixin favorites(data)
+  .favorites
+    .favorites__container
+      .favorites__title #{data.title} • #{data.locations.length}
+      .favorites__wrapper
+        each location in data.locations
+          +location('favorites__location', location)

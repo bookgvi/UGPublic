@@ -1,0 +1,42 @@
+include ../../../blocks/form/checkbox/form-checkbox.pug
+include ../inputNumber/inputNumber.pug
+
+mixin location-additionalService(additional)
+  .location-additionalService
+    .location-additionalService__title #{additional.title}
+    .location-additionalService__service-box
+      each item in additional.list
+        .location-additionalService__service
+          .location-additionalService__header
+            .location-additionalService__checkbox
+              +form-checkbox({
+                inputID: item.checkboxId,
+                value: item.value,
+                attributes: {
+                  name: 'extras',
+                }
+              }, true)(class='location-additionalService__checkbox')
+              .location-additionalService__checkbox-text #{item.title}
+            if item.input
+              .location-additionalService__number-box
+                .location-inputNumber
+                  .location-inputNumber__wrapper
+                    button.location-inputNumber__button(type='button', @click='setCount("'+ item.value +'", "-", "'+ item.checkboxId +'")')
+                      svg
+                        use(xlink:href='/assets/front/static/assets/sprite.svg#minus-usage')
+                    input.location-inputNumber__input(type='text', value='1', name=item.checkboxId)
+                    button.location-inputNumber__button(type='button', @click='setCount("'+ item.value +'", "+", "'+ item.checkboxId +'")')
+                      svg
+                        use(xlink:href='/assets/front/static/assets/sprite.svg#plus-usage')
+            .location-additionalService__price-box
+              span.location-additionalService__price #{item.price}
+              span ₽
+            .location-additionalService__arrow
+              svg
+                use(xlink:href=require('../assets/svg/arrow_down.svg').url)
+          .location-additionalService__content
+            .location-additionalService__wrapper
+              if item.image
+                .location-additionalService__image-box
+                  img(src=item.image, alt='alt')
+              p #{item.text}

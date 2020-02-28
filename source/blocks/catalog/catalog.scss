@@ -1,0 +1,170 @@
+$parent: catalog;
+
+@include block ($parent) {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+
+  @include element ($parent, 'wrapper') {
+    max-width: 100%;
+    flex-basis: 100%;
+    transition: max-width 0.2s, flex-basis 0.2s;
+
+    @include modifier ($parent, 'move-over') {
+      max-width: calc(100% - 420px);
+      flex-basis: calc(100% - 420px);
+
+      @media (min-width: $xl-max) {
+        max-width: calc(100% - 33.3333% + 20px);
+        flex-basis: calc(100% - 33.3333% + 20px);
+      }
+
+      @include element ($parent, 'item') {
+        @media (max-width: $xl) and (min-width: $lg) {
+          width: calc(50% - 13px);
+        }
+
+        @media (max-width: $lg-min) and (min-width: $md) {
+          width: 100%;
+        }
+
+        &:nth-child(3) {
+          @media (max-width: $xl) and (min-width: $lg) {
+            order: 1;
+          }
+        }
+      }
+
+      .catalog__slider--half-size {
+        @include element ($parent, 'slider-btn') {
+          display: flex;
+          left: 100%;
+          transform: translateX(-85%);
+        }
+      }
+    }
+
+    .location__rating {
+      pointer-events: none;
+    }
+
+    .banner-location__img {
+      @media (min-width: $xl-max) {
+        height: auto;
+      }
+    }
+  }
+
+  @include element ($parent, 'container') {
+    padding: rem(10) rem(10) rem(30);
+    position: relative;
+    min-height: 400px;
+
+    @media (min-width: $md) {
+      padding: rem(40) rem(20);
+    }
+  }
+
+  @include element ($parent, 'row') {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    z-index: 3;
+
+    @media (min-width: $md) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      margin: 0 -10px;
+    }
+  }
+
+  @include element ($parent, 'slider') {
+    width: 100%;
+    margin-top: rem(10);
+    margin-bottom: rem(38);
+
+    @media (max-width: $md-min) {
+      order: 1;
+      margin-top: 0;
+    }
+
+    @media (min-width: $md) {
+      padding: 0 10px;
+    }
+
+    @include modifier ($parent, 'half-size') {
+      @include element ($parent, 'slider-btn') {
+        @media (max-width: $md-min) {
+          display: flex;
+        }
+      }
+
+      .swiper-slide {
+        @media (max-width: $md-min) {
+          max-width: rem(325);
+        }
+      }
+    }
+  }
+
+  @include element ($parent, 'item') {
+    @media (min-width: $md) {
+      width: 50%;
+      padding: 0 10px;
+    }
+
+    @media (min-width: $lg) {
+      width: 33.333%;
+    }
+
+    @media (min-width: $big) {
+      width: 25%;
+    }
+
+    @include modifier ($parent, 'order') {
+      @media (min-width: $md) {
+        order: 3;
+      }
+    }
+
+    .location__slider {
+      @media (min-width: $xl) {
+        height: rem(250);
+      }
+    }
+
+    &:nth-child(3) {
+      @media (min-width: $md) {
+        order: 3;
+      }
+
+      @media (min-width: $lg) {
+        order: 0;
+      }
+    }
+  }
+
+  @include element ($parent, 'slider-btn') {
+    position: absolute;
+    top: rem(90);
+    right: 0;
+    display: none;
+    z-index: 1;
+
+    @media (min-width: 370px) {
+      left: rem(305);
+      right: auto;
+    }
+  }
+
+  @include element ($parent, 'pagination') {
+    display: flex;
+    justify-content: center;
+    margin-top: rem(35);
+    padding: rem(10) rem(10) rem(30);
+
+    @media (min-width: $lg) {
+      padding: rem(20) rem(20) rem(40);
+    }
+  }
+}

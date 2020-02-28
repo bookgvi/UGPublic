@@ -1,0 +1,12 @@
+mixin news-control(control)
+  .news-control&attributes(attributes)
+    .news-control__wrapper
+      a.news-control__all(href=control.allArticles) #{control.allArticlesText}
+      if control.pagination.prevArticle
+        a.news-control__pagination(href=control.pagination.prevArticle, class=control.pagination.prevDisable ? 'news-control__pagination--disabled' : '')
+          svg(width='12', height='12')
+            use(xlink:href=require('../assets/svg/arrow_prev.svg').url)
+      if control.pagination.nextArticle
+        a.news-control__pagination.news-control__pagination--next(href=control.pagination.nextArticle, class=control.pagination.nextDisable ? 'news-control__pagination--disabled' : '')
+          svg(width='12', height='12')
+            use(xlink:href=require('../assets/svg/arrow_prev.svg').url)

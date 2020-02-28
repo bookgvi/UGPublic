@@ -1,0 +1,44 @@
+$parent: dev-chat-message;
+
+@include block($parent) {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: row-reverse;
+  margin-bottom: rem(20);
+
+  @include modifier($parent, 'sent') {
+    flex-direction: row;
+
+    @include element($parent, 'text') {
+      max-width: rem(320);
+      padding: rem(22);
+      margin-right: 0;
+      margin-left: rem(18);
+      border-radius: 20px 20px 0 20px;
+      border: none;
+      background-color: rgba(129, 174, 182, 0.3);
+      text-align: right;
+    }
+  }
+
+  @include element($parent, 'time') {
+    font-weight: 500;
+    font-size: rem(14);
+    line-height: rem(24);
+    color: #b5b5b5;
+  }
+
+  @include element($parent, 'text') {
+    max-width: 70%;
+    margin-right: rem(10);
+    padding: rem(8) rem(26) rem(8) rem(20);
+    font-weight: 500;
+    font-size: rem(15);
+    line-height: rem(24);
+    color: $dark;
+    border: 1px solid #eee;
+    border-radius: rem(20);
+    background-color: $white;
+  }
+}

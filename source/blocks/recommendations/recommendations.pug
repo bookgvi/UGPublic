@@ -1,0 +1,15 @@
+include ../location/location.pug
+include ../form/button/form-button.pug
+
+mixin recommendations(data)
+  .recommendations
+    .recommendations__title Рекомендуем
+    .recommendations__wrapper
+      each location in data
+        +location('recommendations__location', location)
+    +form-button({
+      text: 'Показать еще',
+      attributes: {
+        type: 'button',
+      }
+    })(class='recommendations__btn form-button--cancel')

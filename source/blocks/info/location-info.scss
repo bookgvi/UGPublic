@@ -1,0 +1,134 @@
+$parent: location-info;
+
+@include block($parent) {
+  @include element ($parent, 'header') {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: rem(13);
+  }
+
+  @include element ($parent, 'favorite') {
+    display: inline-block;
+  }
+
+  @include element ($parent, 'favorite-wrapper') {
+    display: flex;
+    cursor: pointer;
+
+    &:hover {
+      @include element ($parent, 'favorite-text') {
+        color: $marsh;
+      }
+
+      @include element ($parent, 'svg') {
+        svg {
+          fill: $marsh;
+        }
+      }
+
+      @include element ($parent, 'svg--liked') {
+        svg {
+          fill: $red;
+        }
+      }
+    }
+  }
+
+  @include element ($parent, 'favorite-text') {
+    display: inline-block;
+    font-weight: 500;
+    font-size: rem(14);
+    line-height: rem(18);
+    margin-right: rem(14);
+    color: $gray_0;
+  }
+
+  @include element ($parent, 'text-box') {
+    margin-bottom: rem(21);
+  }
+
+  @include element ($parent, 'type') {
+    font-weight: 500;
+    font-size: rem(14);
+    line-height: rem(18);
+  }
+
+  @include element ($parent, 'title') {
+    font-weight: 700;
+    font-size: rem(18);
+    line-height: rem(24);
+    color: $dark;
+    margin-bottom: rem(13);
+
+    @media (min-width: $md) {
+      font-size: rem(24);
+      line-height: rem(29);
+    }
+  }
+
+  @include element ($parent, 'wrapper') {
+    span {
+      font-size: rem(14);
+      line-height: rem(24);
+
+      @media (min-width: $md) {
+        font-size: rem(16);
+        line-height: rem(28);
+      }
+    }
+  }
+
+  @include element ($parent, 'address-box') {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    margin-bottom: rem(14);
+
+    span {
+      font-weight: 500;
+      font-size: rem(14);
+      line-height: rem(24);
+      color: $marsh;
+
+      @media (min-width: $md) {
+        font-size: rem(16);
+      }
+    }
+
+    @media (min-width: $md) {
+      flex-direction: row;
+    }
+  }
+
+  @include element ($parent, 'svg') {
+    display: inline-block;
+
+    @include modifier ($parent, 'hidden') {
+      display: none;
+    }
+
+    svg {
+      fill: $gray_0;
+    }
+
+    @include modifier ($parent, 'liked') {
+      svg {
+        fill: $red;
+      }
+    }
+  }
+
+  @include modifier ($parent, 'checkout-page') {
+    @include element ($parent, 'address-box') {
+      margin-bottom: 0;
+
+      @media (min-width: $md) {
+        margin-bottom: rem(7);
+      }
+
+      @media (min-width: $lg) {
+        margin-bottom: rem(14);
+      }
+    }
+  }
+}

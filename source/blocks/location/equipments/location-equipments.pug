@@ -1,0 +1,9 @@
+mixin location-equipments(equipment)
+  .location-equipments
+    ul.location-equipments__wrapper
+      each item in equipment.list
+        li.location-equipments__item #{item}
+      if equipment.loadMore
+        li.location-equipments__button.location-equipments__button--show
+          a.location-equipments__link(href=equipment.link) #{equipment.loadMore}
+            span.location-equipments__counter #{equipment.loadMoreCount}

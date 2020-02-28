@@ -1,0 +1,35 @@
+mixin comments-item(data)
+  -
+    var i = 0;
+  .comments-item&attributes(attributes)
+    .comments-item__heading
+      .comments-item__user-logo(style=data.logoColor ? `background-color: ${data.logoColor};` : '') #{data.name[0]}
+      .comments-item__user-data
+        .comments-item__user-name #{data.name}
+        if (data.rate)
+          .comments-item__rate
+            while (i < 5)
+              span.comments-item__star(class=i < data.rate ? 'comments-item__star--active' : '') ★
+              - i++
+        if(data.respondent)
+          .comments-item__respondent #{data.respondent}
+        .comments-item__date #{data.date}
+    if(data.respondent)
+      span.comments-item__respondent.comments-item__respondent--mobile #{data.respondent}
+    p.comments-item__content !{data.content}
+    form.comments-item__btn-section(action='/')
+      if (data.like && data.dislike)
+        button.comments-item__btn-voited(type='button')
+          .comments-item__voited.comments-item__voited--like(class=data.likeSelect ? 'comments-item__voited--selected' : '')
+            svg
+              use(xlink:href=require('../assets/svg/like.svg').url)
+            span #{data.like}
+        button.comments-item__btn-voited(type='button')
+          .comments-item__voited.comments-item__voited--dislake(class=data.dislikeSelect ? 'comments-item__voited--selected' : '')
+            svg
+              use(xlink:href=require('../assets/svg/like.svg').url)
+            span #{data.dislike}
+      if (data.reply)
+        button.comments-item__btn-voited.comments-item__btn-voited--reply(type='button') ОТВЕТИТЬ
+      if (data.edit)
+        button.comments-item__btn-voited.comments-item__btn-voited--edit(type='button') РЕДАКТИРОВАТЬ

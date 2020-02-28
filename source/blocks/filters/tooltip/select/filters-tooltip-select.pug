@@ -1,0 +1,54 @@
+include ../booking/filters-tooltip-booking.pug
+include ../../../form/checkbox/form-checkbox.pug
+include ../../../form/button/form-button.pug
+
+mixin filters-tooltip-select(data)
+  .filters-tooltip-select&attributes(attributes)
+    .filters-tooltip-select__wrp.scroll
+      each items in data
+        .filters-tooltip-select__item
+          .filters-tooltip-select__header
+            .filters-tooltip-select__title
+              | #{items.title}
+              span.filters-tooltip-select__count
+                span.filters-tooltip-select__count-point ·
+                span.filters-tooltip-select__count-num
+              span.filters-tooltip-select__number #{items.list.length}
+            .filters-tooltip-select__arrow
+              svg(width='12', height='8')
+                use(xlink:href=require('../assets/svg/arrow_down.svg').url)
+          .filters-tooltip-select__container
+            if items.not_select
+              +filters-tooltip-booking('Мгновенное бронирование', 'Локации, которые можно забронировать не дожидаясь подтверждения владельца.')(class='filters-item__tooltip')
+            else
+              .filters-tooltip-select__wrapper(сlass=items.more_options ? 'filters-tooltip-select__wrapper--height' : '')
+                each item in items.list
+                  +form-checkbox({
+                    inputID: item.for,
+                    label: item.title,
+                    attributes: {
+                      name: items.name,
+                      'data-title': item.title,
+                      value: ((item.value !== undefined) ? item.value : item.title)
+                    }
+                  })(class='filters-tooltip-select__checkbox')
+              if items.more_options
+                .filters-tooltip-select__more
+                  .filters-tooltip-select__more-arrow
+                    svg(width='12', height='8')
+                      use(xlink:href=require('../assets/svg/arrow_down.svg').url)
+                  .filters-tooltip-select__more-text
+                    | #{items.more_text} #{items.list.length - 5}
+    .filters-tooltip-select__buttons
+      +form-button({
+        text: 'Отменить',
+        attributes: {
+          type: 'button',
+        }
+      })(class='filters-tooltip-select__btn form-button--cancel', data-action='cancel')
+      +form-button({
+        text: 'Применить',
+        attributes: {
+          type: 'button'
+        }
+      })(class='filters-tooltip-select__btn', data-apply='Применить')

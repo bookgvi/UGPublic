@@ -1,0 +1,12 @@
+.button {
+  position: relative;
+  height: rem(40);
+  padding: 0 rem(20);
+  font-weight: 500;
+  font-size: rem(14);
+  line-height: rem(18);
+  text-align: center;
+  color: $white;
+  background-color: #c0d6da;
+  z-index: 1;
+}

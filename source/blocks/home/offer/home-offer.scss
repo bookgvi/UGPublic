@@ -1,0 +1,42 @@
+$parent: home-offer;
+
+@include block($parent) {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0 rem(10);
+
+  @media (min-width: $md) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: auto;
+    padding: 0 rem(20);
+    margin: 0 rem(-10);
+  }
+
+  @include element ($parent, 'location-wrapper') {
+    flex: 1 1 100%;
+
+    @media (min-width: $md) {
+      flex: 1 1 50%;
+      max-width: 50%;
+      padding: 0 rem(10);
+    }
+
+    @media (min-width: $lg) {
+      flex: 1 1 33.33%;
+      max-width: 33.33%;
+    }
+
+    &:nth-child(3) {
+      @media (min-width: $md) {
+        display: none;
+      }
+
+      @media (min-width: $lg) {
+        display: block;
+      }
+    }
+  }
+}

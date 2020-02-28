@@ -1,0 +1,45 @@
+$parent: location-inputNumber;
+
+@include block($parent) {
+  display: inline-block;
+  width: 100%;
+
+  @include element ($parent, 'wrapper') {
+    display: flex;
+    align-items: center;
+  }
+
+  @include element ($parent, 'button') {
+    width: rem(40);
+    height: rem(40);
+    border: 1px solid $gray-light-2;
+    transition: background-color 0.25s linear;
+
+    svg {
+      width: rem(15);
+      height: rem(15);
+    }
+
+    &:hover {
+      @media (min-width: $lg) {
+        background-color: $gray-laght-btn-cancel;
+      }
+    }
+  }
+
+  @include element ($parent, 'input') {
+    font-weight: 500;
+    font-size: rem(14);
+    line-height: rem(18);
+    width: rem(40);
+    height: rem(40);
+    text-align: center;
+    border-top: 1px solid $gray-light-2;
+    border-bottom: 1px solid $gray-light-2;
+    flex: 1 0 auto;
+
+    @media (min-width: $md) {
+      flex: 0 0 auto;
+    }
+  }
+}

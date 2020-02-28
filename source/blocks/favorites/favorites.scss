@@ -1,0 +1,51 @@
+$parent: favorites;
+
+@include block($parent) {
+  padding: rem(20) rem(10);
+
+  @media (min-width: $md) {
+    padding: rem(20);
+  }
+
+  @media (min-width: $tablet) {
+    padding: rem(40) 0;
+  }
+
+  @include element ($parent, 'container') {
+    margin-left: auto;
+    margin-right: auto;
+
+    @media (min-width: $tablet) {
+      max-width: rem(580);
+    }
+  }
+
+  @include element ($parent, 'title') {
+    font-weight: 700;
+    font-size: rem(18);
+    line-height: rem(24);
+
+    @media (min-width: $md) {
+      font-size: rem(24);
+      line-height: rem(29);
+    }
+  }
+
+  @include element ($parent, 'wrapper') {
+    margin-top: rem(11);
+
+    @media (min-width: $md) {
+      display: flex;
+      justify-content: space-between;
+      margin-top: rem(20);
+    }
+  }
+
+  @include element ($parent, 'location') {
+    width: 100%;
+
+    @media (min-width: $md) {
+      width: calc(50% - 10px);
+    }
+  }
+}

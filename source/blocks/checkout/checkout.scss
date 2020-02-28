@@ -1,0 +1,275 @@
+$parent: checkout;
+
+@include block($parent) {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-color: $white;
+  max-width: rem(1280);
+  margin: 0 auto;
+
+  @media (min-width: $lg) {
+    margin: 0 auto rem(37);
+  }
+
+  @include element ($parent, 'title') {
+    font-weight: 600;
+    font-size: rem(18);
+    line-height: rem(22);
+    margin-bottom: rem(10);
+
+    @media (min-width: $md) {
+      font-size: rem(21);
+      line-height: rem(25);
+      margin-bottom: rem(17);
+    }
+  }
+
+  @include element ($parent, 'content') {
+    padding: rem(7) rem(10) rem(20);
+
+    @media (min-width: $md) {
+      padding: rem(6) rem(20) rem(20);
+    }
+
+    @media (min-width: $lg) {
+      padding: rem(4) rem(20) rem(20);
+      display: flex;
+    }
+  }
+
+  @include element ($parent, 'information') {
+    width: 100%;
+    padding-top: rem(16);
+    margin-right: rem(10);
+
+    @media (min-width: $lg) {
+      width: 66%;
+      margin-right: rem(25);
+    }
+  }
+
+  @include element ($parent, 'info-box') {
+    @media (min-width: $md) {
+      margin-bottom: rem(15);
+    }
+  }
+
+  @include element ($parent, 'receipt') {
+    background-color: $gray_f8;
+    padding: rem(10);
+
+    @media (min-width: $md) {
+      padding: rem(20);
+    }
+  }
+
+  @include element ($parent, 'book-up') {
+    position: relative;
+    width: calc(100% + 20px);
+    margin: 0 rem(-10);
+
+    @media (min-width: $md) {
+      width: 100%;
+      margin: 0;
+    }
+
+    @media (min-width: $lg) {
+      width: 32%;
+      margin-top: rem(16);
+    }
+  }
+
+  @include element ($parent, 'receipt') {
+    margin-bottom: rem(41);
+
+    @media (min-width: $md) {
+      position: sticky;
+      margin-bottom: 0;
+    }
+  }
+
+  @include element ($parent, 'pavilions') {
+    margin-bottom: rem(15);
+
+    @media (min-width: $md) {
+      margin-bottom: rem(11);
+    }
+
+    @media (min-width: $lg) {
+      margin-bottom: rem(50);
+    }
+  }
+
+  @include element ($parent, 'specifications') {
+    margin-bottom: rem(20);
+  }
+
+  @include element ($parent, 'equipment') {
+    margin-bottom: rem(27);
+
+    @media (min-width: $md) {
+      margin-bottom: rem(40);
+    }
+  }
+
+  @include element ($parent, 'equipment-list') {
+    margin-bottom: rem(40);
+
+    @media (min-width: $md) {
+      margin-bottom: rem(30);
+    }
+  }
+
+  @include element ($parent, 'calendar-section') {
+    padding-bottom: rem(30);
+
+    .fc-event {
+      &.event-selected {
+        background-color: #3a87ad;
+      }
+
+      &.event-disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+      }
+    }
+
+    .fc-axis__arrow {
+      height: 14px;
+      width: 14px;
+      position: relative;
+
+      &::after {
+        content: '';
+        width: 7px;
+        height: 7px;
+        border: 2px solid $marsh;
+        border-left: none;
+        border-top: none;
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: rotate(45deg) translate(-50%, -50%);
+      }
+    }
+
+    @media (min-width: $lg) {
+      padding-bottom: rem(40);
+    }
+  }
+
+  @include element ($parent, 'service') {
+    margin-bottom: rem(30);
+
+    @media (min-width: $lg) {
+      margin-bottom: rem(39);
+    }
+  }
+
+  @include element ($parent, 'slider') {
+    margin-bottom: rem(33);
+
+    @media (min-width: $md) {
+      margin-bottom: rem(19);
+    }
+
+    @media (min-width: $lg) {
+      margin-bottom: rem(43);
+    }
+  }
+
+  @include element ($parent, 'order') {
+    margin-bottom: rem(38);
+
+    @include modifier ($parent, 'price') {
+      margin-bottom: rem(18);
+    }
+  }
+
+  @include element ($parent, 'total') {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: rem(19);
+  }
+
+  @include element ($parent, 'total-text') {
+    font-weight: 500;
+    font-size: rem(16);
+    line-height: rem(24);
+  }
+
+  @include element ($parent, 'total-price') {
+    font-weight: 700;
+    font-size: rem(24);
+    line-height: rem(29);
+    margin-left: auto;
+  }
+
+  @include element ($parent, 'submit') {
+    button {
+      height: rem(50);
+      font-weight: 500;
+      font-size: rem(16);
+      line-height: rem(19);
+    }
+  }
+
+  @include element ($parent, 'agreement') {
+    font-weight: 500;
+    font-size: rem(14);
+    line-height: rem(18);
+
+    a {
+      color: $marsh;
+
+      &:hover {
+        color: $marsh * 0.9;
+      }
+    }
+  }
+
+  @include element ($parent, 'button-box') {
+    margin-bottom: rem(21);
+  }
+
+  @include element ($parent, 'studios-props') {
+    margin-bottom: rem(31);
+  }
+
+  @include element ($parent, 'participants-section') {
+    margin-bottom: rem(26);
+  }
+
+  @include element ($parent, 'personal-data-section') {
+    margin-bottom: rem(20);
+
+    @media (min-width: $md) {
+      margin-bottom: rem(30);
+    }
+
+    @media (min-width: $lg) {
+      margin-bottom: rem(40);
+    }
+  }
+
+  @include element ($parent, 'detail-title') {
+    font-weight: 600;
+    font-size: rem(18);
+    line-height: rem(22);
+    padding-left: rem(10);
+    margin-bottom: rem(10);
+
+    @media (min-width: $md) {
+      font-size: rem(21);
+      line-height: rem(25);
+      margin-bottom: rem(19);
+      padding-left: 0;
+    }
+
+    @media (min-width: $lg) {
+      display: none;
+    }
+  }
+}

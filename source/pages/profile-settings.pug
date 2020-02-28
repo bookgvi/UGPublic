@@ -1,0 +1,12 @@
+extends ../layouts/main.pug
+include ../blocks/profile/settings/profile-settings.pug
+
+block content
+  -
+    var settings = {
+      heading: 'Настройки',
+      heading3: 'Изменить пароль',
+      photo: require('../assets/images/profile-img.png'),
+    }
+
+  +profile-settings(settings)

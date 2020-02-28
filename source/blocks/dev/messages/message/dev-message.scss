@@ -1,0 +1,143 @@
+$parent: dev-message;
+
+@include block($parent) {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: rem(80);
+  padding: 0 rem(10);
+  color: $dark;
+  cursor: pointer;
+
+  @media (min-width: $md) {
+    padding: 0 rem(20);
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: rem(26);
+    transform: translateY(-50%);
+    display: none;
+    width: rem(12);
+    height: rem(12);
+    background-color: #dc6868;
+    border-radius: 50%;
+  }
+
+  @include modifier ($parent, 'new') {
+    background-color: #fbf0f0;
+
+    &::after {
+      display: block;
+    }
+  }
+
+  &:not(.dev-messages__item--new) {
+    @media (max-width: $md-min) {
+      border-bottom: 1px solid #e0e0e0;
+    }
+  }
+
+  @include modifier ($parent, 'selected') {
+    cursor: default;
+
+    @include element($parent, 'text') {
+      color: $gray_9b;
+    }
+
+    @include element($parent, 'date') {
+      color: #b5b5b5;
+    }
+
+    @media (min-width: $md) {
+      background-color: $marsh;
+      border-bottom-color: $marsh;
+      color: $white;
+
+      @include element($parent, 'text') {
+        color: $white;
+      }
+
+      @include element($parent, 'date') {
+        color: $white;
+      }
+    }
+  }
+
+  @include modifier ($parent, 'read') {
+    border-bottom: 1px solid #e5e5e5;
+
+    @include element($parent, 'text') {
+      color: $gray_9b;
+    }
+
+    @include element($parent, 'date') {
+      color: $gray_9b;
+    }
+  }
+
+  @include element($parent, 'avatar') {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: rem(40);
+    height: rem(40);
+    margin-right: rem(10);
+    border-radius: 50%;
+    color: $white;
+    font-size: rem(24);
+    line-height: rem(29);
+  }
+
+  @include element($parent, 'wrapper') {
+    white-space: nowrap;
+    overflow: hidden;
+
+    @media (max-width: $lg-min) {
+      padding-right: rem(24);
+    }
+  }
+
+  @include element($parent, 'name') {
+    font-weight: 600;
+    font-size: rem(16);
+    line-height: rem(19);
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  @include element($parent, 'text') {
+    font-weight: 500;
+    font-size: rem(14);
+    line-height: rem(18);
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    @include modifier ($parent, 'gray') {
+      color: $gray_9b;
+    }
+  }
+
+  @include element($parent, 'date') {
+    margin-left: auto;
+    font-weight: 500;
+    font-size: rem(14);
+    line-height: rem(18);
+  }
+
+  @include element ($parent, 'arrow-back') {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: rem(24);
+    height: rem(24);
+    margin-right: rem(18);
+
+    @media (min-width: $md) {
+      display: none;
+    }
+  }
+}

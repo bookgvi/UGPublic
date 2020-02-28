@@ -1,0 +1,78 @@
+$parent: comments;
+
+@include block($parent) {
+  @include element($parent, 'title') {
+    color: $dark;
+    font-family: $montserrat;
+    font-size: rem(18);
+    font-weight: 600;
+    line-height: rem(22);
+    padding-bottom: rem(13);
+
+    @media (min-width: $md) {
+      font-size: rem(21);
+      line-height: rem(25);
+      padding-bottom: rem(18);
+    }
+  }
+
+  @include element($parent, 'form') {
+    border: 1px solid $gray-light-border;
+    margin-bottom: rem(40);
+  }
+
+  @include element($parent, 'textarea') {
+    width: 100%;
+    height: rem(110);
+    padding: rem(11);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    color: $dark;
+    font-family: $montserrat;
+    font-size: rem(14);
+    font-weight: 400;
+    line-height: rem(24);
+    resize: none;
+    overflow: auto;
+
+    @media (min-width: $md) {
+      padding: rem(17) rem(20);
+      font-size: rem(16);
+    }
+
+    &::placeholder {
+      color: $gray_9b;
+    }
+  }
+
+  @include element($parent, 'btn-section') {
+    display: flex;
+    flex-direction: column;
+    padding: rem(12) rem(10);
+
+    @media (min-width: $md) {
+      padding: rem(14) rem(20);
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  @include element($parent, 'rate-wrapper') {
+    padding-bottom: rem(10);
+
+    @media (min-width: $md) {
+      padding: 0;
+    }
+  }
+
+  @include element($parent, 'btn-wrapper') {
+    width: 100%;
+
+    @media (min-width: $md) {
+      width: rem(130);
+    }
+  }
+
+  @include element($parent, 'progress-section') {
+    display: flex;
+  }
+}

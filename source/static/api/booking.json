@@ -1,0 +1,32 @@
+{
+	"data": {
+		"items": {
+			"amount": 3050,
+			"discount": 350,
+			"amountWithDiscount": 2700,
+			"peopleAdditionalPayment": 100,
+			"extras": [
+				{
+					"id": 1,
+					"title": "fall300",
+					"amount": 500,
+					"description": "4-футовый одноламповый люминесцентный прибор"
+				},
+				{
+					"id": 2,
+					"title": "Доп.услуга",
+					"amount": 300,
+					"description": "Доп.услуга описание"
+				}
+			],
+			"promocode": [
+				{
+					"amount": 300,
+					"type": "rub",
+					"discount": 20
+				}
+			],
+			"sumForPay": 1525
+		}
+	}
+}

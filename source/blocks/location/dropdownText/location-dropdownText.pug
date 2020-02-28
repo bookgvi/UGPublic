@@ -1,0 +1,10 @@
+mixin location-dropdownText(droptext)
+  .location-dropdownText
+    .location-dropdownText__wrapper(data-status='hidden')
+      if droptext.visible
+        span.location-dropdownText__main #{droptext.visible}
+      if droptext.hidden
+        span.location-dropdownText__hidden #{droptext.hidden}
+        button.location-dropdownText__button(type='button')
+          svg
+            use(xlink:href=require('../assets/svg/arrow_dropdown.svg').url)

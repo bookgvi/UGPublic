@@ -1,0 +1,7 @@
+mixin comments-rate(data)
+  -
+    var i = 0
+  .comments-rate&attributes(attributes)
+    input.comments-rate__input(type='text')&attributes(data.inputAttributes)
+    ul.comments-rate__star-section
+    span.comments-rate__value #{data.value > 0 && data.value <= 5 ? data.value : 0}

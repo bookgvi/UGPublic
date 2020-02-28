@@ -1,0 +1,18 @@
+include ../../wysiwyg/wysiwyg.pug
+
+mixin home-description()
+  .home-description
+    .home-description__content
+      +wysiwyg
+        h1 Ugoloc.ru — Сервис для поиска и бронирования фотостудиий Москвы
+        p
+          b Ознакомьтесь с самыми интересными предложениями подобранными для Вас. У нас вы найдете последние новости и лучшие цены на бронирование.
+        h3 Аренда подходящей фотостудии в Москве
+        p Запечатлеть мгновение современному человеку помогает новейшая фотографическая техника. А вот создать для фото соответствующий антураж можно несколькими способами. Аренда фотостудии в Москве недорого с возможностью выбора, бронирование на различных сроках, является великолепной возможностью сформировать профессиональное портфолио или провести фотосессию. Разнообразные стили и направления. Многочисленные варианты на выбор.
+    .home-description__content.home-description__content--full.home-description__content--close
+      +wysiwyg
+        p Vestibulum fermentum ipsum nisi, sit amet molestie dolor feugiat pharetra. Sed dui dolor, malesuada eu dolor id, aliquet viverra sem. Aenean tincidunt ultrices lacus, non pharetra nisi venenatis imperdiet. Praesent cursus leo turpis. Mauris ut sapien porttitor, pulvinar justo nec, vehicula orci. Morbi semper a ligula a ultrices. Vivamus diam urna, sagittis ut lectus eget, fringilla condimentum odio. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed pharetra, justo eu interdum elementum, lacus urna fringilla leo, non placerat libero odio nec neque. Integer ut elit et tortor auctor dapibus. Phasellus sodales justo non nibh faucibus congue. Proin nisl tellus, sagittis quis mauris nec, efficitur pulvinar neque. Maecenas mattis, velit sed varius interdum, magna urna commodo metus.
+    .home-description__more-wrapper
+      button.home-description__more-btn.home-description__more-btn--close(type='button')
+        svg
+          use(xlink:href=require('../assets/svg/arrow_down.svg').url)

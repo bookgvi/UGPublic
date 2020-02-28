@@ -1,0 +1,140 @@
+$parent: order-item;
+
+@include block ($parent) {
+  margin-top: rem(11);
+  padding: rem(10);
+  background-color: $gray_f8;
+
+  @media (min-width: $md) {
+    margin-top: rem(20);
+    padding: rem(20);
+  }
+
+  @include modifier ($parent, 'open') {
+    @include element ($parent, 'content') {
+      max-height: 100%;
+    }
+
+    @include element ($parent, 'arrow') {
+      transform: rotate(180deg);
+    }
+  }
+
+  @include element ($parent, 'header') {
+    display: flex;
+    font-weight: 700;
+    font-size: rem(16);
+    line-height: rem(24);
+    letter-spacing: -0.3px;
+    cursor: pointer;
+  }
+
+  @include element ($parent, 'img') {
+    width: rem(120);
+    height: 100%;
+  }
+
+  @include element ($parent, 'wrapper') {
+    margin-left: rem(10);
+  }
+
+  @include element ($parent, 'info') {
+    font-weight: 500;
+  }
+
+  @include element ($parent, 'status') {
+    color: $marsh;
+
+    @include modifier ($parent, 'alert') {
+      color: $red-error;
+    }
+  }
+
+  @include element ($parent, 'arrow') {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: rem(24);
+    height: rem(24);
+    margin-left: auto;
+    transform: rotate(0deg);
+    transition: transform 0.2s;
+  }
+
+  @include element ($parent, 'content') {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s;
+  }
+
+  @include element ($parent, 'buttons') {
+    display: flex;
+    justify-content: space-between;
+    margin-top: rem(15);
+
+    @media (min-width: $md) {
+      margin-top: rem(38);
+    }
+
+    @include modifier ($parent, 'wrap') {
+      flex-wrap: wrap;
+    }
+  }
+
+  @include element ($parent, 'btn') {
+    width: rem(160);
+
+    @include modifier ($parent, 'message') {
+      @media (max-width: $md-min) {
+        width: 100%;
+        order: 1;
+        margin-top: rem(12);
+      }
+    }
+
+    @include modifier ($parent, 'pay') {
+      @media (max-width: $md-min) {
+        width: calc(100% - 152px);
+      }
+    }
+
+    @include modifier ($parent, 'width') {
+      @media (max-width: $md-min) {
+        min-width: rem(160);
+        width: 100%;
+        margin-right: rem(12);
+      }
+    }
+
+    @include modifier ($parent, 'margin') {
+      margin-right: rem(12);
+    }
+
+    &.form-button--cancel {
+      width: rem(110);
+      margin-left: auto;
+
+      @media (max-width: $md-min) {
+        width: rem(140);
+      }
+    }
+  }
+
+  @include element ($parent, 'result') {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-top: rem(25);
+    margin-bottom: rem(5);
+    font-weight: 500;
+    font-size: rem(16);
+    letter-spacing: -0.3px;
+    line-height: rem(24);
+  }
+
+  @include element ($parent, 'price') {
+    font-weight: 700;
+    font-size: rem(24);
+    line-height: rem(29);
+  }
+}

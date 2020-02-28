@@ -1,0 +1,8 @@
+mixin filters-tooltip-booking(title, text)
+  .filters-tooltip-booking&attributes(attributes)
+    .filters-tooltip-booking__title #{title}
+    .filters-tooltip-booking__text #{text}
+    .filters-tooltip-booking__checkbox
+      .filters-tooltip-booking__checkbox-text(data-enabled='Выключить', data-disabled='Включить') Включить
+      label.filters-tooltip-booking__checkbox-switch(for='booking')
+        input(type='checkbox', name='ob', id='booking', value='1')

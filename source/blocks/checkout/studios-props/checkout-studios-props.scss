@@ -1,0 +1,27 @@
+$parent: checkout-studios-props;
+
+@include block($parent) {
+  @media (min-width: $md) {
+    display: flex;
+    align-items: flex-end;
+    margin: 0 rem(-10);
+  }
+
+  @include element($parent, 'wrapper') {
+    padding-bottom: rem(14);
+
+    @media (min-width: $md) {
+      padding: 0 rem(10) rem(20);
+      flex: 1 1 33.33%;
+      max-width: 33.33%;
+    }
+  }
+
+  @include element($parent, 'title') {
+    color: $dark;
+    font-size: rem(14);
+    font-weight: 500;
+    line-height: rem(18);
+    padding-bottom: rem(10);
+  }
+}

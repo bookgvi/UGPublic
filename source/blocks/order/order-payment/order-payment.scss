@@ -1,0 +1,33 @@
+$parent: order-payment;
+
+@include block ($parent) {
+  margin-top: rem(30);
+
+  @include element ($parent, 'title') {
+    display: flex;
+    align-items: center;
+    height: rem(40);
+    font-weight: 700;
+    font-size: rem(18);
+    line-height: rem(24);
+  }
+
+  @include element ($parent, 'row') {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: rem(40);
+    border-bottom: 1px solid #dedede;
+  }
+
+  @include element ($parent, 'item') {
+    font-weight: 500;
+    font-size: rem(16);
+    line-height: rem(24);
+    color: $gray_9b;
+
+    @include modifier($parent, 'black') {
+      color: $dark;
+    }
+  }
+}

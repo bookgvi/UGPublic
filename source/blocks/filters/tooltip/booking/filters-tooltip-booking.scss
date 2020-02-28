@@ -1,0 +1,72 @@
+$parent: filters-tooltip-booking;
+
+@include block($parent) {
+  @include element($parent, 'title') {
+    display: flex;
+    align-items: center;
+    height: rem(40);
+    font-weight: 700;
+    font-size: rem(16);
+    line-height: rem(19);
+  }
+
+  @include element($parent, 'text') {
+    font-weight: 500;
+    font-size: rem(14);
+    line-height: rem(21);
+  }
+
+  @include element($parent, 'checkbox') {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: rem(20);
+  }
+
+  @include element($parent, 'checkbox-text') {
+    font-weight: 500;
+    font-size: rem(14);
+    line-height: rem(18);
+    color: $marsh;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  @include element($parent, 'checkbox-switch') {
+    position: relative;
+    width: rem(50);
+    height: rem(30);
+    border: 1px solid $gray-laght-btn-cancel;
+    border-radius: 15px;
+    background-color: $white;
+    cursor: pointer;
+    transition: border-color 0.2s 0.2s;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      width: rem(30);
+      height: rem(30);
+      border: 1px solid $gray-laght-btn-cancel;
+      border-radius: 50%;
+      background-color: $white;
+      box-shadow: 0 2px 4px 0 rgba($black, 0.1);
+      transition: left 0.2s;
+    }
+
+    @include modifier($parent, 'active') {
+      background-color: $marsh;
+
+      &::after {
+        left: calc(100% - 30px);
+      }
+    }
+
+    input {
+      opacity: 0;
+    }
+  }
+}

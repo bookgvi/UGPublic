@@ -1,0 +1,47 @@
+$parent: imageCaption;
+
+@include block($parent) {
+  text-align: center;
+
+  img {
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    font-family: 'object-fit: contain;';
+  }
+
+  @include modifier($parent, 'left') {
+    min-width: 100%;
+    float: left;
+    padding: rem(20) 0;
+    clear: left;
+
+    @media (min-width: $md) {
+      min-width: auto;
+      padding: rem(20) rem(20) rem(20) 0;
+    }
+  }
+
+  @include modifier($parent, 'right') {
+    min-width: 100%;
+    float: right;
+    padding: rem(20) 0;
+    clear: right;
+
+    @media (min-width: $md) {
+      min-width: auto;
+      padding: rem(20) 0 rem(20) rem(20);
+    }
+  }
+
+  @include element($parent, 'text') {
+    font-family: $montserrat;
+    font-weight: 500;
+    font-style: italic;
+    font-size: rem(14);
+    line-height: rem(21);
+    text-align: center;
+    color: $gray_9b;
+  }
+}

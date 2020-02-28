@@ -1,0 +1,65 @@
+@import "base/styles/plugins/datepicker.css";
+@import "base/styles/plugins/perfect-scrollbar.scss";
+@import "base/styles/plugins/swiper.css";
+@import "base/styles/plugins/histogram.slider.css";
+@import "base/styles/plugins/jquery-ui.css";
+@import "base/styles/plugins/ion.rangeSlider.css";
+@import "base/styles/plugins/rateyo.css";
+@import "base/styles/vars.scss";
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700');
+@import "base/styles/function.scss";
+@import "base/styles/core.scss";
+@import "base/styles/content.scss";
+@import "blocks/**/*.scss";
+
+.loading-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $black;
+  z-index: 5;
+
+  &::before {
+    content: ' ';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: #fff;
+    opacity: 0.8;
+  }
+}
+
+.lds-dual-ring {
+  display: inline-block;
+  width: rem(80);
+  height: rem(80);
+
+  &::after {
+    content: " ";
+    display: block;
+    width: rem(48);
+    height: rem(48);
+    margin: 8px;
+    border-radius: 50%;
+    border: 6px solid #83aeb6;
+    border-color: #83aeb6 transparent #83aeb6 transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+  }
+}
+
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

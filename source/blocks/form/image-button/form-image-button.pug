@@ -1,0 +1,21 @@
+mixin form-image-button(data)
+  //-
+    Expected text of span, and image link.
+    Expected attributes in data for button such as type
+    +form-social-button({
+      img: require('../assets/images/instagram.png'),
+      alt: 'instagram',
+      text: 'Instagram',
+      attributes: {
+        href: '/'
+      }
+    })
+  .form-image-button&attributes(attributes)
+    a.form-image-button__button.grayscale&attributes(data.attributes)
+      if (data.img && data.alt)
+        img.form-image-button__button-img.grayscale__el(src=data.img, alt=data.alt)
+      if data.formSvg
+        span.form-image-button__svg-box(class=data.formSvgMod)
+          svg
+            use(xlink:href=require('../assets/svg/' + data.formSvg).url)
+      span.form-image-button__button-text #{data.text}
