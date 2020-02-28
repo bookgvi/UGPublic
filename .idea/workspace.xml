@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a033e17b-4cd8-4fa3-bf3d-1df417851b83" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/blocks/checkout/checkout.js" beforeDir="false" afterPath="$PROJECT_DIR$/source/blocks/checkout/checkout.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,11 +41,21 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1582915549114</updated>
-      <workItem from="1582915550873" duration="1319000" />
+      <workItem from="1582915550873" duration="2650000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="150" y="100" width="1280" height="725" key="DiffContextDialog" timestamp="1582917654261">
+      <screen x="0" y="28" width="1600" height="872" />
+    </state>
+    <state x="150" y="100" width="1280" height="725" key="DiffContextDialog/0.28.1600.872@0.28.1600.872" timestamp="1582917654261" />
+    <state x="548" y="126" width="493" height="674" key="RollbackChangesDialog" timestamp="1582917655096">
+      <screen x="0" y="28" width="1600" height="872" />
+    </state>
+    <state x="548" y="126" width="493" height="674" key="RollbackChangesDialog/0.28.1600.872@0.28.1600.872" timestamp="1582917655096" />
   </component>
 </project>

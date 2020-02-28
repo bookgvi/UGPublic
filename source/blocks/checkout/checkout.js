@@ -360,7 +360,7 @@ class Checkout {
             let api = '/api/front/v1.0/bookings';
             // eslint-disable-next-line
             if (IS_DEV) {
-              api = '/api/booking.json';
+              api = 'https://ugoloc-1133.shot.ugoloc.ucann.ru/api/front/v1.0/bookings';
             }
             const data = {};
             this.orderFields.forEach((field) => {
@@ -408,7 +408,7 @@ class Checkout {
           let api = '/api/front/v1.0/rooms/booking-price/';
           // eslint-disable-next-line
           if (IS_DEV) {
-            api = '/api/booking.json/?';
+            api = 'https://ugoloc-1133.shot.ugoloc.ucann.ru/api/front/v1.0/rooms/booking-price/';
           }
           let req = '';
           this.pricesFields.forEach((key, ind) => {
