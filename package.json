@@ -9,7 +9,7 @@
     "build": "webpack --env.production=true --progress"
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "custom-event-polyfill": "^1.0.6",
     "email-validator": "^2.0.4",
     "fullcalendar": "^3.9.0",
