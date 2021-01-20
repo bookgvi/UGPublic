@@ -14,7 +14,7 @@
     "email-validator": "^2.0.4",
     "fullcalendar": "^3.9.0",
     "google-maps": "^3.3.0",
-    "gsap": "^2.0.1",
+    "gsap": "^3.6.0",
     "imask": "^4.1.3",
     "jquery": "^3.3.1",
     "js-share": "^2.1.1",
